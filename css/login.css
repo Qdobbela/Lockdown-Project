@@ -1,0 +1,38 @@
+body{
+    background-color: orange;
+    width: 99%;
+}
+
+#center-element{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flexbox;
+    
+    margin: auto;
+    width: 300px;
+
+}
+
+label{
+    display: inline-block;
+    width: 50%;
+}
+
+input{
+    width: 40%;
+}
+
+button{
+    display: flex;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+#floater{
+    display: block;
+    position: absolute;
+    top: 30%;
+    background-color: rgb(163, 107, 2);
+    border: solid black 2px;
+    padding: 1rem;
+    width: 300px;
+}
