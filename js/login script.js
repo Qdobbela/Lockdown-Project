@@ -1,8 +1,12 @@
+
+//een object persoon met naam en wachtwoord om te kunnen inloggen.
 var Persoon = {
     naam:'Sandra',
     wachtwoord:'Lockdown123'
 }
 
+
+// functie die nakijkt of naam en wachtwoord juist zijn.
 function logIn() {
     let vulInNaam = document.getElementById('Name').value;
     let vulInWachtwoord = document.getElementById('password').value;
