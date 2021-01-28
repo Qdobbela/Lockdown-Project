@@ -119,3 +119,35 @@ p {
     background-color: #dfa72f;
 }
 
+/* Container van de folders */
+.folder-container{
+    display: flexbox;
+    margin: auto;
+    width: 1000px;
+    height: 500px;
+    background-color: lightgray;
+    margin-top: 10rem;
+    border: solid gray 2px;
+}
+
+.folder-container h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    border-bottom: solid black 1px;
+}
+
+.grid-container-in-folder{
+    display: grid;
+    grid-auto-flow: column;
+    padding: 5px;
+    width: 200px;
+}
+
+.grid-container-in-folder .grid-item{
+    width: 100px;
+    margin: 0;
+}
+
+.grid-container-in-folder .grid-item p{
+    color: black;
+}
