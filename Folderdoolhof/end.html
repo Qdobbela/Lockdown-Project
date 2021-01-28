@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/screen.css">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/soundscript.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 
 <body>
@@ -42,17 +43,14 @@
         </div>
     </div>
 
-    <!-- Navbar -->
-    <div class="c-navbar">
-        <div class="c-navbar-container">
-            <a class="c-navbar-btn">Menu</a>
-            <div class="c-navbar-menu">
-                <a class="c-navbar-menu--item" href="../index.html">Bureaublad</a>
-                <a class="c-navbar-menu--item" href="../login-page.html">Log Uit</a>
-                <a class="c-navbar-menu--item" href="#">Netwerk</a>
-            </div>
-        </div>
-    </div>
+    <!-- navbar -->
+    <div id="nav-placeholder"></div>
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("/nav.html");
+        });
+    </script>
+    <!-- end navbar -->
 
 </body>
 
