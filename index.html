@@ -4,34 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bureaublad</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <script src="js/app.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <script src="js/login.js"></script>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="https://fintrabank.be/wp-content/uploads/2019/05/favicon.png" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/screen.css" />
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    
+    <title>Bureaublad</title>
 </head>
 
-<body>
-    <!-- Bureaubladiconen -->
-    <div id="to-inlineblock">
-        <div class="grid-container">
+<body style="overflow: hidden;">
+    <div class="c-desktop o-layout">
+        <div class="c-desktop-container">
             <!-- Foldericoon -->
-            <div class="grid-item">
-                <a href="Folderdoolhof/folder_open.html">
+            <div class="c-desktop-icon">
+                <a class="c-desktop-icon-content" href="Folderdoolhof/folder_open.html">
                     <img src="img/folder.png">
-                    <p class="folder-name">mapje</p>
+                    <p class="folder-name">uw</p>
+                </a>
+            </div>
+            <div class="c-desktop-icon">
+                <a class="c-desktop-icon-content" href="Folderdoolhof/folder_open.html">
+                    <img src="img/folder.png">
+                    <p class="folder-name">moeder</p>
                 </a>
             </div>
         </div>
-    </div>
 
-
-    <!-- Navbar -->
-    <div class="navbar">
-        <div class="dropup">
-            <a class="dropbtn">Menu</a>
-            <div class="dropup-content">
-                <a href="index.html">Bureaublad</a>
-                <a href="login-page.html">Log Uit</a>
-                <a href="#">Netwerk</a>
+        <!-- Navbar -->
+        <div class="c-navbar">
+            <a class="c-navbar-btn">Menu</a>
+            <div class="c-navbar-menu">
+                <a class="c-navbar-menu--item" href="index.html">Bureaublad</a>
+                <a class="c-navbar-menu--item" href="login-page.html">Log Uit</a>
+                <a class="c-navbar-menu--item" href="#">Netwerk</a>
             </div>
         </div>
     </div>

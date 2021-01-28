@@ -624,6 +624,106 @@ textarea {
 }
 
 /*
+    Component: Desktop
+    ---
+    Everything Desktop related here
+*/
+
+.c-desktop{
+	display: flex;
+	height: 100vh;
+	background-color: #E2E3E7;
+    background-image: url("../img/Fintra_Logo_POS.svg");
+    background-repeat: no-repeat;
+    background-size: 80vh;
+    background-position: center;
+}
+
+.c-desktop-container{
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(16, 1fr);
+	grid-template-rows: repeat(7, 1fr);
+	column-gap: 10px;
+	row-gap: 10px;
+	justify-items: start;
+	grid-auto-flow: column;
+}
+
+.c-desktop-icon{
+	width: 100%;
+	height: 100%;
+}
+
+.c-desktop-icon a{
+	text-decoration: none;
+	color:#000
+}
+
+.c-desktop-icon-content{
+	padding-top: 16px;
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+/*
+    Component: Navbar
+    ---
+    Everything Navbar related here
+*/
+
+.c-navbar{
+	align-self: end;
+	width: 100vw;
+	/* padding: 20px 0; */
+	background-color: #1b742d;
+}
+
+.c-navbar-btn {
+	position: relative;
+	display: inline-block;
+	color: white;
+    padding: 24px;
+	font-size: 16px;
+	width: 88px;
+}
+
+.c-navbar-btn:hover {
+	color: black;
+	/* font-size: 20px; */
+	background-color: #218B36;
+}
+
+.c-navbar-menu{
+	display: none;
+	position: absolute;
+	min-width: 200px;
+	padding: 16px;
+	z-index: 1;
+}
+
+.c-navbar-menu a{
+	color: white;
+}
+
+.c-navbar-btn:hover .c-navbar-menu{
+	display: block;
+}
+
+.c-navbar-menu--item{
+	color:white;
+	padding: 16px;
+	background-color: #1b742d;
+    width: 200px;
+}
+.c-navbar-menu--item:hover{
+	background-color: #218B36;
+	color:#000;
+}
+
+/*
     Component: Forms
     ---
     Everything form related here
@@ -678,7 +778,7 @@ textarea {
 
 .c-input-error-message {
 	display: none;
-	color: rgb(185, 32, 32);
+	color: red;
 }
 
 /* option input for checkboxes and radio buttons */

@@ -4,12 +4,12 @@
 }
 
 body {
-    background-color: #0C0A08;
-    background-image: url("../img/bureaubladachtergrond.png");
+    background-color: #ebebeb;
+    background-image: url("../img/Fintra_Logo_POS.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    height: 100vh;
+    height: 60vh;
 }
 
 #to-inlineblock {
