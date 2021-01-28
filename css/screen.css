@@ -679,15 +679,30 @@ textarea {
 	width: 100vw;
 	/* padding: 20px 0; */
 	background-color: #1b742d;
+	position: fixed;
+	bottom: 0;
 }
 
+
 .c-navbar-btn {
-	position: relative;
 	display: inline-block;
 	color: white;
     padding: 24px;
 	font-size: 16px;
 	width: 88px;
+}
+
+.c-navbar-container{
+	position: relative;
+    display: inline-block;
+}
+
+.c-navbar-menu{
+	display: none;
+	min-width: 200px;
+	z-index: 1;
+	position: absolute;
+	bottom: 70px;
 }
 
 .c-navbar-btn:hover {
@@ -696,19 +711,16 @@ textarea {
 	background-color: #218B36;
 }
 
-.c-navbar-menu{
-	display: none;
-	position: absolute;
-	min-width: 200px;
-	padding: 16px;
-	z-index: 1;
-}
+
 
 .c-navbar-menu a{
 	color: white;
+    text-align: center;
+    text-decoration: none;
+	font-size: 17px;
 }
 
-.c-navbar-btn:hover .c-navbar-menu{
+.c-navbar-container:hover .c-navbar-menu{
 	display: block;
 }
 
@@ -716,7 +728,12 @@ textarea {
 	color:white;
 	padding: 16px;
 	background-color: #1b742d;
+	width: 200px;
+    display: block;
+    width: 100%;
+    bottom: 50px;
     width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 .c-navbar-menu--item:hover{
 	background-color: #218B36;
