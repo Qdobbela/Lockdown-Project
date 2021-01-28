@@ -1,17 +1,37 @@
-sessionStorage.setItem('pc1', true);
-sessionStorage.setItem('pc2', false);
-sessionStorage.setItem('pc3', false);
-sessionStorage.setItem('pc4', false);
-sessionStorage.setItem('pcceo', false);
-
-
-
-const unlockComputer = (computer) => {
-    sessionStorage.setItem(computer, true);
+const checkAuth = () => { 
+    if (sessionStorage.getItem('Auth1') === null) {
+        auth = false
+    } else {
+        auth = !!sessionStorage.getItem('Auth1');
+    }
+    
+    console.log(window.location.pathname, auth);
+    if (window.location.pathname == '/login-page.html') {
+        console.log("1")
+        if (auth) {
+            console.log('2');
+            location.replace('/index.html');
+        }
+    } else {
+        console.log('3');
+        console.log(auth)
+        if (!auth) {
+            console.log('4');
+			location.replace('/login-page.html');
+		}
+    }
 }
-const lockComputer = (computer) => {
-    sessionStorage.setItem(computer, false);
-}
 
-console.log(sessionStorage.getItem(pc1))
+
+const init = function () {
+    
+};
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    checkAuth();
+    init();
+});
+
+
 
