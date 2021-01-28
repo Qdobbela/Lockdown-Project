@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folder open</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/soundscript.js"></script>
+</head>
+
+<body>
+    <!-- soundfiles -->
+    <audio src="../snd/animals_dogs_x2_barking_small_001.mp3" id="woof-audio"></audio>
+    <audio src="../snd/Blastwave_FX_CatMeow_SFXB.203.mp3" id="meow-audio"></audio>
+    <audio src="../snd/animal_bull_scottish_highland_moo_001.mp3" id="moo-audio"></audio>
+
+    <div class="folder-container">
+        <h1>Folder</h1>
+        <div class="grid-container-in-folder">
+            <div class="grid-item">
+                <a onclick="playWoof()">
+                    <img src="../img/sound-waves.png">
+                    <p class="folder-name">Sound1</p>
+                </a>
+            </div>
+
+            <div class="grid-item">
+                <a onclick="playMeow()">
+                    <img src="../img/sound-waves.png">
+                    <p class="folder-name">Sound1</p>
+                </a>
+            </div>
+
+            <div class="grid-item">
+                <a onclick="playMoo()">
+                    <img src="../img/sound-waves.png" id="woof-img">
+                    <p class="folder-name">Sound1</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="dropup">
+            <a class="dropbtn">Menu</a>
+            <div class="dropup-content">
+                <a href="../index.html">Bureaublad</a>
+                <a href="../login-page.html">Log Uit</a>
+                <a href="#">Netwerk</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
