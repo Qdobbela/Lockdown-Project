@@ -39,6 +39,11 @@ body {
     display: block;
 }
 
+.grid-item img{
+    max-width: 80px;
+    max-height: 80px;
+}
+
 .folder-name {
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
