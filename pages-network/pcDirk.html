@@ -7,20 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <script src="../js/app.js"></script>
-    <script src="../js/login.js"></script>
 
     <link rel="icon" type="image/png" sizes="32x32" href="https://fintrabank.be/wp-content/uploads/2019/05/favicon.png" />
     <link rel="stylesheet" href="../css/normalize.css" />
     <link rel="stylesheet" href="../css/screen.css" />
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
-    <title>Bureaublad</title>
+    <title>Bureaublad Dirk</title>
 </head>
 
 <body style="overflow: hidden;">
     <div class="c-desktop ">
         <div class="c-desktop-container">
-            <div class="c-desktop-icon" id="empty_folder_icon">
+            <div class="c-desktop-icon" id="documents_icon">
                 <a class="c-desktop-icon-content u-cursor-pointer">
                     <img src="../img/folder.png">
                     <p class="folder-name">Documents</p>
@@ -39,29 +38,54 @@
                     <img class="c-folder-header--close u-cursor-pointer" src="../img/disabled_by_default-24px.svg" id="network_folder_close">
                 </div>
                 <div class="c-folder-grid-container">
-                    <a class="c-desktop-icon-content u-cursor-pointer">
+                    <a class="c-desktop-icon-content u-cursor-pointer" href="../pages-puzzle/Pattern puzzle.html" id="pcHR_icon_locked">
                         <img src="../img/https-24px.svg">
                         <p class="folder-name">PC HR</p>
                     </a>
-                    <a class="c-desktop-icon-content u-cursor-pointer">
+                    <a class="c-desktop-icon-content u-cursor-pointer" style="display: none;" href="./pcHR.html" id="pcHR_icon">
+                        <img src="../img/desktop_mac-24px.svg">
+                        <p class="folder-name">PC HR</p>
+                    </a>
+                    <a class="c-desktop-icon-content u-cursor-pointer" href="../pages-puzzle/QR puzzle.html" id="pcFinance_icon_locked">
                         <img src="../img/https-24px.svg">
                         <p class="folder-name">PC Finance</p>
                     </a>
-        
-                    <a class="c-desktop-icon-content u-cursor-pointer">
+                    <a class="c-desktop-icon-content u-cursor-pointer" style="display: none;" href="./pcFinance.html" id="pcFinance_icon">
+                        <img src="../img/desktop_mac-24px.svg">
+                        <p class="folder-name">PC Finance</p>
+                    </a>
+                    <a class="c-desktop-icon-content u-cursor-pointer" id="pcIT_icon_locked">
                         <img src="../img/https-24px.svg">
                         <p class="folder-name">PC IT</p>
                     </a>
-        
-                    <a class="c-desktop-icon-content u-cursor-pointer">
+                    <a class="c-desktop-icon-content u-cursor-pointer" style="display: none;" href="./pcIT.html" id="pcIT_icon">
+                        <img src="../img/desktop_mac-24px.svg">
+                        <p class="folder-name">PC IT</p>
+                    </a>
+                    <a class="c-desktop-icon-content u-cursor-pointer" id="pcCEO_icon_locked3">
+                        <img src="../img/https-24px3.svg">
+                        <p class="folder-name">PC CEO</p>
+                    </a>
+                    <a class="c-desktop-icon-content u-cursor-pointer" style="display: none;" href="../pages-puzzle/Captcha puzzle.html.html" id="pcCEO_icon_locked2">
+                        <img src="../img/https-24px2.svg">
+                        <p class="folder-name">PC CEO</p>
+                    </a>
+                    <a class="c-desktop-icon-content u-cursor-pointer" style="display: none;" id="pcCEO_icon_locked1">
                         <img src="../img/https-24px.svg">
+                        <p class="folder-name">PC CEO</p>
+                    </a>
+                    <a class="c-desktop-icon-content u-cursor-pointer" style="display: none;" href="./pcCEO.html" id="pcCEO_icon">
+                        <img src="../img/desktop_mac-24px.svg">
                         <p class="folder-name">PC CEO</p>
                     </a>
                 </div>
             </div>
             
-            <div class="c-folder-container c-folder" id="empty_folder">
-                <h1>Folder</h1>
+            <div class="c-folder-container c-folder" id="documents_folder">
+                <div class="c-folder-header">
+                    <h1>Folder</h1>
+                    <img class="c-folder-header--close u-cursor-pointer" src="../img/disabled_by_default-24px.svg" id="documents_folder_close">
+                </div>
                 <div class="c-folder-grid-container">
                 </div>
             </div>
