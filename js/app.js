@@ -5,15 +5,15 @@ const checkAuth = () => {
         auth = !!sessionStorage.getItem('Auth1');
     }
     
-    if (window.location.pathname == '') {
-		if (auth) {
-			location.replace('Lockdown-Project/pages-network/pcDirk.html');
+    if (window.location.pathname == '/index.html') {
+        if (auth) {
+            location.replace('/pages-network/pcDirk.html');
+        }
+    } else {
+        if (!auth) {
+			location.replace('/index.html');
 		}
-	} else {
-		if (!auth) {
-			location.replace('');
-		}
-	}
+    }
 }
 
 const getNetworkProgress = () => {
