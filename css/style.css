@@ -131,6 +131,8 @@ p {
 
 /* Container van de folders */
 .folder-container{
+    z-index: 100;
+    position: absolute;
     display: flexbox;
     margin: auto;
     width: 1000px;
