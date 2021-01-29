@@ -5,13 +5,13 @@ const checkAuth = () => {
         auth = !!sessionStorage.getItem('Auth1');
     }
     
-    if (window.location.pathname == 'Lockdown-Project/index.html') {
+    if (window.location.pathname == '') {
 		if (auth) {
 			location.replace('Lockdown-Project/pages-network/pcDirk.html');
 		}
 	} else {
 		if (!auth) {
-			location.replace('Lockdown-Project/index.html');
+			location.replace('');
 		}
 	}
 }
