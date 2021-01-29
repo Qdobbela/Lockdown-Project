@@ -1,5 +1,6 @@
 body{
     background-image: url("../img/hacker-background.jpg");
+    background-size: contain;
     width: 99%;
 }
 
@@ -11,4 +12,18 @@ body{
     background-color: darkgreen;
     border: dotted black 2px;
     margin-top: 200px;
+}
+
+img, #patternLock{
+    display: flex;
+    margin: auto;
+}
+
+img{
+    margin-top: 9%;
+}
+
+.fix{
+    width: 100%;
+    margin-top: 2rem;
 }
