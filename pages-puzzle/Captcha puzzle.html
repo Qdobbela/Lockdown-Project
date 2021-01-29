@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>SVG clip-path Hover Effect</title>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/css/captcha.css">
+
+</head>
+<body>
+<body onload="wsConnect();" onunload="ws.disconnect();">
+
+<!-- partial:index.partial.html -->
+<div class='container'>
+  <header>
+      <!--
+    <h1>SVG clip-path Hover Effect</h1>
+      -->
+    <p id="titel1">
+      
+    </p>
+      
+    <p id="titel2">
+      Database finding:
+        </p>
+         <p id ="titel3"  class="animate-flicker" >
+             <b>Computer Hacked</b>
+    </p>
+    
+    
+      
+     
+          
+      
+      
+  </header>
+  <main>
+    <div class='items'>
+      <div class='item'>
+        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+          <defs>
+            <clipPath id='clip-0'>
+              <circle cx='0' cy='0' fill='#000' r='350px'></circle>
+            </clipPath>
+          </defs>
+          <text class='svg-text' dy='.3em' x='50%' y='50%'>
+           
+          </text>
+          <g clip-path='url(#clip-0)'>
+            <image id="myImg" height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='/img/cap1.png'></image>
+            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+              
+            </text>
+          </g>
+        </svg>
+      </div>
+      <div class='item'>
+        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+          <defs>
+            <clipPath id='clip-1'>
+              <circle cx='0' cy='0' fill='#000' r='350px'></circle>
+            </clipPath>
+          </defs>
+          <text class='svg-text' dy='.3em' x='50%' y='50%'>
+            
+          </text>
+          <g clip-path='url(#clip-1)'>
+            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='/img/cap2.png'></image>
+            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+              
+            </text>
+          </g>
+        </svg>
+      </div>
+      <div class='item'>
+        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+          <defs>
+            <clipPath id='clip-2'>
+              <circle cx='0' cy='0' fill='#000' r='350px'></circle>
+            </clipPath>
+          </defs>
+          <text class='svg-text' dy='.3em' x='50%' y='50%'>
+            
+          </text>
+          <g clip-path='url(#clip-2)'>
+            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='/img/cap3.png'></image>
+            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+              
+            </text>
+          </g>
+        </svg>
+      </div>
+      <div class='item'>
+        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+          <defs>
+            <clipPath id='clip-3'>
+              <circle cx='0' cy='0' fill='#000' r='350px'></circle>
+            </clipPath>
+          </defs>
+          <text class='svg-text' dy='.3em' x='50%' y='50%'>
+            
+          </text>
+          <g clip-path='url(#clip-3)'>
+            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='/img/cap4.png'></image>
+            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+              
+            </text>
+          </g>
+        </svg>
+      </div>
+      <div class='item'>
+        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+          <defs>
+            <clipPath id='clip-4'>
+              <circle cx='0' cy='0' fill='#000' r='350px'></circle>
+            </clipPath>
+          </defs>
+          <text class='svg-text' dy='.3em' x='50%' y='50%'>
+            
+          </text>
+          <g clip-path='url(#clip-4)'>
+            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='/img/cap5.png'></image>
+            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+              
+            </text>
+          </g>
+        </svg>
+      </div>
+      <div class='item'>
+        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+          <defs>
+            <clipPath id='clip-5'>
+              <circle cx='0' cy='0' fill='#000' r='350px'></circle>
+            </clipPath>
+          </defs>
+          <text class='svg-text' dy='.3em' x='50%' y='50%'>
+           
+          </text>
+          <g clip-path='url(#clip-5)'>
+            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='/img/cap6.png'></image>
+            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+              
+            </text>
+          </g>
+        </svg>
+      </div>
+      <div class='item'>
+        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+          <defs>
+            <clipPath id='clip-6'>
+              <circle cx='0' cy='0' fill='#000' r='350px'></circle>
+            </clipPath>
+          </defs>
+          <text class='svg-text' dy='.3em' x='50%' y='50%'>
+            
+          </text>
+          <g clip-path='url(#clip-6)'>
+            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='/img/cap8.png'></image>
+            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+              
+            </text>
+          </g>
+        </svg>
+      </div>
+      <div class='item'>
+        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+          <defs>
+            <clipPath id='clip-7'>
+              <circle cx='0' cy='0' fill='#000' r='350px'></circle>
+            </clipPath>
+          </defs>
+          <text class='svg-text' dy='.3em' x='50%' y='50%'>
+            
+          </text>
+          <g clip-path='url(#clip-7)'>
+            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='/img/cap9.png'></image>
+            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+              
+            </text>
+          </g>
+        </svg>
+      </div>
+      <div class='item'>
+        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+          <defs>
+            <clipPath id='clip-8'>
+              <circle cx='0' cy='0' fill='#000' r='350px'></circle>
+            </clipPath>
+          </defs>
+          <text class='svg-text' dy='.3em' x='50%' y='50%'>
+            
+          </text>
+          <g clip-path='url(#clip-8)'>
+            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%'  xlink:href='/img/cap10.png'></image>
+            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+              
+            </text>
+          </g>
+        </svg>
+      </div>
+
+      <div class='item'>
+        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+          <defs>
+            <clipPath id='clip-9'>
+              <circle cx='0' cy='0' fill='#000' r='350px'></circle>
+            </clipPath>
+          </defs>
+          <text class='svg-text' dy='.3em' x='50%' y='50%'>
+            
+          </text>
+          <g clip-path='url(#clip-9)'>
+            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='/img/cap11.png'></image>
+            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+              
+            </text>
+          </g>
+        </svg>
+      </div>
+
+      <div class='item'>
+        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+          <defs>
+            <clipPath id='clip-10'>
+              <circle cx='0' cy='0' fill='#000' r='350px'></circle>
+            </clipPath>
+          </defs>
+          <text class='svg-text' dy='.3em' x='50%' y='50%'>
+            
+          </text>
+          <g clip-path='url(#clip-10)'>
+            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' xlink:href='/img/cap12.png'></image>
+            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+              
+            </text>
+          </g>
+        </svg>
+      </div>
+        
+        
+      
+        
+    </div>
+  </main>
+</div>
+    <!--
+<div class='options'>
+  <button class='dark'></button>
+  <button class='light'></button>
+</div>
+    -->
+<!-- partial -->
+  <script  src="/js/captchascript.js"></script>
+    <script  src="./socket.js"></script>
+
+</body>
+</html>
