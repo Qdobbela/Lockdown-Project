@@ -699,10 +699,18 @@ textarea {
     border: solid gray 2px;
 }
 
-.c-folder-container h1{
+.c-folder-header{
+    border-bottom: solid gray 1px;
+}
+
+.c-folder-header .c-folder-header--close{
+	position: absolute;
+	right:0;
+}
+
+.c-folder-header h1{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
-    border-bottom: solid black 1px;
 }
 
 .c-folder-grid-container{
