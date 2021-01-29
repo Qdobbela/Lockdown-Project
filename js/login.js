@@ -6,7 +6,7 @@ const user = {
 const logIn = function (credentials) {
 	console.log(credentials, user);
 	if (credentials.email == user.email && credentials.password == user.password) {
-		//sessionStorage.setItem('Auth1', true);
+		sessionStorage.setItem('Auth1', true);
 		location.replace('pages-network/pcDirk.html');
 		console.log('login successful');
 	} else {
@@ -28,5 +28,5 @@ const login_init = function () {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-	//login_init();
+	login_init();
 });
