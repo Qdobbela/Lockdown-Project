@@ -7,7 +7,7 @@ const logIn = function (credentials) {
 	console.log(credentials, user);
 	if (credentials.email == user.email && credentials.password == user.password) {
 		sessionStorage.setItem('Auth1', true);
-		location.replace('Lockdown-Project/index.html');
+		location.replace('Lockdown-Project/pages-network/pcDirk.html');
 		console.log('login successful');
 	} else {
 		document.querySelector('.c-input-error-message').style.display = 'block';
