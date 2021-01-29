@@ -125,7 +125,7 @@ const init = function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    //checkAuth();
+    checkAuth();
     getNetworkProgress();
     init();
 });
