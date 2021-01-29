@@ -28,5 +28,5 @@ const login_init = function () {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-	login_init();
+	//login_init();
 });
