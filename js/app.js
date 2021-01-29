@@ -6,18 +6,18 @@ const checkAuth = () => {
     }
     
     console.log(window.location.pathname, auth);
-    if (window.location.pathname == '/login-page.html') {
+    if (window.location.pathname == '/index.html') {
         console.log("1")
         if (auth) {
             console.log('2');
-            location.replace('/index.html');
+            location.replace('/pages-network/pcDirk.html');
         }
     } else {
         console.log('3');
         console.log(auth)
         if (!auth) {
             console.log('4');
-			location.replace('/login-page.html');
+			location.replace('/index.html');
 		}
     }
 }
@@ -26,7 +26,7 @@ const checkAuth = () => {
 const init = function () {
     networkFolder = document.getElementById('network_folder')
     networkIcon = document.getElementById('network_icon')
-    
+
     networkIcon.addEventListener('click', function () {
         networkFolder.style.display = 'block'
     });

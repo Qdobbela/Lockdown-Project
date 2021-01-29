@@ -1,5 +1,5 @@
 const user = {
-	email: 'sandra.vd@fintra.be',
+	email: 'dirk.vd@fintra.be',
 	password: 'Lockdown123',
 };
 
