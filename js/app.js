@@ -26,10 +26,14 @@ const checkAuth = () => {
 const init = function () {
     networkFolder = document.getElementById('network_folder')
     networkIcon = document.getElementById('network_icon')
+    networkFolderClose = document.getElementById('network_folder_close')
 
     networkIcon.addEventListener('click', function () {
         networkFolder.style.display = 'block'
     });
+    networkFolderClose.addEventListener('click', function () {
+		networkFolder.style.display = 'none';
+	});
 };
 
 

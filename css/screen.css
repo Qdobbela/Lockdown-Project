@@ -700,17 +700,24 @@ textarea {
 }
 
 .c-folder-header{
-    border-bottom: solid gray 1px;
+	width: 100%;
+	display: flex;
+	border-bottom: solid gray 1px;
+	justify-content: space-between;
+	align-content: center;
 }
 
 .c-folder-header .c-folder-header--close{
-	position: absolute;
-	right:0;
+	min-height: 40px;
+	padding-right: 4px;
 }
 
 .c-folder-header h1{
+	position: relative;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
+	text-align: center;
+	margin-bottom: 5px;
+	margin-left: 40%;
 }
 
 .c-folder-grid-container{
