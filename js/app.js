@@ -7,11 +7,11 @@ const checkAuth = () => {
     
     if (window.location.pathname == '/index.html') {
         if (auth) {
-            location.replace('Lockdown-project/pages-network/pcDirk.html');
+            location.replace('pages-network/pcDirk.html');
         }
     } else {
         if (!auth) {
-			location.replace('Lockdown-project/index.html');
+			location.replace('index.html');
 		}
     }
 }
@@ -125,7 +125,7 @@ const init = function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    checkAuth();
+    //checkAuth();
     getNetworkProgress();
     init();
 });
