@@ -11,7 +11,7 @@ const checkAuth = () => {
 		}
 	} else {
 		if (!auth) {
-			location.replace('Lockdown-Project//index.html');
+			location.replace('Lockdown-Project/index.html');
 		}
 	}
 }
