@@ -27,3 +27,31 @@ img{
     width: 100%;
     margin-top: 2rem;
 }
+
+.password-container{
+    display: flex;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+    margin-top: 20%;
+}
+
+.password-center{
+    display: flexbox;
+    margin: auto;
+    align-items: center;
+}
+
+.password-center button{
+    display: flex;
+    margin: auto;
+    margin-top: 15px;
+}
+
+#psw-fout{
+    display: flex;
+    margin: auto;
+    color: red;
+    padding-top: 15px;
+    width: fit-content;
+}
