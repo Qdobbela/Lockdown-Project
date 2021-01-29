@@ -13,23 +13,22 @@
     <link rel="stylesheet" href="../css/screen.css" />
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
+    <style>
+        .c-desktop {
+            background-image: url("../img/3.png");
+        }
+    </style>
+
     <title>Bureaublad Finance</title>
 </head>
 
 <body style="overflow: hidden;">
     <div class="c-desktop ">
         <div class="c-desktop-container">
-            <!-- Foldericoon -->
-            <div class="c-desktop-icon">
-                <a class="c-desktop-icon-content" href="Folderdoolhof/Folder1.html">
+            <div class="c-desktop-icon" id="documents_icon">
+                <a class="c-desktop-icon-content u-cursor-pointer">
                     <img src="../img/folder.png">
-                    <p class="folder-name">Folderdoolhof</p>
-                </a>
-            </div>
-            <div class="c-desktop-icon">
-                <a class="c-desktop-icon-content" href="../pages-puzzle/Pattern Puzzle.html">
-                    <img src="../img/folder.png">
-                    <p class="folder-name">Patternlock puzzle</p>
+                    <p class="folder-name">Documents</p>
                 </a>
             </div>
             <div class="c-desktop-icon u-cursor-pointer" id="network_icon">
@@ -80,6 +79,19 @@
                     <a class="c-desktop-icon-content u-cursor-pointer" href="./pcDirk.html">
                         <img src="../img/desktop_mac-24px.svg">
                         <p class="folder-name">PC Dirk</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="c-folder-container c-folder" id="documents_folder">
+                <div class="c-folder-header">
+                    <h1>Folder</h1>
+                    <img class="c-folder-header--close u-cursor-pointer" src="../img/disabled_by_default-24px.svg" id="documents_folder_close">
+                </div>
+                <div class="c-folder-grid-container">
+                    <a class="c-desktop-icon-content u-cursor-pointer" href="../img/grafiek.png">
+                        <img src="../img/grafiek.png">
+                        <p class="folder-name">Wisnt</p>
                     </a>
                 </div>
             </div>

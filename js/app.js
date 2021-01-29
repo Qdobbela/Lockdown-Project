@@ -5,15 +5,15 @@ const checkAuth = () => {
         auth = !!sessionStorage.getItem('Auth1');
     }
     
-    if (window.location.pathname == '/index.html') {
-        if (auth) {
-            location.replace('/pages-network/pcDirk.html');
-        }
-    } else {
-        if (!auth) {
-			location.replace('/index.html');
+    if (window.location.pathname == 'Lockdown-Project/index.html') {
+		if (auth) {
+			location.replace('Lockdown-Project/pages-network/pcDirk.html');
 		}
-    }
+	} else {
+		if (!auth) {
+			location.replace('Lockdown-Project//index.html');
+		}
+	}
 }
 
 const getNetworkProgress = () => {
@@ -31,7 +31,7 @@ const getNetworkProgress = () => {
         document.getElementById('pcCEO_icon_locked1').style.display = 'none';
         document.getElementById('pcCEO_icon_locked2').style.display = 'none';
         document.getElementById('pcCEO_icon_locked3').style.display = 'none';
-        if (!!ceo == 'true') {
+        if (ceo == 'true') {
             document.getElementById('pcCEO_icon').style.display = 'block';
         } else if (ceo == '1') {
             document.getElementById('pcCEO_icon_locked1').style.display = 'block';
