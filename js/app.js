@@ -24,7 +24,12 @@ const checkAuth = () => {
 
 
 const init = function () {
+    networkFolder = document.getElementById('network_folder')
+    networkIcon = document.getElementById('network_icon')
     
+    networkIcon.addEventListener('click', function () {
+        networkFolder.style.display = 'block'
+    });
 };
 
 
