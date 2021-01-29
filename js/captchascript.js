@@ -110,8 +110,8 @@ function check(a) {
 
             document.body.style.backgroundColor = "#0e580e"
 
-
-            fadeOut();
+            sessionStorage.setItem('pcCEO', 1);
+            history.back();
 
 
 
