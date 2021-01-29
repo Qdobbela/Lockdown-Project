@@ -31,7 +31,7 @@ const getNetworkProgress = () => {
         document.getElementById('pcCEO_icon_locked1').style.display = 'none';
         document.getElementById('pcCEO_icon_locked2').style.display = 'none';
         document.getElementById('pcCEO_icon_locked3').style.display = 'none';
-        if (!!ceo == 'true') {
+        if (ceo == 'true') {
             document.getElementById('pcCEO_icon').style.display = 'block';
         } else if (ceo == '1') {
             document.getElementById('pcCEO_icon_locked1').style.display = 'block';

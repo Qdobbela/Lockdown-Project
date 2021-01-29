@@ -632,8 +632,8 @@ textarea {
 .c-desktop{
 	display: flex;
 	height: 100vh;
-	background-color: #E2E3E7;
-    background-image: url("../img/Fintra_Logo_POS.svg");
+	background-color: #FFF;
+    background-image: url("../img/0.png");
     background-repeat: no-repeat;
     background-size: 80vh;
     background-position: center;
