@@ -88,46 +88,83 @@ const getNetworkProgress = () => {
 }
 
 
+var clicks = 1
+const subfolderDoolhof = () => { 
+    folders = document.querySelectorAll('.js-subfolder');
+    folders.forEach((icon) => {
+        icon.addEventListener('click', function () {
+            console.log(clicks, icon.name)
+            clicks ++
+            toOpen = document.getElementById(icon.name);
+            toOpen.style.display = 'block'
+            toOpen.style.zIndex = clicks
+        })
+    })
+    foldersClose = document.querySelectorAll('.js-close');
+    foldersClose.forEach((icon) => { 
+        icon.addEventListener('click', function () {
+			toClose = document.getElementById(icon.name);
+			toClose.style.zIndex = 1;
+			toClose.style.display = 'none';
+		});
+    })
+}
+
+
+
 const init = function () {
-    networkFolder = document.getElementById('network_folder')
-    networkIcon = document.getElementById('network_icon')
-    networkFolderClose = document.getElementById('network_folder_close')
+    try {
+        networkFolder = document.getElementById('network_folder')
+        networkIcon = document.getElementById('network_icon')
+        networkFolderClose = document.getElementById('network_folder_close')
 
-    documentsFolder = document.getElementById('documents_folder');
-    documentsIcon = document.getElementById('documents_icon');
-    documentsFolderClose = document.getElementById('documents_folder_close');
+        networkIcon.addEventListener('click', function () {
+            networkFolder.style.display = 'block';
+        });
+        networkFolderClose.addEventListener('click', function () {
+            networkFolder.style.display = 'none';
+        });
+    } catch (error) {
+        console.log(error)
+    }
 
-    mailboxFolder = document.getElementById('mailbox_folder');
-    mailboxIcon = document.getElementById('mailbox_icon');
-    mailboxFolderClose = document.getElementById('mailbox_folder_close');
+    try {
+        documentsFolder = document.getElementById('documents_folder');
+        documentsIcon = document.getElementById('documents_icon');
+        documentsFolderClose = document.getElementById('documents_folder_close');
 
-    networkIcon.addEventListener('click', function () {
-        networkFolder.style.display = 'block'
-    });
-    networkFolderClose.addEventListener('click', function () {
-		networkFolder.style.display = 'none';
-    });
-    
-    documentsIcon.addEventListener('click', function () {
-        documentsFolder.style.display = 'block'
-    });
-    documentsFolderClose.addEventListener('click', function () {
-		documentsFolder.style.display = 'none';
-    });
-    
-    mailboxIcon.addEventListener('click', function () {
-		mailboxFolder.style.display = 'block';
-	});
-	mailboxFolderClose.addEventListener('click', function () {
-		mailboxFolder.style.display = 'none';
-    });
+        documentsIcon.addEventListener('click', function () {
+            documentsFolder.style.display = 'block';
+        });
+        documentsFolderClose.addEventListener('click', function () {
+            documentsFolder.style.display = 'none';
+        });
+    } catch (error) {
+        console.log(error)
+    }
+
+    try {
+        mailboxFolder = document.getElementById('mailbox_folder');
+        mailboxIcon = document.getElementById('mailbox_icon');
+        mailboxFolderClose = document.getElementById('mailbox_folder_close');
+
+        mailboxIcon.addEventListener('click', function () {
+            mailboxFolder.style.display = 'block';
+        });
+        mailboxFolderClose.addEventListener('click', function () {
+            mailboxFolder.style.display = 'none';
+        });
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 
 document.addEventListener('DOMContentLoaded', function () {
     checkAuth();
-    getNetworkProgress();
     init();
+    getNetworkProgress();
+    subfolderDoolhof();
 });
 
 
