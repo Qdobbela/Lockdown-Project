@@ -650,6 +650,15 @@ textarea {
 	grid-auto-flow: column;
 }
 
+.c-desktop-img{
+	grid-column-start: 13;
+	grid-column-end: 15;
+	grid-row-start: 1;
+	grid-row-end: 3;
+	margin-top: 2rem;
+	transform: rotate(-10deg);
+}
+
 .c-desktop-icon{
 	width: 100%;
 	height: 100%;

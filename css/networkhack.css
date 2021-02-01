@@ -35,6 +35,13 @@ img{
     margin-top: 20%;
 }
 
+.password-container-CEO3{
+    display: flex;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+}
+
 .password-center{
     display: flexbox;
     margin: auto;
@@ -61,4 +68,8 @@ p{
     text-align: center;
     border-bottom: solid black 1px;
     padding-bottom: 15px;
+}
+
+.picture-ceo3{
+    height: 400px;
 }

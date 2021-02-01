@@ -6,13 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NetworkHack</title>
     <link rel="stylesheet" href="/css/networkhack.css">
+    <script src="/js/passwordcheck.js"></script>
 </head>
 
 <body>
 
-    <div class="puzzle-container">
-        <img src="/img/QR-code.png">
+    
 
+    <div class="puzzle-container">
+        <div class="password-container-CEO3">
+        <img src="/img/QR-code.png" class="picture-ceo3">
+            <div class="password-center">
+                <label for="psw"><b>Password</b></label>
+                <input placeholder="Enter Password" name="psw" required id="psw">
+                <br>
+                <button type="submit" id="btn" onclick="checkPasswordQR()">Confirm</button>
+                <p id="psw-fout"></p>
+            </div>
+        </div>
     </div>
 </body>
 
