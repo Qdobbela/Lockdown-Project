@@ -73,3 +73,7 @@ p{
 .picture-ceo3{
     height: 400px;
 }
+
+#qr{
+    size: initial;
+}

@@ -138,7 +138,7 @@ function check(a) {
 
 document.getElementsByClassName('item')[0]
     .addEventListener('click', function () {
-        document.querySelector('#clip-0 circle').style.transform = "scale(1)";
+        document.getElementById('img1').style.transform = "scale(0.5)";
         check(0);
 
     }, {
@@ -148,9 +148,7 @@ document.getElementsByClassName('item')[0]
 
 document.getElementsByClassName('item')[1]
     .addEventListener('click', function () {
-        //alert("hello 2")
-
-        document.querySelector('#clip-1 circle').style.transform = "scale(1)";
+        document.getElementById('img2').style.transform = "scale(0.5)";
         check(0);
 
     }, {
@@ -159,8 +157,7 @@ document.getElementsByClassName('item')[1]
 
 document.getElementsByClassName('item')[2]
     .addEventListener('click', function () {
-        //alert("hello 2")
-        document.querySelector('#clip-2 circle').style.transform = "scale(1)";
+        document.getElementById('img3').style.transform = "scale(0.5)";
         check(0);
 
     }, {
@@ -169,8 +166,7 @@ document.getElementsByClassName('item')[2]
 
 document.getElementsByClassName('item')[3]
     .addEventListener('click', function () {
-        //alert("hello 2")
-        document.querySelector('#clip-3 circle').style.transform = "scale(1)";
+        document.getElementById('img4').style.transform = "scale(0.5)";
         check(1)
     }, {
         once: true
@@ -178,8 +174,7 @@ document.getElementsByClassName('item')[3]
 
 document.getElementsByClassName('item')[4]
     .addEventListener('click', function () {
-        //alert("hello 2")
-        document.querySelector('#clip-4 circle').style.transform = "scale(1)";
+        document.getElementById('img5').style.transform = "scale(0.5)";
         check(1)
     }, {
         once: true
@@ -187,8 +182,7 @@ document.getElementsByClassName('item')[4]
 
 document.getElementsByClassName('item')[5]
     .addEventListener('click', function () {
-        //alert("hello 2")
-        document.querySelector('#clip-5 circle').style.transform = "scale(1)";
+        document.getElementById('img6').style.transform = "scale(0.5)";
         check(1)
     }, {
         once: true
@@ -196,8 +190,7 @@ document.getElementsByClassName('item')[5]
 
 document.getElementsByClassName('item')[6]
     .addEventListener('click', function () {
-        //alert("hello 2")
-        document.querySelector('#clip-6 circle').style.transform = "scale(1)";
+        document.getElementById('img7').style.transform = "scale(0.5)";
         check(0)
     }, {
         once: true
@@ -205,8 +198,7 @@ document.getElementsByClassName('item')[6]
 
 document.getElementsByClassName('item')[7]
     .addEventListener('click', function () {
-        //alert("hello 2")
-        document.querySelector('#clip-7 circle').style.transform = "scale(1)";
+        document.getElementById('img8').style.transform = "scale(0.5)";
         check(1)
     }, {
         once: true
@@ -214,8 +206,7 @@ document.getElementsByClassName('item')[7]
 
 document.getElementsByClassName('item')[8]
     .addEventListener('click', function () {
-        //alert("hello 2")
-        document.querySelector('#clip-8 circle').style.transform = "scale(1)";
+        document.getElementById('img9').style.transform = "scale(0.5)";
         check(0)
     }, {
         once: true
@@ -223,8 +214,7 @@ document.getElementsByClassName('item')[8]
 
 document.getElementsByClassName('item')[9]
     .addEventListener('click', function () {
-        //alert("hello 2")
-        document.querySelector('#clip-9 circle').style.transform = "scale(1)";
+        document.getElementById('img10').style.transform = "scale(0.5)";
         check(0)
     }, {
         once: true
@@ -232,17 +222,7 @@ document.getElementsByClassName('item')[9]
 
 document.getElementsByClassName('item')[10]
     .addEventListener('click', function () {
-        //alert("hello 2")
-        document.querySelector('#clip-10 circle').style.transform = "scale(1)";
-        check(0)
-    }, {
-        once: true
-    });
-
-document.getElementsByClassName('item')[11]
-    .addEventListener('click', function () {
-        //alert("hello 2")
-        document.querySelector('#clip-11 circle').style.transform = "scale(1)";
+        document.getElementById('img11').style.transform = "scale(0.5)";
         check(0)
     }, {
         once: true
