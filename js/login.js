@@ -1,6 +1,6 @@
 const user = {
-	email: 'dirk.vd@fintra.be',
-	password: 'Lockdown123',
+	email: 'Dirkers',
+	password: 'woefke48',
 };
 
 const logIn = function (credentials) {
