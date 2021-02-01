@@ -13,7 +13,7 @@ function checkPasswordIT(){
 
 function checkPasswordCEO1(){
 
-    if (document.getElementById('psw').value.toLowerCase() === "ceo1") {
+    if (document.getElementById('psw').value.toLowerCase() === "temsed") {
         document.getElementById('psw-fout').innerHTML = "psw juist";
         sessionStorage.setItem('pcCEO', true);
 		document.location.href = "/pages-network/pcIT.html";
@@ -24,7 +24,7 @@ function checkPasswordCEO1(){
 
 function checkPasswordCEO3(){
 
-    if (document.getElementById('psw').value.toLowerCase() === "temsed") {
+    if (document.getElementById('psw').value.toLowerCase() === "CEO3") {
         document.getElementById('psw-fout').innerHTML = "psw juist";
         sessionStorage.setItem('pcCEO', 2);
         history.back();

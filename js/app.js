@@ -11,7 +11,7 @@ const checkAuth = () => {
         }
     } else {
         if (!auth) {
-			location.replace('index.html');
+			location.replace('/index.html');
 		}
     }
 }

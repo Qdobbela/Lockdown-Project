@@ -11,7 +11,6 @@ const logIn = function (credentials) {
 		console.log('login successful');
 	} else {
 		document.querySelector('.c-input-error-message').style.display = 'block';
-		console.log('bruh tf');
 	}
 };
 
