@@ -24,7 +24,7 @@ function checkPasswordCEO1(){
 
 function checkPasswordCEO3(){
 
-    if (document.getElementById('psw').value.toLowerCase() === "CEO3") {
+    if (document.getElementById('psw').value.toLowerCase() === "ceo3") {
         document.getElementById('psw-fout').innerHTML = "psw juist";
         sessionStorage.setItem('pcCEO', 2);
         history.back();
