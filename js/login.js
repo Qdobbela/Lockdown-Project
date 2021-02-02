@@ -1,11 +1,11 @@
 const user = {
-	email: 'Dirkers',
+	email: 'dirkers',
 	password: 'woefke48',
 };
 
 const logIn = function (credentials) {
 	console.log(credentials, user);
-	if (credentials.email == user.email && credentials.password == user.password) {
+	if (credentials.email.toLowerCase() == user.email && credentials.password.toLowerCase() == user.password) {
 		sessionStorage.setItem('Auth1', true);
 		location.replace('pages-network/pcDirk.html');
 		console.log('login successful');
