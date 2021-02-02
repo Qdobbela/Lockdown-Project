@@ -690,6 +690,12 @@ textarea {
 	fill: #186828;
 }
 
+/*
+    Component: help
+    ---
+    Everything help related here
+*/
+
 .c-help{
 	grid-row: 7;
 	grid-column: 16;
@@ -741,18 +747,58 @@ textarea {
 	margin-bottom: -25px;
 }
 
-/* .c-help-text-bubble:before {
-	content: "";
-	width: 0px;
-	height: 0px;
+.c-help-container{
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: end;
 	position: absolute;
-	border-left: 10px solid transparent;
-	border-right: 10px solid #000;
-	border-top: 10px solid #000;
-	border-bottom: 10px solid transparent;
-	right: 3%;
-	bottom: 13.9%;
-} */
+	bottom: 40px;
+	right: 50px;
+}
+
+.c-help-2 a{
+	padding: 0;
+}
+
+.c-help-text-2 p{
+	padding: 12px;
+}
+
+.c-help-text-2{
+	display: none;
+	align-self: end;
+	width: 350px;
+	padding: 12px;
+
+}
+
+.c-help-text-2 .c-help-text-bubble p{
+	margin: 0;
+}
+
+.c-help-text-2 .c-help-text-bubble{
+	position: relative;
+	bottom: 10px;
+	height: 100%;
+	border-radius: 20px;
+	border: solid #8a8a8a;
+}
+
+.c-help-text-2 .c-help-text-bubble:after{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 25px solid transparent;
+	border-top-color: #5a5a5a;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: 35%;
+	margin-bottom: -25px;
+}
 
 /*
     Component: Folder

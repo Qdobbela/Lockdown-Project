@@ -19,18 +19,78 @@ const checkAuth = () => {
 const checkUnlocked = () => {
     title = document.title.split(' ')
     page = title[title.length - 1]
+    console.log(`pc${page}`);
     if (sessionStorage.getItem(`pc${page}`) != 'true') {
         history.back();
     }
 }
 
+const setBubbleText = () => {
+    title = document.title //.split(' ');
+	// page = title[title.length - 1];
+    // console.log(page)
+
+    switch (title) {
+    
+        case 'Login':
+            if (sessionStorage.getItem('help4') != 'true') {
+                document.getElementById('help_text').innerHTML = 'Lets go phishing! Stuur al die medewerkers een mail om hun wachtwoord te ontfutselen. Stuur hen volgende mail door. "Beste, wegens problemen met het netwerk moeten we jouw paswoord van de Fintrabank opnieuw instellen. Gelieve je huidige wachtwoord door te geven en wij zorgen voor de rest."';
+                showText();
+				hideText();
+                sessionStorage.setItem('help4', true);
+            }
+            document.getElementById('help_text').innerHTML = 'De username is een combinatie van de voornaam en enkele letters in de achternaam. Probeer het paswoord te bekomen via een onoplettende werknemer.';
+            break;
+        
+        case 'Bureaublad Dirk':
+            if (sessionStorage.getItem('help1') != 'true') {
+                document.getElementById('help_text').innerHTML = 'Je hebt kunnen inloggen op de PC van Dirk! Dat wil zeggen dat je nu ook toegang zult hebben op andere computers op dit netwerk. Met een beetje geluk zijn deze niet beveiligd. Hulp nodig? Laat het me weten door op dit icoontje te klikken. ';
+                showText();
+                hideText();
+                sessionStorage.setItem('help1', true);
+            }
+            break;
+
+        case 'Bureaublad HR':
+            break;
+
+        case 'Bureaublad Finance':
+            break;
+
+        case 'Bureaublad CEO':
+            document.getElementById('help_text').innerHTML = 'Dank voor de hulp. Zelf had ik nooit zo ver geraakt. Maar ik moet je iets bekennen, dit was geen opdracht vanuit Fintrabank. Het spijt me om te melden, maar je hebt net een misdaad begaan. En jouw virtuele vingerafdrukken staan overal. Veel succes om dit uit te leggen aan de authoriteiten. Adios!';
+            showText();
+            break;
+
+        case 'Bureaublad IT':
+            break;
+        
+        case 'NetworkHack Pattern':
+            document.getElementById('help_text').innerHTML = "Volg de HR medewekers! De collega's van de personeelsdienst bezitten elk een deel van de oplossing. ";
+            break;
+
+        default:
+            break;
+    }
+}
+
+async function showText(delay=3000) {
+    await new Promise((r) => setTimeout(r, delay));
+    document.getElementById('help_bubble').style.display = 'block'
+}
+
+async function hideText(delay=20000) {
+    await new Promise((r) => setTimeout(r, delay));
+    document.getElementById('help_bubble').style.display = 'none'
+}
+
 const getNetworkProgress = () => {
     if (sessionStorage.getItem('pcCEO') === null) {
-        console.log('initiate progress')
 		sessionStorage.setItem('pcCEO', 3);
 		sessionStorage.setItem('pcFinance', false);
 		sessionStorage.setItem('pcHR', false);
 		sessionStorage.setItem('pcIT', false);
+		sessionStorage.setItem('pcDirk', true);
     }
 
     try {
@@ -54,7 +114,6 @@ const getNetworkProgress = () => {
 
     try {
         HR = sessionStorage.getItem('pcHR');
-        console.log(HR)
         document.getElementById('pcHR_icon').style.display = 'none';
         document.getElementById('pcHR_icon_locked').style.display = 'none';
         if (HR == 'true') {
@@ -68,7 +127,6 @@ const getNetworkProgress = () => {
     
     try {
         IT = sessionStorage.getItem('pcIT');
-        console.log(IT);
         document.getElementById('pcIT_icon').style.display = 'none';
         document.getElementById('pcIT_icon_locked').style.display = 'none';
         if (IT == 'true') {
@@ -82,7 +140,6 @@ const getNetworkProgress = () => {
     
     try {
         Finance = sessionStorage.getItem('pcFinance');
-        console.log(Finance);
         document.getElementById('pcFinance_icon').style.display = 'none';
         document.getElementById('pcFinance_icon_locked').style.display = 'none';
         if (Finance == 'true') {
@@ -102,7 +159,6 @@ const subfolderDoolhof = () => {
     subfolders = document.querySelectorAll('.js-subfolder');
     subfolders.forEach((icon) => {
         icon.addEventListener('click', function () {
-            console.log(clicks, icon.name)
             clicks ++
             toOpen = document.getElementById(icon.name);
             toOpen.style.display = 'block'
@@ -128,6 +184,18 @@ const subfolderDoolhof = () => {
 
 displaying = false;
 const init = function () {
+    try {
+        document.getElementById('pcCEO_icon_locked3').addEventListener('mouseover', function () {
+            if (sessionStorage.getItem('help3') != 'true') {
+                document.getElementById('help_text').innerHTML = 'Hier moeten we zijn! Bereid je voor, dit gaat geen gemakkelijke opgave zijn. Waarschijnlijk moet je hier door meerdere lagen firewall breken. ';
+                showText(0);
+                hideText(10000);
+                sessionStorage.setItem('help3', true);
+            }
+        })
+	} catch (error) {
+		console.log(error);
+	}
 
     try {
         networkFolder = document.getElementById('network_folder')
@@ -135,6 +203,12 @@ const init = function () {
         networkFolderClose = document.getElementById('network_folder_close')
 
         networkIcon.addEventListener('click', function () {
+            if (sessionStorage.getItem('help2') != 'true') { 
+                document.getElementById('help_text').innerHTML = 'Het ziet ernaar uit dat ze intern toch beveiliging hebben ingesteld. Ongetwijfeld een koud kunstje voor jou om die security te kraken!';
+                showText();
+				hideText();
+				sessionStorage.setItem('help2', true);
+            }
             if (!displaying) {
                 networkFolder.style.display = 'block';
                 displaying = true;
@@ -206,6 +280,7 @@ const init = function () {
 document.addEventListener('DOMContentLoaded', function () {
     checkAuth();
     checkUnlocked();
+    setBubbleText();
     init();
     getNetworkProgress();
     subfolderDoolhof();
