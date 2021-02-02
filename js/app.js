@@ -113,16 +113,22 @@ const subfolderDoolhof = () => {
 
 
 const init = function () {
+    displaying = false;
+
     try {
         networkFolder = document.getElementById('network_folder')
         networkIcon = document.getElementById('network_icon')
         networkFolderClose = document.getElementById('network_folder_close')
 
         networkIcon.addEventListener('click', function () {
-            networkFolder.style.display = 'block';
+            if (!displaying) {
+                networkFolder.style.display = 'block';
+                displaying = true;
+            }            
         });
         networkFolderClose.addEventListener('click', function () {
             networkFolder.style.display = 'none';
+            displaying = false;
         });
     } catch (error) {
         console.log(error)
@@ -134,10 +140,14 @@ const init = function () {
         documentsFolderClose = document.getElementById('documents_folder_close');
 
         documentsIcon.addEventListener('click', function () {
-            documentsFolder.style.display = 'block';
+            if (!displaying) {
+				documentsFolder.style.display = 'block';
+				displaying = true;
+			}            
         });
         documentsFolderClose.addEventListener('click', function () {
             documentsFolder.style.display = 'none';
+            displaying = false;
         });
     } catch (error) {
         console.log(error)
@@ -149,10 +159,14 @@ const init = function () {
         mailboxFolderClose = document.getElementById('mailbox_folder_close');
 
         mailboxIcon.addEventListener('click', function () {
-            mailboxFolder.style.display = 'block';
+            if (!displaying) {
+				mailboxFolder.style.display = 'block';
+				displaying = true;
+			}            
         });
         mailboxFolderClose.addEventListener('click', function () {
             mailboxFolder.style.display = 'none';
+            displaying = false;
         });
     } catch (error) {
         console.log(error);
