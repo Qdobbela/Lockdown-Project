@@ -690,6 +690,70 @@ textarea {
 	fill: #186828;
 }
 
+.c-help{
+	grid-row: 7;
+	grid-column: 16;
+	width: 100%;
+}
+
+.c-help a{
+	padding: 0;
+}
+
+.c-help-text{
+	display: none;
+	align-self: end;
+	width: 100%;
+	padding: 12px;
+	grid-row-start: 5;
+	grid-row-end: 7;
+	grid-column-start: 14;
+	grid-column-end: 17;
+}
+
+.c-help-text p{
+	padding: 12px;
+}
+
+.c-help-text-bubble p{
+	margin: 0;
+}
+
+.c-help-text-bubble{
+	position: relative;
+	height: 100%;
+	border-radius: 20px;
+	border: solid #8a8a8a;
+}
+
+.c-help-text-bubble:after{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 25px solid transparent;
+	border-top-color: #5a5a5a;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: 25%;
+	margin-bottom: -25px;
+}
+
+/* .c-help-text-bubble:before {
+	content: "";
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	border-left: 10px solid transparent;
+	border-right: 10px solid #000;
+	border-top: 10px solid #000;
+	border-bottom: 10px solid transparent;
+	right: 3%;
+	bottom: 13.9%;
+} */
+
 /*
     Component: Folder
     ---

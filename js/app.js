@@ -16,6 +16,14 @@ const checkAuth = () => {
     }
 }
 
+const checkUnlocked = () => {
+    title = document.title.split(' ')
+    page = title[title.length - 1]
+    if (sessionStorage.getItem(`pc${page}`) != 'true') {
+        history.back();
+    }
+}
+
 const getNetworkProgress = () => {
     if (sessionStorage.getItem('pcCEO') === null) {
         console.log('initiate progress')
@@ -90,8 +98,9 @@ const getNetworkProgress = () => {
 
 var clicks = 1
 const subfolderDoolhof = () => { 
-    folders = document.querySelectorAll('.js-subfolder');
-    folders.forEach((icon) => {
+    folders = document.querySelectorAll('.js-folder');
+    subfolders = document.querySelectorAll('.js-subfolder');
+    subfolders.forEach((icon) => {
         icon.addEventListener('click', function () {
             console.log(clicks, icon.name)
             clicks ++
@@ -103,17 +112,22 @@ const subfolderDoolhof = () => {
     foldersClose = document.querySelectorAll('.js-close');
     foldersClose.forEach((icon) => { 
         icon.addEventListener('click', function () {
-			toClose = document.getElementById(icon.name);
-			toClose.style.zIndex = 1;
-			toClose.style.display = 'none';
+            folders.forEach((folder) => {
+                folder.style.zIndex = 1;
+                folder.style.display = 'none'
+                displaying = false;
+            })
+			// toClose = document.getElementById(icon.name);
+			// toClose.style.zIndex = 1;
+			// toClose.style.display = 'none';
 		});
     })
 }
 
 
 
+displaying = false;
 const init = function () {
-    displaying = false;
 
     try {
         networkFolder = document.getElementById('network_folder')
@@ -171,11 +185,27 @@ const init = function () {
     } catch (error) {
         console.log(error);
     }
+    
+    try {
+        helpIcon = document.getElementById('help_icon');
+        helpBubble = document.getElementById('help_bubble');
+
+        helpIcon.addEventListener('click', function () {
+			if (helpBubble.style.display != 'block') {
+				helpBubble.style.display = 'block';
+			} else {
+				helpBubble.style.display = 'none';
+			}
+		});
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 
 document.addEventListener('DOMContentLoaded', function () {
     checkAuth();
+    checkUnlocked();
     init();
     getNetworkProgress();
     subfolderDoolhof();
