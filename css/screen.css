@@ -665,8 +665,12 @@ textarea {
 	height: 100%;
 }
 
-.c-desktop-icon--row2{
+.c-desktop-icon--column2{
 	grid-column: 2;
+}
+
+.c-desktop-icon--column-last{
+	grid-column: -2;
 }
 
 .c-desktop-icon:hover{
@@ -702,9 +706,9 @@ textarea {
 */
 
 .c-help{
-	grid-row: 7;
-	grid-column: 16;
-	width: 100%;
+	position: fixed;
+	bottom: 80px;
+	right: 50px;
 }
 
 .c-help a{
@@ -713,13 +717,16 @@ textarea {
 
 .c-help-text{
 	display: none;
+	position: absolute;
 	align-self: end;
-	width: 100%;
+	width: 350px;
 	padding: 12px;
-	grid-row-start: 5;
+	/* grid-row-start: 5;
 	grid-row-end: 7;
 	grid-column-start: 14;
-	grid-column-end: 17;
+	grid-column-end: 17; */
+	bottom: 140px;
+	right: 5px;
 }
 
 .c-help-text p{
