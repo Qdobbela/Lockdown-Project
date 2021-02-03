@@ -305,14 +305,14 @@
 	display: none;
 	align-self: end;
 	width: 350px;
-	padding: 12px;
 
 }
 
 .c-help-text-2 .c-help-text-bubble p{
-  margin: 0;
+  display: block;
   font-size: 16px;
-  padding: 12px;
+  padding: -12px;
+  margin-left: 20px;
 }
 
 .c-help-text-2 .c-help-text-bubble{
