@@ -8,7 +8,8 @@ const logIn = function (credentials) {
 	if (credentials.email.toLowerCase() == user.email && credentials.password.toLowerCase() == user.password) {
 		sessionStorage.setItem('Auth1', true);
 		sessionStorage.setItem('startTime', Date.now());
-		location.replace('pages-network/pcDirk.html');
+		// location.replace('pages-network/pcDirk.html');
+		location.href = 'pages-network/pcDirk.html';
 		console.log('login successful');
 	} else {
 		document.querySelector('.c-input-error-message').style.display = 'block';

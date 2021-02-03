@@ -8,10 +8,12 @@ const checkAuth = () => {
     if (window.location.pathname == '/index.html') {
         if (auth) {
             location.replace('pages-network/pcDirk.html');
+            // location.href = '/pages-network/pcDirk.html';
         }
     } else {
         if (!auth) {
 			location.replace('/index.html');
+			// location.href = '/index.html';
 		}
     }
 }
