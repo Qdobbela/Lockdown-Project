@@ -19,11 +19,13 @@ const checkAuth = () => {
 }
 
 const checkUnlocked = () => {
-    title = document.title.split(' ')
-    page = title[title.length - 1]
-    console.log(`pc${page}`);
-    if (sessionStorage.getItem(`pc${page}`) != 'true') {
-        history.back();
+    if (document.title != 'Login' && document.title != 'Bureaublad Dirk') {
+        title = document.title.split(' ')
+        page = title[title.length - 1]
+        console.log(`pc${page}`);
+        if (sessionStorage.getItem(`pc${page}`) != 'true') {
+            history.back();
+        }
     }
 }
 
@@ -38,10 +40,13 @@ const setBubbleText = () => {
             if (sessionStorage.getItem('help4') != 'true') {
                 document.getElementById('help_text').innerHTML = 'Lets go phishing! Stuur al die medewerkers een mail om hun wachtwoord te ontfutselen. Stuur hen volgende mail door. "Beste, wegens problemen met het netwerk moeten we jouw paswoord van de Fintrabank opnieuw instellen. Gelieve je huidige wachtwoord door te geven en wij zorgen voor de rest."';
                 showText();
-				hideText();
-                sessionStorage.setItem('help4', true);
+                hideText(30000)
+                    .then(() => {
+                        sessionStorage.setItem('help4', true);
+                    }).then(() => {
+                        document.getElementById('help_text').innerHTML = 'De username is een combinatie van de voornaam en enkele letters in de achternaam. Probeer het paswoord te bekomen via een onoplettende werknemer.';
+                    });
             }
-            document.getElementById('help_text').innerHTML = 'De username is een combinatie van de voornaam en enkele letters in de achternaam. Probeer het paswoord te bekomen via een onoplettende werknemer.';
             break;
         
         case 'Bureaublad Dirk':
@@ -60,7 +65,24 @@ const setBubbleText = () => {
             break;
 
         case 'Bureaublad CEO':
-            document.getElementById('help_text').innerHTML = 'Dank voor de hulp. Zelf had ik nooit zo ver geraakt. Maar ik moet je iets bekennen, dit was geen opdracht vanuit Fintrabank. Het spijt me om te melden, maar je hebt net een misdaad begaan. En jouw virtuele vingerafdrukken staan overal. Veel succes om dit uit te leggen aan de authoriteiten. Adios!';
+            if (sessionStorage.getItem('endTime') !== null) {
+                time = sessionStorage.getItem('endTime');
+            } else {
+                now = Date.now();
+				start = Date.parse(sessionStorage.getItem('startTime'));
+				duration = now - start;
+				hours = Math.floor(duration / 3600000);
+				minutes = Math.floor(Math.floor(duration % 3600000) / 60000);
+				seconds = Math.floor(Math.floor(Math.floor(duration % 3600000) % 60000) / 1000);
+				if (hours == 0) {
+					time = `${minutes}:${seconds}`;
+				} else {
+					time = `${hours}:${minutes}:${seconds}`;
+				}
+                sessionStorage.setItem('endTime', time);
+            }
+            
+            document.getElementById('help_text').innerHTML = `Dank voor de hulp. Zelf had ik nooit zo ver geraakt. Maar ik moet je iets bekennen, dit was geen opdracht vanuit Fintrabank. Het spijt me om te melden, maar je hebt net een misdaad begaan. En jouw virtuele vingerafdrukken staan overal. Je hebt de CEO gehackt in ${time}. Veel succes om dit uit te leggen aan de authoriteiten. Adios!`;
             showText();
             break;
 
@@ -92,7 +114,7 @@ const getNetworkProgress = () => {
 		sessionStorage.setItem('pcFinance', false);
 		sessionStorage.setItem('pcHR', false);
 		sessionStorage.setItem('pcIT', false);
-		sessionStorage.setItem('pcDirk', true);
+		// sessionStorage.setItem('pcDirk', true);
     }
 
     try {
@@ -256,6 +278,25 @@ const init = function () {
         });
         mailboxFolderClose.addEventListener('click', function () {
             mailboxFolder.style.display = 'none';
+            displaying = false;
+        });
+    } catch (error) {
+        console.log(error);
+    }
+
+    try {
+        trashFolder = document.getElementById('trash_folder');
+        trashIcon = document.getElementById('trash_icon');
+        trashFolderClose = document.getElementById('trash_folder_close');
+
+        trashIcon.addEventListener('click', function () {
+            if (!displaying) {
+				trashFolder.style.display = 'block';
+				displaying = true;
+			}            
+        });
+        trashFolderClose.addEventListener('click', function () {
+            trashFolder.style.display = 'none';
             displaying = false;
         });
     } catch (error) {

@@ -651,12 +651,57 @@ textarea {
 }
 
 .c-desktop-img{
-	grid-column-start: 13;
-	grid-column-end: 15;
-	grid-row-start: 1;
-	grid-row-end: 3;
+	z-index: 0;
 	margin-top: 2rem;
 	transform: rotate(-10deg);
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+
+.c-desktop-img img{
+	/* border: solid 1px rgb(138, 138, 138); */
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.192);
+}
+
+.c-postit--1{
+	grid-column-start: 14;
+	grid-column-end: 16;
+}
+
+.c-postit--1:hover{
+	z-index: 100;
+}
+.c-postit--2{
+	grid-column-start: 13;
+	grid-column-end: 15;
+}
+
+.c-postit--2:hover{
+	z-index: 100;
+}
+.c-postit--3{
+	grid-column-start: 12;
+	grid-column-end: 14;
+}
+
+.c-postit--3:hover{
+	z-index: 100;
+}
+.c-postit--4{
+	grid-column-start: 11;
+	grid-column-end: 13;
+}
+
+.c-postit--4:hover{
+	z-index: 100;
+}
+.c-postit--5{
+	grid-column-start: 10;
+	grid-column-end: 12;
+}
+
+.c-postit--5:hover{
+	z-index: 100;
 }
 
 .c-desktop-icon{
@@ -763,7 +808,7 @@ textarea {
 	display: flex;
 	flex-direction: column;
 	justify-content: end;
-	align-items: end;
+	align-items: flex-end;
 	position: absolute;
 	bottom: 40px;
 	right: 50px;
@@ -824,6 +869,7 @@ textarea {
 	grid-row-start: 2;
 	grid-row-end: 6;
 
+	z-index: 200;
     display: flexbox;
     width: 100%;
     background-color: lightgray;

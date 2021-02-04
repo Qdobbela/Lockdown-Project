@@ -100,15 +100,6 @@
       
   }
   
-  /* circle {
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    transition: -webkit-transform 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transition: transform 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transition: transform 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-transform 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  } */
   
   text {
     font-size: 1.1rem;
@@ -118,18 +109,18 @@
     font-weight: 600;
   }
   
-  .svg-text {
+  /* .svg-text {
     fill: #545a64;
       
-  }
+  } */
   
-  .svg-masked-text {
+  /* .svg-masked-text {
     fill: white;
-  }
+  } */
   
   image {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
     -webkit-transform-origin: 50% 50%;
             transform-origin: 50% 50%;
     transition: -webkit-transform 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -151,12 +142,12 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
-    width: 275px;
-    height: 275px;
+    width: 27vh;
+    height: 27vh;
     margin: 5px;
     cursor: pointer;
     background-color: #3b3e46;
-    border-radius: 2px;
+    border-radius: 5px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.02), inset 0 0px 0px 1px rgba(0, 0, 0, 0.07);
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
@@ -165,13 +156,12 @@
   }
 
   
-  .item:hover circle,
   .item:hover image {
     -webkit-transform: scale(0.8);
             transform: scale(0.8);
   }
   
-  button {
+  /* button {
     width: 12px;
     height: 12px;
     border: none;
@@ -186,9 +176,9 @@
   }
   button.light {
     background-color: #f9f9f9;
-  }
+  } */
   
-  .options {
+  /* .options {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -209,7 +199,7 @@
   }
   .light .svg-text {
     fill: rgba(0, 0, 0, 0.1);
-  }
+  } */
 
 
 
@@ -313,15 +303,15 @@
   font-size: 16px;
   padding: -12px;
   margin-left: 20px;
+  color: #000;
 }
 
 .c-help-text-2 .c-help-text-bubble{
 	position: relative;
-	bottom: 10px;
+	bottom: 20px;
 	height: 100%;
-    border-radius: 20px;
-    background-color: #000;
-    color: #FFF;
+  border-radius: 20px;
+  background-color: #FFF;
 	border: solid #8a8a8a;
 }
 
