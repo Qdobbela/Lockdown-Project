@@ -1548,6 +1548,31 @@ textarea {
 	z-index: 0;
 }
 
+.tree-structure {
+	margin-top: .5rem;
+	display: flex;
+	flex-direction: row;
+}
+
+.tree-structure-text {
+	margin-left: .5rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.tree-structure-text::after {
+	display: flex;
+	content: ' ';
+	background-image: url('../img/breadcrumb.svg');
+	background-size: 15px 15px;
+	height: 15px;
+	width: 15px;
+	margin-left: .3rem;
+}
+
+
+
 @media (min-width: 576px) {
 	.u-1-of-2-bp1 {
 		width: 50% !important;

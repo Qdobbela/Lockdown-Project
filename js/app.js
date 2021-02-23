@@ -223,14 +223,18 @@ const subfolderDoolhof = () => {
 }
 
 const setPathStructure = (pathName) => {
-    const pathText = document.querySelectorAll('.tree-structure-text');
+    const pathDiv = document.querySelectorAll('.tree-structure');
     path.push(pathName);
-    console.log(path);
 
-    pathText.forEach(text => {
-        text.textContent = path.toString();
-        console.log(text)
-    });
+    if (path.length > 1) {
+        pathDiv.forEach(text => {
+            const pathText = document.createElement("p");
+            pathText.classList.add("tree-structure-text")
+            text.appendChild(pathText);
+            pathText.textContent = pathName
+        });
+    }
+
 }
 
 
@@ -356,4 +360,5 @@ document.addEventListener('DOMContentLoaded', function () {
     init();
     getNetworkProgress();
     subfolderDoolhof();
+    setPathStructure();
 });
