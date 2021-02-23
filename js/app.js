@@ -176,27 +176,41 @@ const getNetworkProgress = () => {
     }
 }
 
-
+let path = [];
 var clicks = 1
 const subfolderDoolhof = () => {
     folders = document.querySelectorAll('.js-folder');
     subfolders = document.querySelectorAll('.js-subfolder');
     subfolders.forEach((icon) => {
-        icon.addEventListener('click', function () {
+        icon.addEventListener('click', function (e) {
             clicks++
             toOpen = document.getElementById(icon.name);
             toOpen.style.display = 'block'
-            toOpen.style.zIndex = clicks
+            toOpen.style.zIndex = clicks;
+
+            const pathName = e.path[1].innerText;
+            setPathStructure(pathName);
         })
     })
+    document.addEventListener('play', function (e) {
+        const allAudios = document.getElementsByTagName('audio');
+        for (var i = 0; i < allAudios.length; i++) {
+            if (allAudios[i] != e.target) {
+                allAudios[i].pause();
+            }
+        }
+    }, true);
     foldersClose = document.querySelectorAll('.js-close');
     foldersClose.forEach((icon) => {
         icon.addEventListener('click', function () {
             folders.forEach((folder) => {
-                folder.style.zIndex = 1;
+                folder.style.zIndex = 0;
                 folder.style.display = 'none'
                 displaying = false;
-                var audios = document.getElementsByTagName('audio');
+                // Refresh the paths
+                path = [];
+                setPathStructure();
+                const audios = document.getElementsByTagName('audio');
                 for (var i = 0, len = audios.length; i < len; i++) {
                     audios[i].pause();
                 }
@@ -206,6 +220,17 @@ const subfolderDoolhof = () => {
             // toClose.style.display = 'none';
         });
     })
+}
+
+const setPathStructure = (pathName) => {
+    const pathText = document.querySelectorAll('.tree-structure-text');
+    path.push(pathName);
+    console.log(path);
+
+    pathText.forEach(text => {
+        text.textContent = path.toString();
+        console.log(text)
+    });
 }
 
 
