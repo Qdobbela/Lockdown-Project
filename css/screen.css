@@ -1549,13 +1549,15 @@ textarea {
 }
 
 .tree-structure {
-	margin-top: .5rem;
 	display: flex;
 	flex-direction: row;
+	height: 3rem;
+	margin-left: 1rem;
 }
 
 .tree-structure-text {
 	margin-left: .5rem;
+	margin-top: 1rem;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
