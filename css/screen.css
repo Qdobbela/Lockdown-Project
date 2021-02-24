@@ -1555,6 +1555,13 @@ textarea {
 	margin-left: 1rem;
 }
 
+.tree-structure-found {
+	display: flex;
+	flex-direction: row;
+	height: 3rem;
+	margin-left: 1rem;
+}
+
 .tree-structure-text {
 	margin-left: .5rem;
 	margin-top: 1rem;

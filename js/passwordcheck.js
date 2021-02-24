@@ -41,3 +41,29 @@ function checkPasswordQR() {
         document.getElementById('psw-fout').innerText = "Dat is een fout wachtwoord!";
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const passwordInput = document.querySelector(".password-input");
+
+    let inputArr = []
+
+    passwordInput.addEventListener('input', (e) => {
+        const inputValue = e.target.value
+        // updateArr(inputValue);
+    })
+
+    // const updateArr = (inputValue) => {
+    //     const inputvalue = inputValue
+    //     switch ( inputvalue) {
+    //         case inputvalue.length === 0:
+    //             passwordInput.value = `*****`
+    //             break;
+    //         case `${inputvalue}****`:
+    //             passwordInput.value = `${inputvalue}****`
+    //             break;
+    //         default:
+    //             // code block
+    //     }
+    // }
+
+});

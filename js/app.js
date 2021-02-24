@@ -209,7 +209,7 @@ const subfolderDoolhof = () => {
                 displaying = false;
                 // Refresh the paths
                 path = [];
-                setPathStructure();
+                deletePathStructure();
                 const audios = document.getElementsByTagName('audio');
                 for (var i = 0, len = audios.length; i < len; i++) {
                     audios[i].pause();
@@ -225,18 +225,49 @@ const subfolderDoolhof = () => {
 const setPathStructure = (pathName) => {
     const pathDiv = document.querySelectorAll('.tree-structure');
     path.push(pathName);
+    console.log(path.toString());
+
+    checkPathStructure();
 
     if (path.length > 1) {
         pathDiv.forEach(text => {
             const pathText = document.createElement("p");
-            pathText.classList.add("tree-structure-text")
+            pathText.classList.add("tree-structure-text");
             text.appendChild(pathText);
             pathText.textContent = pathName
         });
     }
-
 }
 
+const deletePathStructure = () => {
+    const pathText = document.querySelectorAll('.tree-structure-text');
+    pathText.forEach(text => {
+        text.remove();
+    });
+    // Reset the structure
+    setPathStructure();
+}
+
+const checkPathStructure = () => {
+    if (path.toString() === ",A,G,E,N,D,A" || sessionStorage.getItem('agendaFound') === "true") {
+        sessionStorage.setItem('agendaFound', true);
+        setPathStructureFound();
+    } else {
+        sessionStorage.setItem('agendaFound', false);
+    }
+}
+
+// Never delete this commented code, otherwise its broke, no idea why
+const setPathStructureFound = () => {
+    // if (sessionStorage.getItem('agendaFound') === "true") {
+    //     console.log("Key found!, now store it")
+    //     sessionStorage.setItem('agendaFound', true);
+    //     toOpen = document.getElementById("-1");
+    //     clicks++
+    //     toOpen.style.display = 'block'
+    //     toOpen.style.zIndex = clicks;
+    // }
+}
 
 
 displaying = false;
@@ -283,11 +314,33 @@ const init = function () {
         documentsFolder = document.getElementById('documents_folder');
         documentsIcon = document.getElementById('documents_icon');
         documentsFolderClose = document.getElementById('documents_folder_close');
-
         documentsIcon.addEventListener('click', function () {
             if (!displaying) {
                 documentsFolder.style.display = 'block';
                 displaying = true;
+                setPathStructureFound()
+            }
+            if (sessionStorage.getItem('agendaFound') === "true") {
+                toOpen = document.getElementById("-1");
+                clicks++
+                if (toOpen) {
+                    toOpen.style.display = 'block'
+                    toOpen.style.zIndex = clicks;
+                    const div = document.createElement('div');
+
+                    div.className = 'tree-structure-found';
+
+                    div.innerHTML = `
+                        <p class="tree-structure-text">A</p>
+                        <p class="tree-structure-text">G</p>
+                        <p class="tree-structure-text">E</p>
+                        <p class="tree-structure-text">N</p>
+                        <p class="tree-structure-text">D</p>
+                        <p class="tree-structure-text">A</p>
+                        `;
+
+                    document.getElementById('tree-structure-found').appendChild(div);
+                }
             }
         });
         documentsFolderClose.addEventListener('click', function () {

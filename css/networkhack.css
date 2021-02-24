@@ -28,6 +28,11 @@ img {
 	width: 100%;
 }
 
+a {
+	text-decoration: none;
+	color: black;
+}
+
 .password-container {
 	display: flex;
 	width: 100%;
