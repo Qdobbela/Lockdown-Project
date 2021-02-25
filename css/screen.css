@@ -763,14 +763,25 @@ textarea {
     Everything help related here
 */
 
+.icon-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: ;
+}
+
 .c-help {
 	position: fixed;
-	bottom: 80px;
-	right: 50px;
+	bottom: 6rem;
+	right: 1rem;
+	display: flex;
+	flex-direction: row;
+	z-index: 6;
 }
 
 .c-help a {
-	padding: 0;
+	margin-left: 1rem;
+	margin-right: 1rem;
 }
 
 .c-help-text {
@@ -778,12 +789,11 @@ textarea {
 	position: absolute;
 	align-self: end;
 	width: 350px;
-	padding: 12px;
 	/* grid-row-start: 5;
 	grid-row-end: 7;
 	grid-column-start: 14;
 	grid-column-end: 17; */
-	bottom: 140px;
+	bottom: 5rem;
 	right: 5px;
 }
 
@@ -800,13 +810,39 @@ textarea {
 	height: 100%;
 	border-radius: 20px;
 	border: solid #8a8a8a;
+	background-color: #E2E3E7;
+	z-index: 10;
+}
+
+.c-help-text-bubble-hint {
+	position: relative;
+	height: 100%;
+	border-radius: 20px;
+	border: solid #8a8a8a;
+	background-color: #E2E3E7;
+	z-index: 10;
 }
 
 .c-help-text-bubble:after {
 	content: '';
 	position: absolute;
 	bottom: 0;
-	left: 50%;
+	right: 2rem;
+	width: 0;
+	height: 0;
+	border: 25px solid transparent;
+	border-top-color: #5a5a5a;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: 25%;
+	margin-bottom: -25px;
+}
+
+.c-help-text-bubble-hint:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	right: 6.5rem;
 	width: 0;
 	height: 0;
 	border: 25px solid transparent;
@@ -829,6 +865,8 @@ textarea {
 
 .c-help-2 a {
 	padding: 0;
+	margin-left: 1rem;
+	margin-right: 1rem;
 }
 
 .c-help-text-2 p {
@@ -881,8 +919,7 @@ textarea {
 	grid-column-end: 14;
 	grid-row-start: 2;
 	grid-row-end: 6;
-
-	z-index: 200;
+	z-index: 4;
 	display: flexbox;
 	width: 100%;
 	background-color: lightgray;
@@ -1388,6 +1425,10 @@ textarea {
 	cursor: pointer;
 }
 
+.u-cursor-nopointer {
+	cursor: default
+}
+
 /*
     Utilities: color
     ---
@@ -1580,6 +1621,11 @@ textarea {
 	height: 15px;
 	width: 15px;
 	margin-left: .3rem;
+}
+
+.disabled {
+	filter: blur(1.5px);
+	-webkit-filter: blur(1.5px);
 }
 
 

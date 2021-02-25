@@ -33,6 +33,11 @@ a {
 	color: black;
 }
 
+.helpers-wrapper {
+	display: flex;
+	flex-direction: row;
+}
+
 .password-container {
 	display: flex;
 	width: 100%;
@@ -213,7 +218,7 @@ p {
 	align-items: end;
 	position: absolute;
 	bottom: 40px;
-	right: 50px;
+	right: 6rem;
 	z-index: 100;
 }
 

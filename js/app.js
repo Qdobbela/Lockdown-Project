@@ -38,7 +38,7 @@ const setBubbleText = () => {
 
         case 'Login':
             if (sessionStorage.getItem('help4') != 'true') {
-                document.getElementById('help_text').innerHTML = 'Lets go phishing! Stuur al die medewerkers een mail om hun wachtwoord te ontfutselen. Stuur hen volgende mail door. "Beste, wegens problemen met het netwerk moeten we jouw paswoord van de Fintrabank opnieuw instellen. Gelieve je huidige wachtwoord door te geven en wij zorgen voor de rest."';
+                document.getElementById('help_text').innerHTML = "Alright, laat ons beginnen met het hacken van de Fintrabank! <br> Eerst moeten we binnengeraken in een computer op het netwerk.<br> We hebben de meeste kans om een username en wachtwoord te ontfutselen van één van de collega's.<br><br> Lets go phishing! Stuur al de medewerkers van Fintra een mail om hun wachtwoord te ontfutselen.<br><br> Stuur hen dit bericht door. \"Beste, wegens problemen met het netwerk moeten we jouw paswoord van de Fintrabank opnieuw instellen. Gelieve je huidige wachtwoord door te geven en wij zorgen voor de rest.\"";
                 showText();
                 hideText(30000)
                     .then(() => {
@@ -51,7 +51,7 @@ const setBubbleText = () => {
 
         case 'Bureaublad Dirk':
             if (sessionStorage.getItem('help1') != 'true') {
-                document.getElementById('help_text').innerHTML = 'Je hebt kunnen inloggen op de PC van Dirk! Dat wil zeggen dat je nu ook toegang zult hebben op andere computers op dit netwerk. Met een beetje geluk zijn deze niet beveiligd. Hulp nodig? Laat het me weten door op dit icoontje te klikken. ';
+                document.getElementById('help_text').innerHTML = "Alright, laat ons beginnen met het hacken van de Fintrabank! <br> Eerst moeten we binnengeraken in een computer op het netwerk.<br> We hebben de meeste kans om een username en wachtwoord te ontfutselen van één van de collega's.<br><br> Lets go phishing! Stuur al de medewerkers van Fintra een mail om hun wachtwoord te ontfutselen.<br><br> Stuur hen dit bericht door. \"Beste, wegens problemen met het netwerk moeten we jouw paswoord van de Fintrabank opnieuw instellen. Gelieve je huidige wachtwoord door te geven en wij zorgen voor de rest.\"";
                 showText();
                 hideText();
                 sessionStorage.setItem('help1', true);
@@ -59,9 +59,13 @@ const setBubbleText = () => {
             break;
 
         case 'Bureaublad HR':
+            showText();
+            hideText();
             break;
 
         case 'Bureaublad Finance':
+            showText();
+            hideText();
             break;
 
         case 'Bureaublad CEO':
@@ -90,7 +94,7 @@ const setBubbleText = () => {
             break;
 
         case 'NetworkHack Pattern':
-            document.getElementById('help_text').innerHTML = "Volg de HR medewekers! De collega's van de personeelsdienst bezitten elk een deel van de oplossing. ";
+            // document.getElementById('help_text').innerHTML = "Volg de HR medewekers! De collega's van de personeelsdienst bezitten elk een deel van de oplossing. ";
             break;
 
         default:
@@ -225,7 +229,6 @@ const subfolderDoolhof = () => {
 const setPathStructure = (pathName) => {
     const pathDiv = document.querySelectorAll('.tree-structure');
     path.push(pathName);
-    console.log(path.toString());
 
     checkPathStructure();
 
@@ -292,10 +295,17 @@ const init = function () {
 
         networkIcon.addEventListener('click', function () {
             if (sessionStorage.getItem('help2') != 'true') {
-                document.getElementById('help_text').innerHTML = 'Het ziet ernaar uit dat ze intern toch beveiliging hebben ingesteld. Ongetwijfeld een koud kunstje voor jou om die security te kraken!';
+                document.getElementById('help_text').innerHTML = 'Lap, het ziet ernaar uit dat ze intern toch beveiliging hebben ingesteld. Ongetwijfeld een koud kunstje voor een hacker van jouw kaliber om die security te omzeilen!Laat ons focussen op de computer van het Human Resources departement. Daar gaan we wel wat meer info vinden die ons kan helpen bij de andere toestellen op het netwerk. ';
                 showText();
                 hideText();
                 sessionStorage.setItem('help2', true);
+            }
+
+            if (sessionStorage.getItem('helpHR') != 'true') {
+                document.getElementById('help_text').innerHTML = 'Lap, het ziet ernaar uit dat ze intern toch beveiliging hebben ingesteld. Ongetwijfeld een koud kunstje voor een hacker van jouw kaliber om die security te omzeilen!Laat ons focussen op de computer van het Human Resources departement. Daar gaan we wel wat meer info vinden die ons kan helpen bij de andere toestellen op het netwerk. ';
+                showText();
+                hideText();
+                sessionStorage.setItem('helpHR', true);
             }
             if (!displaying) {
                 networkFolder.style.display = 'block';
@@ -390,14 +400,31 @@ const init = function () {
     }
 
     try {
-        helpIcon = document.getElementById('help_icon');
+        hintIcon = document.getElementById('hint-icon');
+        helpIcon = document.getElementById('help-icon');
         helpBubble = document.getElementById('help_bubble');
+        helpBubbleHint = document.getElementById('help_bubble-hint');
 
         helpIcon.addEventListener('click', function () {
             if (helpBubble.style.display != 'block') {
                 helpBubble.style.display = 'block';
+                if (helpBubbleHint) {
+                    helpBubbleHint.style.display = 'none'
+                }
+
             } else {
                 helpBubble.style.display = 'none';
+            }
+        });
+
+        hintIcon.addEventListener('click', function () {
+            if (helpBubbleHint.style.display != 'block') {
+                helpBubbleHint.style.display = 'block';
+                helpBubble.style.display = 'none';
+            } else {
+                if (helpBubbleHint) {
+                    helpBubbleHint.style.display = 'none'
+                }
             }
         });
     } catch (error) {
