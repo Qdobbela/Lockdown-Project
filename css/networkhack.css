@@ -213,13 +213,24 @@ p {
 
 .c-help-container {
 	display: flex;
-	flex-direction: column;
-	justify-content: end;
-	align-items: end;
+	flex-direction: row;
 	position: absolute;
 	bottom: 40px;
 	right: 6rem;
 	z-index: 100;
+}
+
+.help-container {
+	display: flex;
+	flex-direction: row;
+	position: absolute;
+	bottom: 40px;
+	right: 6rem;
+}
+
+.icon-wrapper {
+	display: flex;
+	flex-direction: row;
 }
 
 .c-help-2 a {
