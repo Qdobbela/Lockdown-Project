@@ -59,13 +59,21 @@ const setBubbleText = () => {
             break;
 
         case 'Bureaublad HR':
-            showText();
-            hideText();
+            sessionStorage.setItem('helpHRNetwork', false)
+            if (sessionStorage.getItem('helpHR') != 'true') {
+                showText();
+                hideText();
+                sessionStorage.setItem('helpHR', true);
+            }
             break;
 
         case 'Bureaublad Finance':
-            showText();
-            hideText();
+            sessionStorage.setItem('helpFinanceNetwork', false)
+            if (sessionStorage.getItem('helpFinance') != 'true') {
+                showText();
+                hideText();
+                sessionStorage.setItem('helpFinance', true);
+            }
             break;
 
         case 'Bureaublad CEO':
@@ -301,11 +309,18 @@ const init = function () {
                 sessionStorage.setItem('help2', true);
             }
 
-            if (sessionStorage.getItem('helpHR') != 'true') {
-                document.getElementById('help_text').innerHTML = 'Lap, het ziet ernaar uit dat ze intern toch beveiliging hebben ingesteld. Ongetwijfeld een koud kunstje voor een hacker van jouw kaliber om die security te omzeilen!Laat ons focussen op de computer van het Human Resources departement. Daar gaan we wel wat meer info vinden die ons kan helpen bij de andere toestellen op het netwerk. ';
+            if (sessionStorage.getItem('helpHRNetwork') != 'true') {
+                document.getElementById('help_text').innerHTML = 'Het ziet er naar uit dat we alle informatie voor handen hebben om  de eerste beveiliging van de CEO computer te kraken.  We kunnen ook machtiging krijgen over de computer van de finance afdeling. Genoeg te doen lijkt me, aan het werk!';
                 showText();
                 hideText();
-                sessionStorage.setItem('helpHR', true);
+                sessionStorage.setItem('helpHRNetwork', true);
+            }
+
+            if (sessionStorage.getItem('helpFinanceNetwork') != 'true') {
+                document.getElementById('help_text').innerHTML = 'We kunnen nu ook de computer van IT proberen te kraken alsook de tweede beveiliging van de computer van de CEO. Doe waar je goed in bent. Zorg dat we toegang krijgen tot die computers. De tijd begint te dringen. ';
+                showText();
+                hideText();
+                sessionStorage.setItem('helpFinanceNetwork', true);
             }
             if (!displaying) {
                 networkFolder.style.display = 'block';
