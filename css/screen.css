@@ -767,7 +767,6 @@ textarea {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	justify-content: ;
 }
 
 .c-help {
@@ -859,7 +858,7 @@ textarea {
 	justify-content: end;
 	align-items: flex-end;
 	position: absolute;
-	bottom: 40px;
+	bottom: 6rem;
 	right: 50px;
 }
 

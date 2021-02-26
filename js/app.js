@@ -47,11 +47,21 @@ const setBubbleText = () => {
                         document.getElementById('help_text').innerHTML = 'De username is een combinatie van de voornaam en enkele letters in de achternaam. Probeer het paswoord te bekomen via een onoplettende werknemer.';
                     });
             }
+
+
+            const loginButton = document.querySelector('.login-button');
+            const passwordValue = document.querySelector('.password-value');
+
+            setTimeout(() => {
+                document.getElementById('hint-icon').style.display = "block"
+            }, 10000);
+
+
             break;
 
         case 'Bureaublad Dirk':
             if (sessionStorage.getItem('help1') != 'true') {
-                document.getElementById('help_text').innerHTML = "Alright, laat ons beginnen met het hacken van de Fintrabank! <br> Eerst moeten we binnengeraken in een computer op het netwerk.<br> We hebben de meeste kans om een username en wachtwoord te ontfutselen van één van de collega's.<br><br> Lets go phishing! Stuur al de medewerkers van Fintra een mail om hun wachtwoord te ontfutselen.<br><br> Stuur hen dit bericht door. \"Beste, wegens problemen met het netwerk moeten we jouw paswoord van de Fintrabank opnieuw instellen. Gelieve je huidige wachtwoord door te geven en wij zorgen voor de rest.\"";
+                // document.getElementById('help_text').innerHTML = "Alright, laat ons beginnen met het hacken van de Fintrabank! <br> Eerst moeten we binnengeraken in een computer op het netwerk.<br> We hebben de meeste kans om een username en wachtwoord te ontfutselen van één van de collega's.<br><br> Lets go phishing! Stuur al de medewerkers van Fintra een mail om hun wachtwoord te ontfutselen.<br><br> Stuur hen dit bericht door. \"Beste, wegens problemen met het netwerk moeten we jouw paswoord van de Fintrabank opnieuw instellen. Gelieve je huidige wachtwoord door te geven en wij zorgen voor de rest.\"";
                 showText();
                 hideText();
                 sessionStorage.setItem('help1', true);
@@ -110,7 +120,7 @@ const setBubbleText = () => {
     }
 }
 
-async function showText(delay = 3000) {
+async function showText(delay = 1000) {
     await new Promise((r) => setTimeout(r, delay));
     document.getElementById('help_bubble').style.display = 'block'
 }
@@ -283,18 +293,18 @@ const setPathStructureFound = () => {
 
 displaying = false;
 const init = function () {
-    try {
-        document.getElementById('pcCEO_icon_locked3').addEventListener('mouseover', function () {
-            if (sessionStorage.getItem('help3') != 'true') {
-                document.getElementById('help_text').innerHTML = 'Hier moeten we zijn! Bereid je voor, dit gaat geen gemakkelijke opgave zijn. Waarschijnlijk moet je hier door meerdere lagen firewall breken. ';
-                showText(0);
-                hideText(10000);
-                sessionStorage.setItem('help3', true);
-            }
-        })
-    } catch (error) {
-        console.log(error);
-    }
+    // try {
+    //     document.getElementById('pcCEO_icon_locked3').addEventListener('mouseover', function () {
+    //         if (sessionStorage.getItem('help3') != 'true') {
+    //             document.getElementById('help_text').innerHTML = 'Hier moeten we zijn! Bereid je voor, dit gaat geen gemakkelijke opgave zijn. Waarschijnlijk moet je hier door meerdere lagen firewall breken. ';
+    //             showText(0);
+    //             hideText(10000);
+    //             sessionStorage.setItem('help3', true);
+    //         }
+    //     })
+    // } catch (error) {
+    //     console.log(error);
+    // }
 
     try {
         networkFolder = document.getElementById('network_folder')
