@@ -220,13 +220,6 @@ p {
 	z-index: 100;
 }
 
-.help-container {
-	display: flex;
-	flex-direction: row;
-	position: absolute;
-	bottom: 40px;
-	right: 6rem;
-}
 
 .icon-wrapper {
 	display: flex;

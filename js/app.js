@@ -312,21 +312,21 @@ const init = function () {
         networkFolderClose = document.getElementById('network_folder_close')
 
         networkIcon.addEventListener('click', function () {
-            if (sessionStorage.getItem('help2') != 'true') {
+            if (sessionStorage.getItem('helpDirk') != 'true' && document.title === "Bureaublad Dirk"){
                 document.getElementById('help_text').innerHTML = 'Lap, het ziet ernaar uit dat ze intern toch beveiliging hebben ingesteld. Ongetwijfeld een koud kunstje voor een hacker van jouw kaliber om die security te omzeilen!Laat ons focussen op de computer van het Human Resources departement. Daar gaan we wel wat meer info vinden die ons kan helpen bij de andere toestellen op het netwerk. ';
                 showText();
                 hideText();
-                sessionStorage.setItem('help2', true);
+                sessionStorage.setItem('helpDirk', true);
             }
 
-            if (sessionStorage.getItem('helpHRNetwork') != 'true') {
+            if (sessionStorage.getItem('helpHRNetwork') != 'true' && document.title === "Bureaublad HR") {
                 document.getElementById('help_text').innerHTML = 'Het ziet er naar uit dat we alle informatie voor handen hebben om  de eerste beveiliging van de CEO computer te kraken.  We kunnen ook machtiging krijgen over de computer van de finance afdeling. Genoeg te doen lijkt me, aan het werk!';
                 showText();
                 hideText();
                 sessionStorage.setItem('helpHRNetwork', true);
             }
 
-            if (sessionStorage.getItem('helpFinanceNetwork') != 'true') {
+            if (sessionStorage.getItem('helpFinanceNetwork') != 'true' && document.title === "Bureaublad Finance") {
                 document.getElementById('help_text').innerHTML = 'We kunnen nu ook de computer van IT proberen te kraken alsook de tweede beveiliging van de computer van de CEO. Doe waar je goed in bent. Zorg dat we toegang krijgen tot die computers. De tijd begint te dringen. ';
                 showText();
                 hideText();
