@@ -38,7 +38,7 @@ const setBubbleText = () => {
 
         case 'Login':
             if (sessionStorage.getItem('help4') != 'true') {
-                document.getElementById('help_text').innerHTML = "Alright, laat ons beginnen met het hacken van de Fintrabank! <br> Eerst moeten we binnengeraken in een computer op het netwerk.<br> We hebben de meeste kans om een username en wachtwoord te ontfutselen van één van de collega's.<br><br> Lets go phishing! Stuur al de medewerkers van Fintra een mail om hun wachtwoord te ontfutselen.<br><br> Stuur hen dit bericht door. \"Beste, wegens problemen met het netwerk moeten we jouw paswoord van de Fintrabank opnieuw instellen. Gelieve je huidige wachtwoord door te geven en wij zorgen voor de rest.\"";
+                document.getElementById('help_text').innerHTML = "Alright, laat ons beginnen met het hacken van de Fintrabank! Eerst moeten we binnengeraken in een computer op het netwerk. We hebben de meeste kans om een username en wachtwoord te ontfutselen van één van de collega's. <br> <br>Lets go phishing! Stuur al de medewerkers van Fintra een mail om hun wachtwoord te ontfutselen. Stuur hen dit bericht door. <br> <br>\"Beste,  wegens problemen met het netwerk moeten we jouw paswoord van de Fintrabank opnieuw instellen.  Gelieve je huidige wachtwoord door te geven en wij zorgen voor de rest.\" <br><br>Om te veel tijdverlies te vermijden blijk ik volgen en begeleid ik mee het hack proces.  Had je graag een hint? Klik dan op het Vraagteken symbool.";
                 showText();
                 hideText(30000)
                     .then(() => {
@@ -312,7 +312,7 @@ const init = function () {
         networkFolderClose = document.getElementById('network_folder_close')
 
         networkIcon.addEventListener('click', function () {
-            if (sessionStorage.getItem('helpDirk') != 'true' && document.title === "Bureaublad Dirk"){
+            if (sessionStorage.getItem('helpDirk') != 'true' && document.title === "Bureaublad Dirk") {
                 document.getElementById('help_text').innerHTML = 'Lap, het ziet ernaar uit dat ze intern toch beveiliging hebben ingesteld. Ongetwijfeld een koud kunstje voor een hacker van jouw kaliber om die security te omzeilen!Laat ons focussen op de computer van het Human Resources departement. Daar gaan we wel wat meer info vinden die ons kan helpen bij de andere toestellen op het netwerk. ';
                 showText();
                 hideText();
