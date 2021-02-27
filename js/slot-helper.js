@@ -1,46 +1,54 @@
 {
 
-    const helper = () => {
-        const hintBtn = document.getElementById('hint-icon');
-        const helpBtn = document.getElementById('help-icon');
-        const hintBubble = document.querySelector('.help-text-bubble');
-        const helpBubble = document.querySelector('.help-text-bubble-2')
+    // Selectors
+    const hintBtn = document.getElementById('hint-icon');
+    const helpBtn = document.getElementById('help-icon');
+    const hintBubble = document.querySelector('.help-text-bubble-2');
+    const helpBubble = document.querySelector('.help-text-bubble')
 
+
+    const helper = () => {
         hintBtn.addEventListener('click', () => {
-            if (hintBubble.style.display != "none") {
-                hintBubble.style.display = "flex"
-                if (helpBubble.style.display = "flex") {
-                    hintBubble.style.display = "none"
+            if (hintBubble.style.display != 'flex') {
+                hintBubble.style.display = 'flex';
+                if (helpBubble) {
+                    helpBubble.style.display = 'none'
                 }
+
             } else {
-                hintBubble.style.display = "none"
+                hintBubble.style.display = 'none';
             }
+
+
         })
 
         helpBtn.addEventListener('click', () => {
-            if (helpBubble.style.display != "none") {
-                helpBubble.style.display = "flex"
-                if (hintBubble.style.display = "flex") {
-                    helpBubble.style.display = "none"
+            if (helpBubble.style.display != 'flex') {
+                helpBubble.style.display = 'flex';
+                if (hintBubble) {
+                    hintBubble.style.display = 'none'
                 }
+
             } else {
-                helpBubble.style.display = "none"
+                helpBubble.style.display = 'none';
             }
         })
 
     }
 
+    const helpPopup = () => {
+        helpBubble.style.display = 'flex'
 
-
-
-    const init = () => {
-        helper();
+        // Close text 
+        setTimeout(() => {
+            helpBubble.style.display = 'none'
+        }, 5000);
     }
 
 
     document.addEventListener('DOMContentLoaded', function () {
-        init();
-
+        helper();
+        helpPopup();
     });
 
 }
