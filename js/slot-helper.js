@@ -37,18 +37,21 @@
     }
 
     const helpPopup = () => {
-        helpBubble.style.display = 'flex'
+        setTimeout(() => {
+            helpBubble.style.display = 'flex'
+        }, 1000);
 
         // Close text 
         setTimeout(() => {
             helpBubble.style.display = 'none'
-        }, 5000);
+        }, 20000);
     }
 
-
-    document.addEventListener('DOMContentLoaded', function () {
+    const init = () => {
         helper();
         helpPopup();
-    });
+    }
+
+    init();
 
 }

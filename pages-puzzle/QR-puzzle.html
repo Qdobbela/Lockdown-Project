@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NetworkHack QR</title>
     <link rel="stylesheet" href="/css/networkhack.css">
-    <script src="/js/help.js"></script>
-    <script src="/js/passwordcheck.js"></script>
+    <link rel="stylesheet" href="/css/slot-helpers.css">
+
 </head>
 
 <body>
@@ -25,19 +25,29 @@
             </div>
         </div>
     </div>
-    <div class="c-help-container">
-        <div class="u-cursor-pointer c-help-text-2" id="help_bubble">
-            <div class="c-help-text-bubble">
-                <p id="help_text">LLYAL? Welke taal is dit? <br>
-                    Ik vermoed dat we nog extra informatie nodig zullen hebben om dit te vertalen naar iets die we wel verstaan.</p>
+    <div class="help-container">   
+        <div class="u-cursor-pointer help-text-bubble help-bubble" id="help-bubble">
+                <p id="help_text">LLYAL? Welke taal is dit?  <br> <br>
+                    Ik vermoed dat we nog extra informatie nodig zullen hebben om dit te vertalen naar iets die we wel verstaan. </p>
+        </div>
+        <div class="u-cursor-pointer help-text-bubble-2 help-bubble-hint" id="help-bubble-hint">
+                <p id="help_text">
+                    Zelfs de meest versnipperde documenten vormen geen obstakel voor hackers als wij. Waar hebben we die symbolen op de achterkant nog gezien? 
+                    </p>
+        </div>
+        <div class="icon-wrapper">
+            <div class="u-cursor-pointer" id="help-icon">
+                    <img class="icon-content" src="../img/help.svg">
+            </div>
+            <div class="u-cursor-pointer" id="hint-icon">
+
+                    <img class="icon-content" src="../img/hint.svg">
+
             </div>
         </div>
-        <div class="u-cursor-pointer c-help-2" id="help_icon">
-            <a class="c-desktop-icon-content">
-                <img src="../img/hint.svg">
-            </a>
-        </div>
     </div>
+    <script src="/js/passwordcheck.js"></script>
+    <script src="/js/slot-helper.js"></script>
 </body>
 
 </html>
