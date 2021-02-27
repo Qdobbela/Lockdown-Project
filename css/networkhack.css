@@ -256,17 +256,17 @@ p {
 	border: solid #8a8a8a;
 }
 
-.c-help-text-2 .c-help-text-bubble:after {
+.c-help-text-bubble:after {
 	content: '';
 	position: absolute;
 	bottom: 0;
-	left: 50%;
+	right: 2rem;
 	width: 0;
 	height: 0;
 	border: 25px solid transparent;
 	border-top-color: #5a5a5a;
 	border-bottom: 0;
 	border-right: 0;
-	margin-left: 35%;
+	margin-left: 25%;
 	margin-bottom: -25px;
 }

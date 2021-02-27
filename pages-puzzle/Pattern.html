@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetworkHack Pattern</title>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/slots.css">
+    <script src="/js/slot-helper.js"></script>
+    <script src="../npm/node_modules/@phenax/pattern-lock-js/build/example.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="puzzle-container">
+            <p>Volg de HR medewerkers</p>
+    
+            <div class="fix">
+                <canvas id='patternLock'></canvas>
+                <p id="check"></p>
+            </div>
+    
+        </div>
+
+
+
+
+        <div class="help-container">   
+            <div class="u-cursor-pointer help-text-bubble help-bubble" id="help-bubble">
+                    <p id="help_text">Dit ziet er toch complexer uit dan aanvankelijk gedacht. 
+                        Je zult toegang krijgen als je de juiste figuur kunt maken. Sleep de muis van punt naar punt om ze te verbinden. 
+                        Als je loslaat en de figuur is correct gaan we toegang krijgen tot de bestanden van de personeelsdienst. 
+                        Hulp nodig? Vergeet geen hint te vragen door op het vraagteken symbool te klikken. </p>
+            </div>
+            <div class="u-cursor-pointer help-text-bubble-2 help-bubble-hint" id="help-bubble-hint">
+                    <p id="help_text">
+                        Volg de HR medewekers? De collega's van de personeelsdienst bezitten elk een deel van de oplossing. 
+                        </p>
+            </div>
+            <div class="icon-wrapper">
+                <div class="u-cursor-pointer c-help-2" id="help-icon">
+                        <img class="c-desktop-icon-content" src="../img/help.svg">
+                </div>
+                <div class="u-cursor-pointer c-help-2" id="hint-icon">
+
+                        <img class="c-desktop-icon-content" src="../img/hint.svg">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

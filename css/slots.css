@@ -1,0 +1,125 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../img/hacker-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.help-container {
+    z-index: 5;
+}
+
+.puzzle-container {
+    width: 90%;
+    max-width: 50rem;
+    background-color: #006400;
+    border: dotted black 2px;
+}
+
+.puzzle-container p {
+    text-align: center;
+    border-bottom: dotted black 2px;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fix {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.icon-wrapper {
+    display: flex;
+    position: absolute;
+    flex-direction: row-reverse;
+    bottom: 3rem;
+    right: 3rem;
+    z-index: 3;
+}
+
+.c-desktop-icon-content {
+    width: 3rem;
+    height: 3rem;
+    margin: .5rem;
+    cursor: pointer;
+}
+
+.help-text-bubble {
+    position: absolute;
+    bottom: 9rem;
+    right: 2rem;
+    height: fit-content;
+    width: 20rem;
+    border-radius: 20px;
+    background-color: #000;
+    color: #FFF;
+    border: solid #8a8a8a;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.help-text-bubble p {
+    padding: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.help-text-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 43%;
+    width: 0;
+    height: 0;
+    border: 25px solid transparent;
+    border-top-color: #5a5a5a;
+    border-bottom: 0;
+    border-right: 0;
+    margin-left: 35%;
+    margin-bottom: -25px;
+}
+
+.help-text-bubble-2 {
+    position: absolute;
+    bottom: 9rem;
+    right: 2rem;
+    height: fit-content;
+    width: 20rem;
+    border-radius: 20px;
+    background-color: #000;
+    color: #FFF;
+    border: solid #8a8a8a;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.help-text-bubble-2 p {
+    padding: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.help-text-bubble-2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 22%;
+    width: 0;
+    height: 0;
+    border: 25px solid transparent;
+    border-top-color: #5a5a5a;
+    border-bottom: 0;
+    border-right: 0;
+    margin-left: 35%;
+    margin-bottom: -25px;
+}
