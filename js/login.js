@@ -26,8 +26,8 @@ const login_init = function () {
 		};
 		logIn(credentials);
 	});
+
+	window.open("/clock.html", '_blank');
 };
 
-document.addEventListener('DOMContentLoaded', function () {
-	login_init();
-});
+login_init();

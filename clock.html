@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css" />
+    <title>Time left</title>
+
+    <style>
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    box-sizing: inherit;
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.clockdiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+}
+
+.clockpiece {
+    margin: 1rem;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+    </style>
+</head>
+<body>
+    <div class="clockdiv" id="clockdiv">
+      <div class="clockpiece">
+        <span class="hours">00</span>
+        <div class="smalltext">Hours</div>
+      </div>
+      <div class="clockpiece">
+        <span class="minutes">00</span>
+        <div class="smalltext">Minutes</div>
+      </div>
+      <div class="clockpiece">
+        <span class="seconds">00</span>
+        <div class="smalltext">Seconds</div>
+      </div>
+    </div>
+
+    <script src="js/clock.js"></script>
+</body>
+</html>

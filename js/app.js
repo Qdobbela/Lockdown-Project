@@ -37,24 +37,28 @@ const setBubbleText = () => {
     switch (title) {
 
         case 'Login':
+
             if (sessionStorage.getItem('help4') != 'true') {
-                document.getElementById('help_text').innerHTML = "Alright, laat ons beginnen met het hacken van de Fintrabank! Eerst moeten we binnengeraken in een computer op het netwerk. We hebben de meeste kans om een username en wachtwoord te ontfutselen van één van de collega's. <br> <br>Lets go phishing! Stuur al de medewerkers van Fintra een mail om hun wachtwoord te ontfutselen. Stuur hen dit bericht door. <br> <br>\"Beste,  wegens problemen met het netwerk moeten we jouw paswoord van de Fintrabank opnieuw instellen.  Gelieve je huidige wachtwoord door te geven en wij zorgen voor de rest.\" <br><br>Om te veel tijdverlies te vermijden blijk ik volgen en begeleid ik mee het hack proces.  Had je graag een hint? Klik dan op het Vraagteken symbool.";
                 showText();
                 hideText(30000)
                     .then(() => {
                         sessionStorage.setItem('help4', true);
-                    }).then(() => {
-                        document.getElementById('help_text').innerHTML = 'De username is een combinatie van de voornaam en enkele letters in de achternaam. Probeer het paswoord te bekomen via een onoplettende werknemer.';
-                    });
+                    })
             }
-
-
-            const loginButton = document.querySelector('.login-button');
-            const passwordValue = document.querySelector('.password-value');
+            const hintTxt = document.querySelector(".hint-text")
 
             setTimeout(() => {
                 document.getElementById('hint-icon').style.display = "block"
-            }, 10000);
+            }, 30000);
+
+
+            setTimeout(() => {
+                hintTxt.innerHTML = "1"
+            }, 60000);
+
+            setTimeout(() => {
+                hintTxt.innerHTML = "2"
+            }, 120000);
 
 
             break;
