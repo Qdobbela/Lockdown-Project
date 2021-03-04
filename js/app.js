@@ -37,7 +37,7 @@ const setBubbleText = () => {
     switch (title) {
 
         case 'Login':
-
+            let clicks = 0;
             if (sessionStorage.getItem('help4') != 'true') {
                 showText();
                 hideText(30000)
@@ -46,20 +46,18 @@ const setBubbleText = () => {
                     })
             }
             const hintTxt = document.querySelector(".hint-text")
+            const hintBtn = document.getElementById("hint-icon")
 
-            setTimeout(() => {
-                document.getElementById('hint-icon').style.display = "block"
-            }, 30000);
-
-
-            setTimeout(() => {
-                hintTxt.innerHTML = "1"
-            }, 60000);
-
-            setTimeout(() => {
-                hintTxt.innerHTML = "2"
-            }, 120000);
-
+            hintBtn.addEventListener('click', () => {
+                console.log("click")
+                clicks++
+                if (clicks === 2) {
+                    hintTxt.innerHTML = "HINT 2"
+                }
+                if (clicks === 4) {
+                    hintTxt.innerHTML = "HINT 3"
+                }
+            })
 
             break;
 

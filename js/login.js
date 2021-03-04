@@ -13,6 +13,7 @@ const logIn = function (credentials) {
 		console.log('login successful');
 	} else {
 		document.querySelector('.c-input-error-message').style.display = 'block';
+		document.getElementById('hint-icon').style.display = "block"
 	}
 };
 
@@ -27,7 +28,7 @@ const login_init = function () {
 		logIn(credentials);
 	});
 
-	window.open("/clock.html", '_blank');
+	// window.open("/clock.html", '_blank');
 };
 
 login_init();
