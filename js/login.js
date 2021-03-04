@@ -4,7 +4,7 @@ const user = {
 };
 
 const logIn = function (credentials) {
-	console.log(credentials, user);
+	// console.log(credentials, user);
 	if (credentials.email.toLowerCase() == user.email && credentials.password.toLowerCase() == user.password) {
 		sessionStorage.setItem('Auth1', true);
 		sessionStorage.setItem('startTime', Date());
@@ -28,7 +28,7 @@ const login_init = function () {
 		logIn(credentials);
 	});
 
-	// window.open("/clock.html", '_blank');
+	window.open("/clock.html", '_blank');
 };
 
 login_init();
