@@ -459,6 +459,28 @@ const init = function () {
     }
 };
 
+// Close hints & tips on folder click
+const closeOnClick = () => {
+    const helpBubble = document.getElementById('help_bubble');
+    const helpBubbleHint = document.getElementById('help_bubble-hint');
+    const folders = document.querySelectorAll('.c-desktop-icon');
+
+    folders.forEach(folder => {
+        folder.addEventListener('click', () => {
+            if (helpBubble.style.display != "none" || helpBubbleHint.style.display != "none") {
+                if (helpBubble) {
+                    helpBubble.style.display = "none";
+                }
+                if (helpBubbleHint) {
+                    helpBubbleHint.style.display = "none";
+                }
+            }
+        })
+    });
+
+
+}
+
 
 document.addEventListener('DOMContentLoaded', function () {
     checkAuth();
@@ -468,4 +490,5 @@ document.addEventListener('DOMContentLoaded', function () {
     getNetworkProgress();
     subfolderDoolhof();
     setPathStructure();
+    closeOnClick();
 });
