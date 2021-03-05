@@ -467,11 +467,13 @@ const closeOnClick = () => {
 
     folders.forEach(folder => {
         folder.addEventListener('click', () => {
-            if (helpBubble.style.display != "none" || helpBubbleHint.style.display != "none") {
-                if (helpBubble) {
+            if (helpBubble) {
+                if (helpBubble.style.display != "none") {
                     helpBubble.style.display = "none";
                 }
-                if (helpBubbleHint) {
+            }
+            if (helpBubbleHint) {
+                if (helpBubbleHint.style.display != "none") {
                     helpBubbleHint.style.display = "none";
                 }
             }

@@ -911,16 +911,22 @@ textarea {
 */
 
 .c-folder-container {
-	grid-column-start: 4;
-	grid-column-end: 14;
-	grid-row-start: 2;
-	grid-row-end: 6;
+	position: absolute;
 	z-index: 4;
-	display: flexbox;
-	width: 100%;
+	width: 90%;
+	max-width: 40rem;
+	height: 70%;
+	margin: 0 auto;
 	background-color: lightgray;
 	border: solid gray 2px;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	text-align: center;
 }
+
 
 .c-folder-header {
 	width: 100%;
@@ -940,7 +946,7 @@ textarea {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	text-align: center;
 	margin-bottom: 5px;
-	margin-left: 40%;
+	margin: 0 auto;
 }
 
 .c-folder-grid-container {
