@@ -122,14 +122,17 @@ const setBubbleText = () => {
     }
 }
 
-async function showText(delay = 1000) {
-    await new Promise((r) => setTimeout(r, delay));
-    document.getElementById('help_bubble').style.display = 'block'
+const showText = (delay = 1000) => {
+    setTimeout(() => {
+        document.getElementById('help_bubble').style.display = 'block'
+    }, delay);
 }
 
-async function hideText(delay = 20000) {
-    await new Promise((r) => setTimeout(r, delay));
-    document.getElementById('help_bubble').style.display = 'none'
+const hideText = (delay = 20000) => {
+    setTimeout(() => {
+        document.getElementById('help_bubble').style.display = 'none'
+    }, delay);
+
 }
 
 const getNetworkProgress = () => {
@@ -144,17 +147,17 @@ const getNetworkProgress = () => {
     try {
         ceo = sessionStorage.getItem('pcCEO')
         document.getElementById('pcCEO_icon').style.display = 'none';
-        document.getElementById('pcCEO_icon_locked1').style.display = 'none';
-        document.getElementById('pcCEO_icon_locked2').style.display = 'none';
-        document.getElementById('pcCEO_icon_locked3').style.display = 'none';
+        // document.getElementById('pcCEO_icon_locked1').style.display = 'none';
+        // document.getElementById('pcCEO_icon_locked2').style.display = 'none';
+        // document.getElementById('pcCEO_icon_locked3').style.display = 'none';
         if (ceo == 'true') {
-            document.getElementById('pcCEO_icon').style.display = 'block';
+            // document.getElementById('pcCEO_icon').style.display = 'block';
         } else if (ceo == '1') {
-            document.getElementById('pcCEO_icon_locked1').style.display = 'block';
+            document.getElementById('pcCEO_icon_locked2').style.display = 'none';
         } else if (ceo == '2') {
-            document.getElementById('pcCEO_icon_locked2').style.display = 'block';
+            document.getElementById('pcCEO_icon_locked3').style.display = 'none';
         } else if (ceo == '3') {
-            document.getElementById('pcCEO_icon_locked3').style.display = 'block';
+            // document.getElementById('pcCEO_icon_locked3').style.display = 'block';
         }
     } catch (error) {
         console.log(error)
