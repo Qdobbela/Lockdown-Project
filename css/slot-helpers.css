@@ -128,3 +128,15 @@
     margin-left: 35%;
     margin-bottom: -25px;
 }
+
+.lottie-container {
+    background-color: white;
+    width: 80%;
+    max-width: 40rem;
+    height: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    display: none;
+}
