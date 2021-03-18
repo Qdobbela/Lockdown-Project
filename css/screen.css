@@ -1928,3 +1928,61 @@ No media query since this is the default in mobile first design
 		page-break-after: avoid;
 	}
 }
+
+.terminal {
+	padding: 0.1em 0.1em 0.1em 1em;
+	font-family: "VT323", monospace;
+	color: white;
+	background: black;
+	font-size: 1.25em;
+	width: 80%;
+	max-width: 50rem;
+	height: 30rem;
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	text-align: center;
+	z-index: 7;
+	display: none;
+	animation: fadein 1s;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+
+strong {
+	color: white;
+}
+
+
+fieldset {
+	width: fit-content;
+}
+
+button {
+	background-color: #21902b;
+	border: none;
+	color: white;
+	padding: 0.5em 1em;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-family: "VT323", monospace;
+	font-size: 1em;
+}
+
+
+.green {
+	color: #34fc47;
+}

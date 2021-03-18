@@ -41,9 +41,8 @@ const setBubbleText = () => {
             if (sessionStorage.getItem('help4') != 'true') {
                 showText();
                 hideText(30000)
-                    .then(() => {
-                        sessionStorage.setItem('help4', true);
-                    })
+                sessionStorage.setItem('help4', true);
+
             }
             const hintTxt = document.querySelector(".hint-text")
             const hintBtn = document.getElementById("hint-icon")
