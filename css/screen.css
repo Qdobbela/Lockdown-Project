@@ -1935,9 +1935,8 @@ No media query since this is the default in mobile first design
 	color: white;
 	background: black;
 	font-size: 1.25em;
-	width: 80%;
-	max-width: 50rem;
-	height: 30rem;
+	width: 100vw;
+	height: 100%;
 	position: absolute;
 	margin: auto;
 	left: 0;
@@ -1947,7 +1946,13 @@ No media query since this is the default in mobile first design
 	text-align: center;
 	z-index: 7;
 	display: none;
-	animation: fadein 1s;
+	animation: fadein .5s;
+}
+
+.terminal-title {
+	max-width: 50rem;
+	margin: 0 auto;
+	height: 10rem;
 }
 
 @keyframes fadein {
@@ -1982,7 +1987,13 @@ button {
 	font-size: 1em;
 }
 
+.green-wrapper {
+	margin-top: 3rem;
+}
+
 
 .green {
 	color: #34fc47;
+	text-align: center;
+	font-size: 1rem;
 }
