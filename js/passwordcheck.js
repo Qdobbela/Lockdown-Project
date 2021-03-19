@@ -2,8 +2,12 @@ function checkPasswordIT() {
 
     if (document.getElementById('psw').value.toLowerCase() === "bonus") {
         document.getElementById('psw-fout').innerHTML = "psw juist";
-        sessionStorage.setItem('pcIT', true);
-        document.location.href = "/pages-network/pcIT.html"; // window.location.replace('url')
+        const lottie = document.querySelector(".lottie-container")
+        lottie.style.display = "flex"
+        setTimeout(() => {
+            sessionStorage.setItem('pcIT', true);
+            document.location.href = "/pages-network/pcIT.html";
+        }, 2600);
     } else {
         document.getElementById('psw-fout').innerText = "Dat is een fout wachtwoord!";
     }
@@ -36,9 +40,13 @@ function checkPasswordCEO3() {
 function checkPasswordQR() {
 
     if (document.getElementById('psw').value.toLowerCase() === "code22") {
-        document.getElementById('psw-fout').innerHTML = "psw juist";
-        sessionStorage.setItem('pcFinance', true);
-        document.location.href = '/pages-network/pcFinance.html';
+        // document.getElementById('psw-fout').innerHTML = "psw juist";
+        const lottie = document.querySelector(".lottie-container")
+        lottie.style.display = "flex"
+        setTimeout(() => {
+            sessionStorage.setItem('pcFinance', true);
+            document.location.href = '/pages-network/pcFinance.html';
+        }, 2600);
     } else {
         document.getElementById('psw-fout').innerText = "Dat is een fout wachtwoord!";
     }

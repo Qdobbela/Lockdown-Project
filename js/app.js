@@ -228,28 +228,54 @@ const checkCeoSlots = () => {
         document.getElementById('pcCEO_icon_locked3').style.display = "block"
         document.getElementById('pcCEO_icon_locked2').style.display = "block"
         document.getElementById('pcCEO_icon_locked1').style.display = "block"
+
+
+        document.getElementById('pcCEO_icon_locked2').classList.add("disabled");
+
     }
     if (ceoSlot1 && ceoSlot2 === "false") {
         document.getElementById('pcCEO_icon_locked2').style.display = "block"
         document.getElementById('pcCEO_icon_locked1').style.display = "block"
+
+        // Set lock colors
+        document.getElementById('pcCEO_icon_locked2').firstElementChild.src = "../img/https-24px3.svg"
+        document.getElementById('pcCEO_icon_locked1').firstElementChild.src = "../img/https-24px3.svg"
+
     }
     if (ceoSlot1 && ceoSlot2 && ceoSlot3 === "false") {
         document.getElementById('pcCEO_icon_locked1').style.display = "block"
+
+        document.getElementById('pcCEO_icon_locked1').classList.add("disabled");
+
+
+        // // Set lock colors
+        // document.getElementById('pcCEO_icon_locked2').firstElementChild.src = "../img/https-24px.svg"
+
     }
 
     if (ceoSlot1 === "true") {
-        console.log("CEO1 OPGELOST")
-        document.getElementById('pcCEO_icon_locked3').style.display = "none"
+        document.getElementById('pcCEO_icon_locked3').style.display = "none";
+        document.getElementById('pcCEO_icon_locked2').firstElementChild.src = "../img/https-24px.svg"
+
     }
     if (ceoSlot1 && ceoSlot2 === "true") {
-        console.log("CEO2 OPGELOST")
+
         document.getElementById('pcCEO_icon_locked3').style.display = "none"
         document.getElementById('pcCEO_icon_locked2').style.display = "none"
+
+        document.getElementById('pcCEO_icon_locked1').classList.remove("disabled");
+
+        if (ceoSlot1 && ceoSlot2 === "true" && window.location.pathname === "/pages-network/pcFinance.html") {
+            document.getElementById('pcCEO_icon_locked1').classList.add("disabled");
+        }
+
+
     }
     if (ceoSlot1 && ceoSlot2 && ceoSlot3 === "true") {
         document.getElementById('pcCEO_icon_locked3').style.display = "none"
         document.getElementById('pcCEO_icon_locked2').style.display = "none"
         document.getElementById('pcCEO_icon_locked1').style.display = "none"
+
     }
 }
 
