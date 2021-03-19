@@ -132,11 +132,15 @@
 .lottie-container {
     background-color: white;
     width: 80%;
-    max-width: 40rem;
+    max-width: 30rem;
     height: 30rem;
-    display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
     display: none;
+    position: absolute;
+    border-radius: 100%
+}
+
+.player {
+    margin: auto;
 }
