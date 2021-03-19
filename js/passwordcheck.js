@@ -14,6 +14,7 @@ function checkPasswordCEO1() {
     if (document.getElementById('psw').value.toLowerCase() === "temsed") {
         document.getElementById('psw-fout').innerHTML = "psw juist";
         sessionStorage.setItem('pcCEO', true);
+        sessionStorage.setItem('ceoSlot1', true);
         document.location.href = '/pages-network/pcCEO.html';
     } else {
         document.getElementById('psw-fout').innerText = "Dat is een fout wachtwoord!";
@@ -25,6 +26,7 @@ function checkPasswordCEO3() {
     if (document.getElementById('psw').value.toLowerCase() === "10873") {
         document.getElementById('psw-fout').innerHTML = "psw juist";
         sessionStorage.setItem('pcCEO', 2);
+        sessionStorage.setItem('ceoSlot1', true);
         history.back();
     } else {
         document.getElementById('psw-fout').innerText = "Dat is een fout wachtwoord!";

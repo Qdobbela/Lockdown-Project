@@ -93,6 +93,7 @@ function check(a) {
         if (count == 4 && correct == 4) {
             document.body.style.backgroundColor = "#0e580e"
             sessionStorage.setItem('pcCEO', 1);
+            sessionStorage.setItem('ceoSlot2', true);
             history.back();
         } else {
             document.body.style.backgroundColor = "#580e0e";

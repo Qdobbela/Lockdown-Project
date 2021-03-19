@@ -140,24 +140,41 @@ const getNetworkProgress = () => {
         sessionStorage.setItem('pcFinance', false);
         sessionStorage.setItem('pcHR', false);
         sessionStorage.setItem('pcIT', false);
-        // sessionStorage.setItem('pcDirk', true);
+        sessionStorage.setItem('ceoSlot1', false);
+        sessionStorage.setItem('ceoSlot2', false);
+        sessionStorage.setItem('ceoSlot3', false);
     }
 
     try {
         ceo = sessionStorage.getItem('pcCEO')
-        document.getElementById('pcCEO_icon').style.display = 'none';
-        // document.getElementById('pcCEO_icon_locked1').style.display = 'none';
-        // document.getElementById('pcCEO_icon_locked2').style.display = 'none';
-        // document.getElementById('pcCEO_icon_locked3').style.display = 'none';
-        if (ceo == 'true') {
-            // document.getElementById('pcCEO_icon').style.display = 'block';
-        } else if (ceo == '1') {
-            document.getElementById('pcCEO_icon_locked2').style.display = 'none';
-        } else if (ceo == '2') {
-            document.getElementById('pcCEO_icon_locked3').style.display = 'none';
-        } else if (ceo == '3') {
-            // document.getElementById('pcCEO_icon_locked3').style.display = 'block';
+        const ceoSlot1 = sessionStorage.getItem('ceoSlot1')
+        const ceoSlot2 = sessionStorage.getItem('ceoSlot2')
+        const ceoSlot3 = sessionStorage.getItem('ceoSlot3')
+
+        if (ceoSlot1 === true) {
+            console.log("CEO OPGELOST")
+            document.querySelector('.pcCEO_icon_locked3').style.display = "none"
         }
+        if (ceoSlot1 && ceoSlot2 === true) {
+
+        }
+        if (ceoSlot1 && ceoSlot2 && ceoSlot3 === true) {
+
+        }
+
+        // document.getElementById('pcCEO_icon').style.display = 'none';
+        // // document.getElementById('pcCEO_icon_locked1').style.display = 'none';
+        // // document.getElementById('pcCEO_icon_locked2').style.display = 'none';
+        // // document.getElementById('pcCEO_icon_locked3').style.display = 'none';
+        // if (ceo == 'true') {
+        //     // document.getElementById('pcCEO_icon').style.display = 'block';
+        // } else if (ceo == '1') {
+        //     document.getElementById('pcCEO_icon_locked2').style.display = 'none';
+        // } else if (ceo == '2') {
+        //     document.getElementById('pcCEO_icon_locked3').style.display = 'none';
+        // } else if (ceo == '3') {
+        //     // document.getElementById('pcCEO_icon_locked3').style.display = 'block';
+        // }
     } catch (error) {
         console.log(error)
     }
@@ -199,6 +216,40 @@ const getNetworkProgress = () => {
         }
     } catch (error) {
         console.log(error)
+    }
+}
+
+const checkCeoSlots = () => {
+    const ceoSlot1 = sessionStorage.getItem('ceoSlot1')
+    const ceoSlot2 = sessionStorage.getItem('ceoSlot2')
+    const ceoSlot3 = sessionStorage.getItem('ceoSlot3')
+
+    if (ceoSlot1 === "false") {
+        document.getElementById('pcCEO_icon_locked3').style.display = "block"
+        document.getElementById('pcCEO_icon_locked2').style.display = "block"
+        document.getElementById('pcCEO_icon_locked1').style.display = "block"
+    }
+    if (ceoSlot1 && ceoSlot2 === "false") {
+        document.getElementById('pcCEO_icon_locked2').style.display = "block"
+        document.getElementById('pcCEO_icon_locked1').style.display = "block"
+    }
+    if (ceoSlot1 && ceoSlot2 && ceoSlot3 === "false") {
+        document.getElementById('pcCEO_icon_locked1').style.display = "block"
+    }
+
+    if (ceoSlot1 === "true") {
+        console.log("CEO1 OPGELOST")
+        document.getElementById('pcCEO_icon_locked3').style.display = "none"
+    }
+    if (ceoSlot1 && ceoSlot2 === "true") {
+        console.log("CEO2 OPGELOST")
+        document.getElementById('pcCEO_icon_locked3').style.display = "none"
+        document.getElementById('pcCEO_icon_locked2').style.display = "none"
+    }
+    if (ceoSlot1 && ceoSlot2 && ceoSlot3 === "true") {
+        document.getElementById('pcCEO_icon_locked3').style.display = "none"
+        document.getElementById('pcCEO_icon_locked2').style.display = "none"
+        document.getElementById('pcCEO_icon_locked1').style.display = "none"
     }
 }
 
@@ -495,4 +546,5 @@ document.addEventListener('DOMContentLoaded', function () {
     subfolderDoolhof();
     setPathStructure();
     closeOnClick();
+    checkCeoSlots();
 });
