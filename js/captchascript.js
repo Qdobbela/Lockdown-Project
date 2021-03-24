@@ -92,9 +92,14 @@ function check(a) {
     if (count == 4) {
         if (count == 4 && correct == 4) {
             document.body.style.backgroundColor = "#0e580e"
-            sessionStorage.setItem('pcCEO', 1);
-            sessionStorage.setItem('ceoSlot2', true);
-            history.back();
+
+            const lottie = document.querySelector(".lottie-container")
+            lottie.style.display = "flex"
+            setTimeout(() => {
+                sessionStorage.setItem('pcCEO', 1);
+                sessionStorage.setItem('ceoSlot2', true);
+                history.back();
+            }, 2600);
         } else {
             document.body.style.backgroundColor = "#580e0e";
             setTimeout(function () {

@@ -638,14 +638,33 @@ textarea {
     Everything Desktop related here
 */
 
+.desktop-dirk {
+	background-image: url(../img/desktop_backgrounds/DIRK.png);
+}
+
+.desktop-hr {
+	background-image: url(../img/desktop_backgrounds/HR.png);
+}
+
+.desktop-finance {
+	background-image: url(../img/desktop_backgrounds/FINANCE.png);
+}
+
+
+.desktop-it {
+	background-image: url(../img/desktop_backgrounds/IT.png);
+}
+
+.desktop-ceo {
+	background-image: url(../img/desktop_backgrounds/CEO.png);
+}
+
 .c-desktop {
 	display: flex;
 	height: 100vh;
 	background-color: #E2E3E7;
-	background-image: url("../img/0.png");
-	background-repeat: no-repeat;
-	background-size: 80vh;
 	background-position: center;
+	background-size: cover;
 }
 
 .c-desktop-container {
@@ -750,6 +769,12 @@ textarea {
 
 .c-desktop-icon-content p {
 	text-align: center;
+	color: black;
+}
+
+.c-desktop-icon-content-white p {
+	text-align: center;
+	color: white;
 }
 
 .c-desktop-icon-content img {
@@ -1021,6 +1046,7 @@ textarea {
 
 .c-folder-grid-container .c-desktop-icon-content {
 	margin: .5rem;
+
 }
 
 .c-folder-grid-container .c-desktop-icon-content p {
