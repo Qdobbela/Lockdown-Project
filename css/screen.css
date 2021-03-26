@@ -1991,6 +1991,21 @@ No media query since this is the default in mobile first design
 	animation: fadein .5s;
 }
 
+.terminal::before {
+	content: "";
+	background-image: url(../img/anonymous-bg.png);
+	background-size: cover;
+	position: absolute;
+	width: 20rem;
+	height: 20rem;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	opacity: 0.25;
+}
+
 .terminal-title {
 	max-width: 50rem;
 	margin: 0 auto;
