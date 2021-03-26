@@ -353,6 +353,7 @@ const deletePathStructure = () => {
 const checkPathStructure = () => {
     if (path.toString() === ",A,G,E,N,D,A" || sessionStorage.getItem('agendaFound') === "true") {
         sessionStorage.setItem('agendaFound', true);
+        sessionStorage.setItem('agendaCount', 1);
         setPathStructureFound();
     } else {
         sessionStorage.setItem('agendaFound', false);
@@ -434,19 +435,9 @@ const init = function () {
         documentsFolderClose = document.getElementById('documents_folder_close');
         staffFolderClose = document.getElementById('staff_folder_close');
 
-        staffIcon.addEventListener('click', () => {
-
-            if (!displaying) {
-                staffFolder.style.display = 'block';
-                displaying = true;
-            }
-        })
-        staffFolderClose.addEventListener('click', function () {
-            staffFolder.style.display = 'none';
-            displaying = false;
-        });
 
         documentsIcon.addEventListener('click', function () {
+            console.log("documents clicked")
             if (!displaying) {
                 documentsFolder.style.display = 'block';
                 displaying = true;
@@ -458,9 +449,7 @@ const init = function () {
                 if (toOpen) {
                     toOpen.style.display = 'block'
                     toOpen.style.zIndex = clicks;
-                    const div = document.createElement('div');
-
-                    div.className = 'tree-structure-found';
+                    const div = document.getElementById('tree-structure-found')
 
                     div.innerHTML = `
                         <p class="tree-structure-text">A</p>
@@ -471,12 +460,24 @@ const init = function () {
                         <p class="tree-structure-text">A</p>
                         `;
 
-                    document.getElementById('tree-structure-found').appendChild(div);
+                    // document.getElementById('tree-structure-found').appendChild(div);
                 }
             }
         });
         documentsFolderClose.addEventListener('click', function () {
             documentsFolder.style.display = 'none';
+            displaying = false;
+        });
+
+        staffIcon.addEventListener('click', () => {
+
+            if (!displaying) {
+                staffFolder.style.display = 'block';
+                displaying = true;
+            }
+        })
+        staffFolderClose.addEventListener('click', function () {
+            staffFolder.style.display = 'none';
             displaying = false;
         });
     } catch (error) {
