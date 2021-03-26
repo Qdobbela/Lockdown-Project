@@ -287,6 +287,22 @@ textarea {
     Creates a horizontal row that stretches the viewport and adds padding around children
 */
 
+.pdf {
+	width: 2.5rem;
+	height: auto;
+	position: absolute;
+	bottom: 2rem;
+	left: 2rem;
+}
+
+/* .pdf img {
+	width: 2.5rem;
+	height: auto;
+	position: absolute;
+	bottom: 2rem;
+	left: 2rem;
+} */
+
 .o-row {
 	position: relative;
 	padding: var(--global-whitespace) var(--global-whitespace) 0;
