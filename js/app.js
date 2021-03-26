@@ -429,7 +429,23 @@ const init = function () {
     try {
         documentsFolder = document.getElementById('documents_folder');
         documentsIcon = document.getElementById('documents_icon');
+        staffIcon = document.getElementById('staff_icon');
+        staffFolder = document.getElementById('staff_folder');
         documentsFolderClose = document.getElementById('documents_folder_close');
+        staffFolderClose = document.getElementById('staff_folder_close');
+
+        staffIcon.addEventListener('click', () => {
+
+            if (!displaying) {
+                staffFolder.style.display = 'block';
+                displaying = true;
+            }
+        })
+        staffFolderClose.addEventListener('click', function () {
+            staffFolder.style.display = 'none';
+            displaying = false;
+        });
+
         documentsIcon.addEventListener('click', function () {
             if (!displaying) {
                 documentsFolder.style.display = 'block';

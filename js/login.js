@@ -13,12 +13,12 @@ const logIn = function (credentials) {
 		console.log('login successful');
 	} else {
 		document.querySelector('.c-input-error-message').style.display = 'block';
-		document.getElementById('hint-icon').style.display = "block"
 	}
 };
 
 const login_init = function () {
 	loginSubmit = document.querySelector('.js-login-button');
+	document.getElementById('hint-icon').style.display = "block"
 
 	loginSubmit.addEventListener('click', function () {
 		credentials = {
