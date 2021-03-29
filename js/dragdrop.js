@@ -68,10 +68,11 @@
     function dragDrop() {
         if (dragClass === "line-1") {
             if (this.id === dragId) {
-                line1.remove();
                 answers.push("line")
-                this.firstElementChild.setAttribute("src", "../img/drag&drop/fullChart/answer3.png")
-                this.firstElementChild.setAttribute("class", "answer")
+                this.append(line1)
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
                 answer1 = true
             } else {
                 answers.push("line")
@@ -83,10 +84,11 @@
         }
         if (dragClass === "line-2") {
             if (this.id === dragId) {
-                line2.remove();
                 answers.push("line")
-                this.firstElementChild.setAttribute("src", "../img/drag&drop/fullChart/answer1.png")
-                this.firstElementChild.setAttribute("class", "answer")
+                this.append(line2)
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
                 answer2 = true
             } else {
                 answers.push("line")
@@ -99,6 +101,10 @@
         if (dragClass === "line-3") {
             if (this.id === dragId) {
                 answers.push("line")
+                this.append(line3)
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
             } else {
                 answers.push("line")
                 this.append(line3)
@@ -110,6 +116,10 @@
         if (dragClass === "line-4") {
             if (this.id === dragId) {
                 answers.push("line")
+                this.append(line4)
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
             } else {
                 answers.push("line")
                 this.append(line4)
@@ -120,11 +130,12 @@
         }
         if (dragClass === "line-5") {
             if (this.id === dragId) {
-                line5.remove();
-                this.firstElementChild.setAttribute("src", "../img/drag&drop/fullChart/answer2.png")
-                this.firstElementChild.setAttribute("class", "answer")
-                answer3 = true;
                 answers.push("line")
+                this.append(line5)
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
+                answer3 = true;
             } else {
                 answers.push("line")
                 this.append(line5)
@@ -136,6 +147,11 @@
         if (dragClass === "line-6") {
             if (this.id === dragId) {
                 answers.push("line")
+                answers.push("line")
+                this.append(line6)
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
             } else {
                 answers.push("line")
                 this.append(line6)
