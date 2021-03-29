@@ -35,7 +35,14 @@
             setTimeout(typeWriter, speed);
         }
     }
+
+    const getTime = () => {
+        const time = sessionStorage.getItem('endTime');
+        console.log(time)
+    }
+
     const init = () => {
+        getTime()
         setTimeout(() => {
             const desktop = document.querySelector(".c-desktop");
             desktop.style.filter = "blur(8px)";

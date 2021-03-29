@@ -10,6 +10,7 @@
     let answer1 = false;
     let answer2 = false;
     let answer3 = false;
+    let answers = []
 
     // Lines
     const line1 = document.querySelector(".line-1")
@@ -68,37 +69,53 @@
         if (dragClass === "line-1") {
             if (this.id === dragId) {
                 line1.remove();
+                answers.push("line")
                 this.firstElementChild.setAttribute("src", "../img/drag&drop/fullChart/answer3.png")
                 this.firstElementChild.setAttribute("class", "answer")
                 answer1 = true
-                checkDone();
             } else {
-                resetCharts()
+                answers.push("line")
+                this.append(line1)
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
             }
         }
         if (dragClass === "line-2") {
             if (this.id === dragId) {
                 line2.remove();
+                answers.push("line")
                 this.firstElementChild.setAttribute("src", "../img/drag&drop/fullChart/answer1.png")
                 this.firstElementChild.setAttribute("class", "answer")
                 answer2 = true
-                checkDone();
             } else {
-                resetCharts()
+                answers.push("line")
+                this.append(line2)
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
             }
         }
         if (dragClass === "line-3") {
             if (this.id === dragId) {
-                checkDone();
+                answers.push("line")
             } else {
-                resetCharts()
+                answers.push("line")
+                this.append(line3)
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
             }
         }
         if (dragClass === "line-4") {
             if (this.id === dragId) {
-                checkDone();
+                answers.push("line")
             } else {
-                resetCharts()
+                answers.push("line")
+                this.append(line4)
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
             }
         }
         if (dragClass === "line-5") {
@@ -106,38 +123,51 @@
                 line5.remove();
                 this.firstElementChild.setAttribute("src", "../img/drag&drop/fullChart/answer2.png")
                 this.firstElementChild.setAttribute("class", "answer")
-                answer3 = true
-                checkDone();
+                answer3 = true;
+                answers.push("line")
             } else {
-                resetCharts()
+                answers.push("line")
+                this.append(line5)
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
             }
         }
         if (dragClass === "line-6") {
             if (this.id === dragId) {
-                checkDone();
+                answers.push("line")
+            } else {
+                answers.push("line")
+                this.append(line6)
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
+            }
+        }
+    }
+
+    const checkAnswers = () => {
+        if (answers.length === 3) {
+            if (answer1 && answer2 && answer3 === true) {
+                // const restart = document.querySelector(".restart");
+                // const restartText = document.querySelector(".restart-text");
+                // restart.style.display = "flex"
+                // restartText.innerHTML = "Je hebt alles correct"
+
+                const lottie = document.querySelector(".lottie-container")
+                lottie.style.display = "flex"
+                setTimeout(() => {
+                    sessionStorage.setItem('pcIT', true);
+                    document.location.href = "/pages-network/pcIT.html";
+                }, 2600);
             } else {
                 resetCharts()
             }
         }
     }
 
-    const checkDone = () => {
-        if (answer1 && answer2 && answer3 === true) {
-            // const restart = document.querySelector(".restart");
-            // const restartText = document.querySelector(".restart-text");
-            // restart.style.display = "flex"
-            // restartText.innerHTML = "Je hebt alles correct"
-
-            const lottie = document.querySelector(".lottie-container")
-            lottie.style.display = "flex"
-            setTimeout(() => {
-                sessionStorage.setItem('pcIT', true);
-                document.location.href = "/pages-network/pcIT.html";
-            }, 2600);
-        }
-    }
-
     function resetCharts() {
+        answers = [];
         answer1 && answer2 && answer3 === false;
         const restart = document.querySelector(".restart");
         top.innerHTML = clonedTop.innerHTML;
@@ -148,11 +178,12 @@
             restart.style.display = "none"
         }, 1500);
 
-
-
-
         initListeners();
     }
 
+
     initListeners();
+    setInterval(() => {
+        checkAnswers()
+    }, 500);
 }

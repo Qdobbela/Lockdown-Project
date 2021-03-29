@@ -22,15 +22,28 @@ body {
     background-color: white;
     width: 15rem;
     height: 15rem;
+    z-index: 5;
 }
 
 .fill img {
     width: 15rem;
     height: 15rem;
+    z-index: 5;
 }
 
 #found {
     position: relative;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
 }
 
 .invisible {
@@ -41,6 +54,7 @@ body {
 .empty {
     width: 20rem;
     height: 20rem;
+    z-index: 1;
 }
 
 .empty img {
