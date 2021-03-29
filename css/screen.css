@@ -2006,6 +2006,29 @@ No media query since this is the default in mobile first design
 	opacity: 0.25;
 }
 
+#myProgress {
+	width: 80%;
+	background-color: grey;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	bottom: 4rem;
+}
+
+#myBar {
+	width: 0%;
+	height: 30px;
+	background-color: #34fc47;
+	text-align: center;
+	/* To center it horizontally (if you want) */
+	line-height: 30px;
+	/* To center it vertically */
+	color: black;
+}
+
 .terminal-title {
 	max-width: 50rem;
 	margin: 0 auto;
@@ -2046,6 +2069,13 @@ button {
 
 .green-wrapper {
 	margin-top: 3rem;
+	bottom: 6rem;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	text-align: center;
 }
 
 

@@ -10,23 +10,24 @@
             terminal.style.display = "block";
             text = "Dank voor de hulp. Zelf had ik nooit zo ver geraakt. Maar ik moet je iets bekennen, dit was geen opdracht vanuit Fintrabank.  Het spijt me om te melden, maar je hebt net een misdaad begaan. En jouw virtuele vingerafdrukken staan overal... Veel succes om dit uit te leggen aan de authoriteiten. Adios! "
             typeWriter();
+            move()
         }, 1000);
-        const interval = setInterval(setGreen, 3500)
+        // const interval = setInterval(setGreen, 3500)
 
         setTimeout(() => {
             clearInterval(interval)
         }, 30000);
     }
 
-    const setGreen = () => {
-        const greenText = document.querySelector(".green-wrapper");
-        countUp++;
+    // const setGreen = () => {
+    //     const greenText = document.querySelector(".green-wrapper");
+    //     countUp++;
 
-        const p = document.createElement("div")
-        p.innerHTML = '<p class="green">[user@fintrabank] % sending IP adress 192.168.1.2 to FBI</p>'
-        p.style.display = "block";
-        greenText.appendChild(p)
-    }
+    //     const p = document.createElement("div")
+    //     p.innerHTML = '<p class="green">[user@fintrabank] % sending IP adress 192.168.1.2 to FBI</p>'
+    //     p.style.display = "block";
+    //     greenText.appendChild(p)
+    // }
 
     const typeWriter = () => {
         if (i < text.length) {
@@ -39,6 +40,28 @@
     const getTime = () => {
         const time = sessionStorage.getItem('endTime');
         console.log(time)
+    }
+
+    let j = 0;
+
+    const move = () => {
+        if (j == 0) {
+            ij = 1;
+            let elem = document.getElementById("myBar");
+            let width = 10;
+            let id = setInterval(frame, 70);
+
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                    j = 0;
+                } else {
+                    width++;
+                    elem.style.width = width + "%";
+                    elem.innerHTML = width + "%";
+                }
+            }
+        }
     }
 
     const init = () => {
