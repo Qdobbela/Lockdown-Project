@@ -30,10 +30,19 @@ var imagePuzzle = {
                 var $dragElem = $(ui.draggable).clone().replaceAll(this);
                 $(this).replaceAll(ui.draggable);
 
-                currentList = $('#sortable > li').map(function (i, el) { return $(el).attr('data-value'); });
-                if (isSorted(currentList))
+                currentList = $('#sortable > li').map(function (i, el) {
+                    return $(el).attr('data-value');
+                });
+                if (isSorted(currentList)) {
                     $('#actualImageBox').empty().html($('#gameOver').html());
-                else {
+                    const lottie = document.querySelector(".lottie-container")
+                    lottie.style.display = "flex"
+                    setTimeout(() => {
+                        sessionStorage.setItem('pcFinance', true);
+                        document.location.href = '/pages-network/pcFinance.html';
+                    }, 2600);
+
+                } else {
                     var now = new Date().getTime();
                     imagePuzzle.stepCount++;
                     $('.stepCount').text(imagePuzzle.stepCount);

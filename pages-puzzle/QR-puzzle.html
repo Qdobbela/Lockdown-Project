@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NetworkHack QR</title>
-    <link rel="stylesheet" href="/css/networkhack.css">
-    <link rel="stylesheet" href="/css/slot-helpers.css">
+    <title>Picture Puzzle</title>
+    <link href="../css/image-puzzle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/slot-helpers.css">
+    <script src="../js/puzzle/jquery-2.1.1.min.js"></script>
+    <script src="../js/puzzle/jquery-ui.js"></script>
+    <script src="../js/puzzle/image-puzzle.js"></script>
 </head>
-
 <body>
     <div class="lottie-wrapper">
         <div class="lottie-container">
@@ -21,44 +20,57 @@
     </lottie-player>
         </div>
     </div>
-    <div class="puzzle-container">
-        <div class="password-container-CEO3">
-            <div class="password-center">
-                <h2 class="password-center-title">LLYZAL ALRLU CHU LSRL OY ZBIMVSKLY</h2>
-                <div class="password-container-input">
-                    <label for="psw"><b>Password</b></label>
-                    <input placeholder="Enter Password" name="psw" required id="psw">
-                </div>
-                <br>
-                <button type="submit" id="btn" onclick="checkPasswordQR()">Confirm</button>
-                <p id="psw-fout"></p>
-            </div>
-        </div>
-    </div>
-    <div class="help-container">   
-        <div class="u-cursor-pointer help-text-bubble help-bubble" id="help-bubble">
-                <p id="help_text">LLYAL? Welke taal is dit?  <br> <br>
-                    Ik vermoed dat we nog extra informatie nodig zullen hebben om dit te vertalen naar iets die we wel verstaan. </p>
-        </div>
-        <div class="u-cursor-pointer help-text-bubble-2 help-bubble-hint" id="help-bubble-hint">
-                <p id="help_text">
-                    Zelfs de meest versnipperde documenten vormen geen obstakel voor hackers als wij. Waar hebben we die symbolen op de achterkant nog gezien? 
+    <div id="collage">
+        <div id="playPanel" style="padding:5px;display:none;">
+            <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
+                <ul id="sortable" class="sortable"></ul>
+                <div id="actualImageBox">
+                    <p id="levelPanel">
+                        <input type="radio" name="level" id="easy" checked="checked" value="3" /> <label for="easy">Easy</label>
+                        <input type="radio" name="level" id="medium" value="4" /> <label for="medium">Medium</label>
+                        <input type="radio" name="level" id="hard" value="5" /> <label for="hard">Hard</label>
+						<input type="radio" name="level" id="veryhard" value="6" /> <label for="veryhard">Very Hard</label>
                     </p>
-        </div>
-        <div class="icon-wrapper">
-            <div class="u-cursor-pointer" id="help-icon">
-                    <img class="icon-content" src="../img/help.svg">
-            </div>
-            <div class="u-cursor-pointer" id="hint-icon">
-
-                    <img class="icon-content" src="../img/hint.svg">
-
+                </div>
             </div>
         </div>
+        <div id="gameOver" style="display:none;">
+            <div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center; ">
+                Congratulations!! <br /> You got the picture ready.
+                <br />
+                Time: <span class="stepCount">0</span> gear.
+                <br />
+                Time spent: <span class="timeCount">0</span> seconds<br />
+                <div>
+                    <button type="button" onclick="window.location.reload(true);">Play more</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var images = [
+                { src: '../img/qr-code.png', title: 'QR code' },
+            ];
+
+            $(function () {
+                var gridSize = $('#levelPanel :radio:checked').val();
+                imagePuzzle.startGame(images, gridSize);
+                $('#newPhoto').click(function () {
+                    var gridSize = $('#levelPanel :radio:checked').val();
+                    imagePuzzle.startGame(images, gridSize);
+                });
+
+                $('#levelPanel :radio').change(function (e) {
+                    var gridSize = $(this).val();
+                    imagePuzzle.startGame(images, gridSize);
+                });
+            });
+            function rules() {
+                alert('Rearrange the pieces so that you get a sample image. \nThe steps taken are counted');
+            }
+        </script>
     </div>
-    <script src="/js/passwordcheck.js"></script>
-    <script src="/js/helper.js"></script>
+    <!-- <script src="/js/helper.js"></script> -->
     <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
 </body>
-
 </html>

@@ -3,11 +3,23 @@
 <head>
     <title>Picture Puzzle</title>
     <link href="../css/image-puzzle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/slot-helpers.css">
     <script src="../js/puzzle/jquery-2.1.1.min.js"></script>
     <script src="../js/puzzle/jquery-ui.js"></script>
     <script src="../js/puzzle/image-puzzle.js"></script>
 </head>
 <body>
+    <div class="lottie-wrapper">
+        <div class="lottie-container">
+            <lottie-player
+    autoplay
+    mode="normal"
+    src="https://assets3.lottiefiles.com/packages/lf20_DI0YrH.json"
+    style="width: 20rem; height: 20rem; margin: 0 auto;"
+    >
+    </lottie-player>
+        </div>
+    </div>
     <div id="collage">
         <div id="playPanel" style="padding:5px;display:none;">
             <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
@@ -58,5 +70,7 @@
             }
         </script>
     </div>
+    <!-- <script src="/js/helper.js"></script> -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@0.4.0/dist/lottie-player.js"></script>
 </body>
 </html>
