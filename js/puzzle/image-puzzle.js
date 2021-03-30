@@ -40,6 +40,7 @@ var imagePuzzle = {
                     setTimeout(() => {
                         sessionStorage.setItem('pcFinance', true);
                         document.location.href = '/pages-network/pcFinance.html';
+                        window.open('../img/qr-code.png', '_blank');
                     }, 2600);
 
                 } else {
