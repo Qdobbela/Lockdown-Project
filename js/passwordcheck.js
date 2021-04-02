@@ -64,6 +64,12 @@ function checkPasswordQR() {
 document.addEventListener('DOMContentLoaded', function () {
     const passwordInput = document.querySelector(".password-input");
 
+    // const button = document.querySelector(".submit");
+    // button.addEventListener('click', () => {
+    //     console.log("test")
+    //     checkPasswordQR()
+    // })
+
     let inputArr = []
 
     passwordInput.addEventListener('input', (e) => {

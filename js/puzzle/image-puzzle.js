@@ -35,13 +35,16 @@ var imagePuzzle = {
                 });
                 if (isSorted(currentList)) {
                     $('#actualImageBox').empty().html($('#gameOver').html());
-                    const lottie = document.querySelector(".lottie-container")
-                    lottie.style.display = "flex"
-                    setTimeout(() => {
-                        sessionStorage.setItem('pcFinance', true);
-                        document.location.href = '/pages-network/pcFinance.html';
-                        window.open('../img/qr-code.png', '_blank');
-                    }, 2600);
+                    // const lottie = document.querySelector(".lottie-container")
+                    // lottie.style.display = "flex"
+                    // setTimeout(() => {
+                    //     sessionStorage.setItem('pcFinance', true);
+                    //     document.location.href = '/pages-network/pcFinance.html';
+                    //     window.open('../img/qr-code.png', '_blank');
+                    // }, 2600);
+
+                    const found = document.querySelector(".found");
+                    found.style.display = "block"
 
                 } else {
                     var now = new Date().getTime();

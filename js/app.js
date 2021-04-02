@@ -579,7 +579,6 @@ const closeOnClick = () => {
 
 }
 
-
 document.addEventListener('DOMContentLoaded', function () {
     checkAuth();
     checkUnlocked();
