@@ -42,7 +42,6 @@ const setBubbleText = () => {
                 showText();
                 hideText(30000)
                 sessionStorage.setItem('help4', true);
-
             }
             const hintTxt = document.querySelector(".hint-text")
             const hintBtn = document.getElementById("hint-icon")
@@ -61,6 +60,8 @@ const setBubbleText = () => {
             break;
 
         case 'Bureaublad Dirk':
+            sessionStorage.setItem("dirk", true);
+            setNetworkIcons();
             if (sessionStorage.getItem('help1') != 'true') {
                 // document.getElementById('help_text').innerHTML = "Alright, laat ons beginnen met het hacken van de Fintrabank! <br> Eerst moeten we binnengeraken in een computer op het netwerk.<br> We hebben de meeste kans om een username en wachtwoord te ontfutselen van één van de collega's.<br><br> Lets go phishing! Stuur al de medewerkers van Fintra een mail om hun wachtwoord te ontfutselen.<br><br> Stuur hen dit bericht door. \"Beste, wegens problemen met het netwerk moeten we jouw paswoord van de Fintrabank opnieuw instellen. Gelieve je huidige wachtwoord door te geven en wij zorgen voor de rest.\"";
                 showText();
@@ -71,6 +72,8 @@ const setBubbleText = () => {
 
         case 'Bureaublad HR':
             sessionStorage.setItem('helpHRNetwork', false)
+            sessionStorage.setItem('hr', true)
+            setNetworkIcons();
             if (sessionStorage.getItem('helpHR') != 'true') {
                 showText();
                 hideText();
@@ -79,6 +82,7 @@ const setBubbleText = () => {
             break;
 
         case 'Bureaublad Finance':
+            sessionStorage.setItem('finance', true)
             sessionStorage.setItem('helpFinanceNetwork', false)
             if (sessionStorage.getItem('helpFinance') != 'true') {
                 showText();
@@ -110,6 +114,8 @@ const setBubbleText = () => {
             break;
 
         case 'Bureaublad IT':
+            sessionStorage.setItem('it', true)
+            setNetworkIcons();
             break;
 
         case 'NetworkHack Pattern':
@@ -145,39 +151,40 @@ const getNetworkProgress = () => {
         sessionStorage.setItem('ceoSlot3', false);
     }
 
-    try {
-        ceo = sessionStorage.getItem('pcCEO')
-        const ceoSlot1 = sessionStorage.getItem('ceoSlot1')
-        const ceoSlot2 = sessionStorage.getItem('ceoSlot2')
-        const ceoSlot3 = sessionStorage.getItem('ceoSlot3')
+    // try {
+    //     ceo = sessionStorage.getItem('pcCEO')
+    //     const ceoSlot1 = sessionStorage.getItem('ceoSlot1')
+    //     const ceoSlot2 = sessionStorage.getItem('ceoSlot2')
+    //     const ceoSlot3 = sessionStorage.getItem('ceoSlot3')
 
-        if (ceoSlot1 === true) {
-            console.log("CEO OPGELOST")
-            document.querySelector('.pcCEO_icon_locked3').style.display = "none"
-        }
-        if (ceoSlot1 && ceoSlot2 === true) {
+    //     if (ceoSlot1 === "true") {
+    //         console.log("CEO OPGELOST")
+    //         document.querySelector('.pcCEO_icon_locked3').style.display = "none"
 
-        }
-        if (ceoSlot1 && ceoSlot2 && ceoSlot3 === true) {
+    //     }
+    //     if (ceoSlot1 && ceoSlot2 === true) {
 
-        }
+    //     }
+    //     if (ceoSlot1 && ceoSlot2 && ceoSlot3 === true) {
 
-        // document.getElementById('pcCEO_icon').style.display = 'none';
-        // // document.getElementById('pcCEO_icon_locked1').style.display = 'none';
-        // // document.getElementById('pcCEO_icon_locked2').style.display = 'none';
-        // // document.getElementById('pcCEO_icon_locked3').style.display = 'none';
-        // if (ceo == 'true') {
-        //     // document.getElementById('pcCEO_icon').style.display = 'block';
-        // } else if (ceo == '1') {
-        //     document.getElementById('pcCEO_icon_locked2').style.display = 'none';
-        // } else if (ceo == '2') {
-        //     document.getElementById('pcCEO_icon_locked3').style.display = 'none';
-        // } else if (ceo == '3') {
-        //     // document.getElementById('pcCEO_icon_locked3').style.display = 'block';
-        // }
-    } catch (error) {
-        console.log(error)
-    }
+    //     }
+
+    //     // document.getElementById('pcCEO_icon').style.display = 'none';
+    //     // // document.getElementById('pcCEO_icon_locked1').style.display = 'none';
+    //     // // document.getElementById('pcCEO_icon_locked2').style.display = 'none';
+    //     // // document.getElementById('pcCEO_icon_locked3').style.display = 'none';
+    //     // if (ceo == 'true') {
+    //     //     // document.getElementById('pcCEO_icon').style.display = 'block';
+    //     // } else if (ceo == '1') {
+    //     //     document.getElementById('pcCEO_icon_locked2').style.display = 'none';
+    //     // } else if (ceo == '2') {
+    //     //     document.getElementById('pcCEO_icon_locked3').style.display = 'none';
+    //     // } else if (ceo == '3') {
+    //     //     // document.getElementById('pcCEO_icon_locked3').style.display = 'block';
+    //     // }
+    // } catch (error) {
+    //     console.log(error)
+    // }
 
     try {
         HR = sessionStorage.getItem('pcHR');
@@ -219,6 +226,28 @@ const getNetworkProgress = () => {
     }
 }
 
+const setNetworkIcons = () => {
+    if (sessionStorage.getItem("finance") === "true") {
+        console.log("finance completed")
+        const finance = document.getElementById("pcFinance_icon");
+        if (finance) {
+            finance.classList.remove("disabled")
+            finance.firstElementChild.src = "../img/desktop_mac-24px.svg";
+        }
+
+    }
+    if (sessionStorage.getItem("it") === "true") {
+        console.log("it completed");
+        const it = document.getElementById("pcIT_icon");
+        if (it) {
+            it.classList.remove("disabled")
+            it.firstElementChild.src = "../img/desktop_mac-24px.svg";
+        }
+    }
+
+}
+
+
 const checkCeoSlots = () => {
     const ceoSlot1 = sessionStorage.getItem('ceoSlot1')
     const ceoSlot2 = sessionStorage.getItem('ceoSlot2')
@@ -228,9 +257,10 @@ const checkCeoSlots = () => {
         document.getElementById('pcCEO_icon_locked3').style.display = "block"
         document.getElementById('pcCEO_icon_locked2').style.display = "block"
         document.getElementById('pcCEO_icon_locked1').style.display = "block"
-
-
         document.getElementById('pcCEO_icon_locked2').classList.add("disabled");
+
+        // document.getElementById('pcCEO_icon_locked3').classList.remove("disabled")
+        // document.getElementById('pcCEO_icon_locked3').firstElementChild.src = "../img/https-24px.svg"
 
     }
     if (ceoSlot1 && ceoSlot2 === "false") {
@@ -255,6 +285,7 @@ const checkCeoSlots = () => {
 
     if (ceoSlot1 === "true") {
         document.getElementById('pcCEO_icon_locked3').style.display = "none";
+        document.getElementById('pcCEO_icon_locked2').classList.remove("disabled")
         document.getElementById('pcCEO_icon_locked2').firstElementChild.src = "../img/https-24px.svg"
 
     }
@@ -387,6 +418,7 @@ const init = function () {
     // } catch (error) {
     //     console.log(error);
     // }
+
 
     try {
         networkFolder = document.getElementById('network_folder')
