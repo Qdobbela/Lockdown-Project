@@ -41,8 +41,8 @@ a {
 }
 
 .pdf img {
-	width: 3rem;
-	height: auto;
+	width: auto;
+	height: 50vh;
 }
 
 .helpers-wrapper {

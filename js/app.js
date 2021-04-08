@@ -63,7 +63,6 @@ const setBubbleText = () => {
             sessionStorage.setItem("dirk", true);
             setNetworkIcons();
             if (sessionStorage.getItem('help1') != 'true') {
-                // document.getElementById('help_text').innerHTML = "Alright, laat ons beginnen met het hacken van de Fintrabank! <br> Eerst moeten we binnengeraken in een computer op het netwerk.<br> We hebben de meeste kans om een username en wachtwoord te ontfutselen van één van de collega's.<br><br> Lets go phishing! Stuur al de medewerkers van Fintra een mail om hun wachtwoord te ontfutselen.<br><br> Stuur hen dit bericht door. \"Beste, wegens problemen met het netwerk moeten we jouw paswoord van de Fintrabank opnieuw instellen. Gelieve je huidige wachtwoord door te geven en wij zorgen voor de rest.\"";
                 showText();
                 hideText();
                 sessionStorage.setItem('help1', true);
@@ -102,9 +101,9 @@ const setBubbleText = () => {
                 minutes = Math.floor(Math.floor(duration % 3600000) / 60000);
                 seconds = Math.floor(Math.floor(Math.floor(duration % 3600000) % 60000) / 1000);
                 if (hours == 0) {
-                    time = `${minutes}:${seconds}`;
+                    time = `${minutes} minuten en ${seconds} seconden`;
                 } else {
-                    time = `${hours}:${minutes}:${seconds}`;
+                    time = `${hours} uur ${minutes} minuten en ${seconds} seconden`;
                 }
                 sessionStorage.setItem('endTime', time);
             }

@@ -1,8 +1,11 @@
 {
     let i = 0;
+    let a = 0;
     let text;
     let speed = 75; /* The speed/duration of the effect in milliseconds */
     let countUp = 0
+    let time;
+    let timeText;
 
     const setTerminal = () => {
         setTimeout(() => {
@@ -37,9 +40,22 @@
         }
     }
 
+    const typeWriterSubtitle = () => {
+        if (a < timeText.length) {
+            document.querySelector(".terminal-subtitle").innerHTML += timeText.charAt(a);
+            a++;
+            setTimeout(typeWriterSubtitle, speed);
+        }
+    }
+
+    setTimeout(() => {
+        typeWriterSubtitle();
+    }, 29000);
+
     const getTime = () => {
-        const time = sessionStorage.getItem('endTime');
-        console.log(time)
+        time = sessionStorage.getItem('endTime');
+        timeText = `Je hebt dit volbracht in ${time}`
+        console.log(timeText)
     }
 
     let j = 0;
@@ -49,7 +65,7 @@
             ij = 1;
             let elem = document.getElementById("myBar");
             let width = 10;
-            let id = setInterval(frame, 70);
+            let id = setInterval(frame, 255);
 
             function frame() {
                 if (width >= 100) {

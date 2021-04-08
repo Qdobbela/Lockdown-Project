@@ -2084,3 +2084,13 @@ button {
 	text-align: center;
 	font-size: 1rem;
 }
+
+.terminal-subtitle {
+	background-color: white;
+	width: fit-content;
+	margin: 0 auto;
+	color: black;
+	padding-left: .5rem;
+	padding-right: .5rem;
+	margin-top: 2rem;
+}

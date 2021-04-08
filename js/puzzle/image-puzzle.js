@@ -1,5 +1,23 @@
 ﻿var timerFunction;
 
+if (localStorage.getItem("puzzleFound") === "false") {
+    localStorage.setItem("puzzleFoudn", false)
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem("puzzleFound") === "true") {
+        const sortable = document.querySelector(".sortable");
+
+        sortable.innerHTML = `<img class="sortable-img" src="../../img/qr-code.png" alt="QR-code"></img>`
+        sortable.style.width = "400px"
+
+        // Set password visible
+        const found = document.querySelector(".found");
+        found.style.display = "block"
+    }
+});
+
+
 var imagePuzzle = {
     stepCount: 0,
     startTime: new Date().getTime(),
@@ -45,6 +63,7 @@ var imagePuzzle = {
 
                     const found = document.querySelector(".found");
                     found.style.display = "block"
+                    localStorage.setItem("puzzleFound", true);
 
                 } else {
                     var now = new Date().getTime();
