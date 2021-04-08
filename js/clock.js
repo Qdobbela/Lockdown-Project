@@ -33,11 +33,11 @@
         secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
         document.title = `Time left: ${hoursSpan.innerHTML}:${ minutes = minutesSpan.innerHTML}:${ seconds = secondsSpan.innerHTML} `;
 
-        // Set time in sessionStorage
-        sessionStorage.setItem("hours", hoursSpan.innerHTML);
-        sessionStorage.setItem("minutes", minutesSpan.innerHTML)
-        sessionStorage.setItem("seconds", secondsSpan.innerHTML)
-        // console.log(sessionStorage.getItem('hours'), sessionStorage.getItem('minutes'), sessionStorage.getItem('seconds'))
+        // Set time inlocalStorage
+       localStorage.setItem("hours", hoursSpan.innerHTML);
+       localStorage.setItem("minutes", minutesSpan.innerHTML)
+       localStorage.setItem("seconds", secondsSpan.innerHTML)
+        // console.log(sessionStorage.getItem('hours'),localStorage.getItem('minutes'),localStorage.getItem('seconds'))
 
         if (t.total <= 0) {
             clearInterval(timeinterval);

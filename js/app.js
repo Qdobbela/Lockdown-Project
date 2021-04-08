@@ -1,8 +1,8 @@
 const checkAuth = () => {
-    if (sessionStorage.getItem('Auth1') === null) {
+    if (localStorage.getItem('Auth1') === null) {
         auth = false
     } else {
-        auth = !!sessionStorage.getItem('Auth1');
+        auth = !!localStorage.getItem('Auth1');
     }
 
     if (window.location.pathname == '/index.html') {
@@ -23,7 +23,7 @@ const checkUnlocked = () => {
         title = document.title.split(' ')
         page = title[title.length - 1]
         console.log(`pc${page}`);
-        if (sessionStorage.getItem(`pc${page}`) != 'true') {
+        if (localStorage.getItem(`pc${page}`) != 'true') {
             history.back();
         }
     }
@@ -38,10 +38,10 @@ const setBubbleText = () => {
 
         case 'Login':
             let clicks = 0;
-            if (sessionStorage.getItem('help4') != 'true') {
+            if (localStorage.getItem('help4') != 'true') {
                 showText();
                 hideText(30000)
-                sessionStorage.setItem('help4', true);
+                localStorage.setItem('help4', true);
             }
             const hintTxt = document.querySelector(".hint-text")
             const hintBtn = document.getElementById("hint-icon")
@@ -60,42 +60,42 @@ const setBubbleText = () => {
             break;
 
         case 'Bureaublad Dirk':
-            sessionStorage.setItem("dirk", true);
+            localStorage.setItem("dirk", true);
             setNetworkIcons();
-            if (sessionStorage.getItem('help1') != 'true') {
+            if (localStorage.getItem('help1') != 'true') {
                 showText();
                 hideText();
-                sessionStorage.setItem('help1', true);
+                localStorage.setItem('help1', true);
             }
             break;
 
         case 'Bureaublad HR':
-            sessionStorage.setItem('helpHRNetwork', false)
-            sessionStorage.setItem('hr', true)
+            localStorage.setItem('helpHRNetwork', false)
+            localStorage.setItem('hr', true)
             setNetworkIcons();
-            if (sessionStorage.getItem('helpHR') != 'true') {
+            if (localStorage.getItem('helpHR') != 'true') {
                 showText();
                 hideText();
-                sessionStorage.setItem('helpHR', true);
+                localStorage.setItem('helpHR', true);
             }
             break;
 
         case 'Bureaublad Finance':
-            sessionStorage.setItem('finance', true)
-            sessionStorage.setItem('helpFinanceNetwork', false)
-            if (sessionStorage.getItem('helpFinance') != 'true') {
+            localStorage.setItem('finance', true)
+            localStorage.setItem('helpFinanceNetwork', false)
+            if (localStorage.getItem('helpFinance') != 'true') {
                 showText();
                 hideText();
-                sessionStorage.setItem('helpFinance', true);
+                localStorage.setItem('helpFinance', true);
             }
             break;
 
         case 'Bureaublad CEO':
-            if (sessionStorage.getItem('endTime') !== null) {
-                time = sessionStorage.getItem('endTime');
+            if (localStorage.getItem('endTime') !== null) {
+                time = localStorage.getItem('endTime');
             } else {
                 now = Date.now();
-                start = Date.parse(sessionStorage.getItem('startTime'));
+                start = Date.parse(localStorage.getItem('startTime'));
                 duration = now - start;
                 hours = Math.floor(duration / 3600000);
                 minutes = Math.floor(Math.floor(duration % 3600000) / 60000);
@@ -105,7 +105,7 @@ const setBubbleText = () => {
                 } else {
                     time = `${hours} uur ${minutes} minuten en ${seconds} seconden`;
                 }
-                sessionStorage.setItem('endTime', time);
+                localStorage.setItem('endTime', time);
             }
 
             // document.getElementById('help_text').innerHTML = `Dank voor de hulp. Zelf had ik nooit zo ver geraakt. Maar ik moet je iets bekennen, dit was geen opdracht vanuit Fintrabank. Het spijt me om te melden, maar je hebt net een misdaad begaan. En jouw virtuele vingerafdrukken staan overal. Je hebt de CEO gehackt in ${time}. Veel succes om dit uit te leggen aan de authoriteiten. Adios!`;
@@ -113,7 +113,7 @@ const setBubbleText = () => {
             break;
 
         case 'Bureaublad IT':
-            sessionStorage.setItem('it', true)
+            localStorage.setItem('it', true)
             setNetworkIcons();
             break;
 
@@ -140,21 +140,21 @@ const hideText = (delay = 20000) => {
 }
 
 const getNetworkProgress = () => {
-    if (sessionStorage.getItem('pcCEO') === null) {
-        sessionStorage.setItem('pcCEO', 3);
-        sessionStorage.setItem('pcFinance', false);
-        sessionStorage.setItem('pcHR', false);
-        sessionStorage.setItem('pcIT', false);
-        sessionStorage.setItem('ceoSlot1', false);
-        sessionStorage.setItem('ceoSlot2', false);
-        sessionStorage.setItem('ceoSlot3', false);
+    if (localStorage.getItem('pcCEO') === null) {
+        localStorage.setItem('pcCEO', 3);
+        localStorage.setItem('pcFinance', false);
+        localStorage.setItem('pcHR', false);
+        localStorage.setItem('pcIT', false);
+        localStorage.setItem('ceoSlot1', false);
+        localStorage.setItem('ceoSlot2', false);
+        localStorage.setItem('ceoSlot3', false);
     }
 
     // try {
-    //     ceo = sessionStorage.getItem('pcCEO')
-    //     const ceoSlot1 = sessionStorage.getItem('ceoSlot1')
-    //     const ceoSlot2 = sessionStorage.getItem('ceoSlot2')
-    //     const ceoSlot3 = sessionStorage.getItem('ceoSlot3')
+    //     ceo = localStorage.getItem('pcCEO')
+    //     const ceoSlot1 = localStorage.getItem('ceoSlot1')
+    //     const ceoSlot2 = localStorage.getItem('ceoSlot2')
+    //     const ceoSlot3 = localStorage.getItem('ceoSlot3')
 
     //     if (ceoSlot1 === "true") {
     //         console.log("CEO OPGELOST")
@@ -186,7 +186,7 @@ const getNetworkProgress = () => {
     // }
 
     try {
-        HR = sessionStorage.getItem('pcHR');
+        HR = localStorage.getItem('pcHR');
         document.getElementById('pcHR_icon').style.display = 'none';
         document.getElementById('pcHR_icon_locked').style.display = 'none';
         if (HR == 'true') {
@@ -199,7 +199,7 @@ const getNetworkProgress = () => {
     }
 
     try {
-        IT = sessionStorage.getItem('pcIT');
+        IT = localStorage.getItem('pcIT');
         document.getElementById('pcIT_icon').style.display = 'none';
         document.getElementById('pcIT_icon_locked').style.display = 'none';
         if (IT == 'true') {
@@ -212,7 +212,7 @@ const getNetworkProgress = () => {
     }
 
     try {
-        Finance = sessionStorage.getItem('pcFinance');
+        Finance = localStorage.getItem('pcFinance');
         document.getElementById('pcFinance_icon').style.display = 'none';
         document.getElementById('pcFinance_icon_locked').style.display = 'none';
         if (Finance == 'true') {
@@ -226,7 +226,7 @@ const getNetworkProgress = () => {
 }
 
 const setNetworkIcons = () => {
-    if (sessionStorage.getItem("finance") === "true") {
+    if (localStorage.getItem("finance") === "true") {
         console.log("finance completed")
         const finance = document.getElementById("pcFinance_icon");
         const it = document.getElementById("pcIT_icon");
@@ -239,7 +239,7 @@ const setNetworkIcons = () => {
         }
 
     }
-    if (sessionStorage.getItem("it") === "true") {
+    if (localStorage.getItem("it") === "true") {
         console.log("it completed");
         const it = document.getElementById("pcIT_icon");
         if (it) {
@@ -252,9 +252,9 @@ const setNetworkIcons = () => {
 
 
 const checkCeoSlots = () => {
-    const ceoSlot1 = sessionStorage.getItem('ceoSlot1')
-    const ceoSlot2 = sessionStorage.getItem('ceoSlot2')
-    const ceoSlot3 = sessionStorage.getItem('ceoSlot3')
+    const ceoSlot1 = localStorage.getItem('ceoSlot1')
+    const ceoSlot2 = localStorage.getItem('ceoSlot2')
+    const ceoSlot3 = localStorage.getItem('ceoSlot3')
 
     if (ceoSlot1 === "false") {
         document.getElementById('pcCEO_icon_locked3').style.display = "block"
@@ -286,14 +286,14 @@ const checkCeoSlots = () => {
 
     }
 
-    if (ceoSlot1 === "false" && sessionStorage.getItem("hr") === "true") {
+    if (ceoSlot1 === "false" && localStorage.getItem("hr") === "true") {
         document.getElementById('pcCEO_icon_locked3').style.display = "block"
         document.getElementById('pcCEO_icon_locked3').firstElementChild.src = "../img/https-24px.svg";
         document.getElementById('pcCEO_icon_locked3').classList.remove("disabled");
         document.getElementById('pcCEO_icon_locked3').classList.remove("disabled")
     }
 
-    if (ceoSlot3 === "false" && sessionStorage.getItem("it") != "true") {
+    if (ceoSlot3 === "false" && localStorage.getItem("it") != "true") {
         console.log(false)
         document.getElementById('pcCEO_icon_locked1').style.display = "block"
         document.getElementById('pcCEO_icon_locked1').firstElementChild.src = "../img/https-24px3.svg"
@@ -400,20 +400,20 @@ const deletePathStructure = () => {
 }
 
 const checkPathStructure = () => {
-    if (path.toString() === ",A,G,E,N,D,A" || sessionStorage.getItem('agendaFound') === "true") {
-        sessionStorage.setItem('agendaFound', true);
-        sessionStorage.setItem('agendaCount', 1);
+    if (path.toString() === ",A,G,E,N,D,A" || localStorage.getItem('agendaFound') === "true") {
+        localStorage.setItem('agendaFound', true);
+        localStorage.setItem('agendaCount', 1);
         setPathStructureFound();
     } else {
-        sessionStorage.setItem('agendaFound', false);
+        localStorage.setItem('agendaFound', false);
     }
 }
 
 // Never delete this commented code, otherwise its broke, no idea why
 const setPathStructureFound = () => {
-    // if (sessionStorage.getItem('agendaFound') === "true") {
+    // if (localStorage.getItem('agendaFound') === "true") {
     //     console.log("Key found!, now store it")
-    //     sessionStorage.setItem('agendaFound', true);
+    //     localStorage.setItem('agendaFound', true);
     //     toOpen = document.getElementById("-1");
     //     clicks++
     //     toOpen.style.display = 'block'
@@ -426,11 +426,11 @@ displaying = false;
 const init = function () {
     // try {
     //     document.getElementById('pcCEO_icon_locked3').addEventListener('mouseover', function () {
-    //         if (sessionStorage.getItem('help3') != 'true') {
+    //         if (localStorage.getItem('help3') != 'true') {
     //             document.getElementById('help_text').innerHTML = 'Hier moeten we zijn! Bereid je voor, dit gaat geen gemakkelijke opgave zijn. Waarschijnlijk moet je hier door meerdere lagen firewall breken. ';
     //             showText(0);
     //             hideText(10000);
-    //             sessionStorage.setItem('help3', true);
+    //             localStorage.setItem('help3', true);
     //         }
     //     })
     // } catch (error) {
@@ -444,25 +444,25 @@ const init = function () {
         networkFolderClose = document.getElementById('network_folder_close')
 
         networkIcon.addEventListener('click', function () {
-            if (sessionStorage.getItem('helpDirk') != 'true' && document.title === "Bureaublad Dirk") {
+            if (localStorage.getItem('helpDirk') != 'true' && document.title === "Bureaublad Dirk") {
                 document.getElementById('help_text').innerHTML = 'Lap, het ziet ernaar uit dat ze intern toch beveiliging hebben ingesteld. Ongetwijfeld een koud kunstje voor een hacker van jouw kaliber om die security te omzeilen!Laat ons focussen op de computer van het Human Resources departement. Daar gaan we wel wat meer info vinden die ons kan helpen bij de andere toestellen op het netwerk. ';
                 showText();
                 hideText();
-                sessionStorage.setItem('helpDirk', true);
+                localStorage.setItem('helpDirk', true);
             }
 
-            if (sessionStorage.getItem('helpHRNetwork') != 'true' && document.title === "Bureaublad HR") {
+            if (localStorage.getItem('helpHRNetwork') != 'true' && document.title === "Bureaublad HR") {
                 document.getElementById('help_text').innerHTML = 'Het ziet er naar uit dat we alle informatie voor handen hebben om  de eerste beveiliging van de CEO computer te kraken.  We kunnen ook machtiging krijgen over de computer van de finance afdeling. Genoeg te doen lijkt me, aan het werk!';
                 showText();
                 hideText();
-                sessionStorage.setItem('helpHRNetwork', true);
+                localStorage.setItem('helpHRNetwork', true);
             }
 
-            if (sessionStorage.getItem('helpFinanceNetwork') != 'true' && document.title === "Bureaublad Finance") {
+            if (localStorage.getItem('helpFinanceNetwork') != 'true' && document.title === "Bureaublad Finance") {
                 document.getElementById('help_text').innerHTML = 'We kunnen nu ook de computer van IT proberen te kraken alsook de tweede beveiliging van de computer van de CEO. Doe waar je goed in bent. Zorg dat we toegang krijgen tot die computers. De tijd begint te dringen. ';
                 showText();
                 hideText();
-                sessionStorage.setItem('helpFinanceNetwork', true);
+                localStorage.setItem('helpFinanceNetwork', true);
             }
             if (!displaying) {
                 networkFolder.style.display = 'block';
@@ -493,7 +493,7 @@ const init = function () {
                 displaying = true;
                 setPathStructureFound()
             }
-            if (sessionStorage.getItem('agendaFound') === "true") {
+            if (localStorage.getItem('agendaFound') === "true") {
                 toOpen = document.getElementById("-1");
                 clicks++
                 if (toOpen) {

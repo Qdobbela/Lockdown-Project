@@ -173,7 +173,7 @@
                 const lottie = document.querySelector(".lottie-container")
                 lottie.style.display = "flex"
                 setTimeout(() => {
-                    sessionStorage.setItem('pcIT', true);
+                    localStorage.setItem('pcIT', true);
                     document.location.href = "/pages-network/pcIT.html";
                 }, 2600);
             } else {

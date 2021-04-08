@@ -6,8 +6,8 @@ const user = {
 const logIn = function (credentials) {
 	// console.log(credentials, user);
 	if (credentials.email.toLowerCase() == user.email && credentials.password.toLowerCase() == user.password) {
-		sessionStorage.setItem('Auth1', true);
-		sessionStorage.setItem('startTime', Date());
+		localStorage.setItem('Auth1', true);
+		localStorage.setItem('startTime', Date());
 		// location.replace('pages-network/pcDirk.html');
 		location.href = 'pages-network/pcDirk.html';
 		console.log('login successful');

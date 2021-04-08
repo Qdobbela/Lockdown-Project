@@ -53,7 +53,7 @@
     }, 29000);
 
     const getTime = () => {
-        time = sessionStorage.getItem('endTime');
+        time = localStorage.getItem('endTime');
         timeText = `Je hebt dit volbracht in ${time}`
         console.log(timeText)
     }

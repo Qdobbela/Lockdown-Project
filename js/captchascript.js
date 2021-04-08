@@ -96,8 +96,8 @@ function check(a) {
             const lottie = document.querySelector(".lottie-container")
             lottie.style.display = "flex"
             setTimeout(() => {
-                sessionStorage.setItem('pcCEO', 1);
-                sessionStorage.setItem('ceoSlot2', true);
+               localStorage.setItem('pcCEO', 1);
+               localStorage.setItem('ceoSlot2', true);
                 history.back();
             }, 2600);
         } else {

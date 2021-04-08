@@ -5,7 +5,7 @@ function checkPasswordIT() {
         const lottie = document.querySelector(".lottie-container")
         lottie.style.display = "flex"
         setTimeout(() => {
-            sessionStorage.setItem('pcIT', true);
+            localStorage.setItem('pcIT', true);
             document.location.href = "/pages-network/pcIT.html";
         }, 2600);
     } else {
@@ -21,8 +21,8 @@ function checkPasswordCEO1() {
         const lottie = document.querySelector(".lottie-container")
         lottie.style.display = "flex"
         setTimeout(() => {
-            sessionStorage.setItem('pcCEO', true);
-            sessionStorage.setItem('ceoSlot3', true);
+            localStorage.setItem('pcCEO', true);
+            localStorage.setItem('ceoSlot3', true);
             document.location.href = '/pages-network/pcCEO.html';
         }, 2600);
     } else {
@@ -37,8 +37,8 @@ function checkPasswordCEO3() {
         const lottie = document.querySelector(".lottie-container")
         lottie.style.display = "flex"
         setTimeout(() => {
-            sessionStorage.setItem('pcCEO', 2);
-            sessionStorage.setItem('ceoSlot1', true);
+            localStorage.setItem('pcCEO', 2);
+            localStorage.setItem('ceoSlot1', true);
             history.back();
         }, 2600);
     } else {
@@ -53,7 +53,7 @@ function checkPasswordQR() {
         const lottie = document.querySelector(".lottie-container")
         lottie.style.display = "flex"
         setTimeout(() => {
-            sessionStorage.setItem('pcFinance', true);
+            localStorage.setItem('pcFinance', true);
             document.location.href = '/pages-network/pcFinance.html';
         }, 2600);
     } else {
