@@ -42,14 +42,13 @@
     // Drag Functions
 
     function dragStart() {
-        this.className += ' hold';
-
+        // this.className += ' hold';
         dragClass = this.className.split(' ')[1];
         dragId = this.id;
     }
 
     function dragEnd() {
-        this.className = 'fill';
+        // this.className = 'fill';
     }
 
     function dragOver(e) {
@@ -62,7 +61,7 @@
     }
 
     function dragLeave() {
-        this.className = 'empty';
+        // this.className = 'empty';
     }
 
     function dragDrop() {
@@ -71,134 +70,86 @@
             if (!checkSibling) {
                 this.append(line1)
                 answers.push("line")
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
                 if (this.id === dragId) {
-                    // Check if child element exists
-                    console.log(this.firstElementChild)
-                    // if (this.firstElementChild)
-                    this.classList.add("relative")
-                    this.firstElementChild.classList.add("absolute")
-                    this.firstElementChild.nextElementSibling.classList.add("absolute")
-                    dragId.firstElementChild.src = ""
                     answer1 = true
-
-                } else {
-
-
-                    this.classList.add("relative")
-                    this.firstElementChild.classList.add("absolute")
-                    this.firstElementChild.nextElementSibling.classList.add("absolute")
-                    dragId.firstElementChild.src = ""
                 }
             } else {
-                console.log("already bezet")
+                this.firstElementChild.nextElementSibling.remove()
+                this.append(line1)
             }
         }
         if (dragClass === "line-2") {
             if (!checkSibling) {
                 this.append(line2)
                 answers.push("line")
-            } else {
-                console.log("already bezet")
-            }
-            if (this.id === dragId) {
                 this.classList.add("relative")
                 this.firstElementChild.classList.add("absolute")
                 this.firstElementChild.nextElementSibling.classList.add("absolute")
-                dragId.firstElementChild.src = ""
-                answer2 = true
-            } else {
-                if (checkSibling) {
-                    this.append(line2)
-                    answers.push("line")
-                } else {
-                    console.log("already bezet")
-                }
 
-                this.classList.add("relative")
-                this.firstElementChild.classList.add("absolute")
-                this.firstElementChild.nextElementSibling.classList.add("absolute")
-                dragId.firstElementChild.src = ""
+                if (this.id === dragId) {
+                    answer2 = true
+                }
+            } else {
+                this.firstElementChild.nextElementSibling.remove()
+                this.append(line2)
             }
         }
         if (dragClass === "line-3") {
             if (!checkSibling) {
                 this.append(line3)
                 answers.push("line")
-            } else {
-                console.log("already bezet")
-            }
-            if (this.id === dragId) {
                 this.classList.add("relative")
                 this.firstElementChild.classList.add("absolute")
                 this.firstElementChild.nextElementSibling.classList.add("absolute")
-                dragId.firstElementChild.src = ""
+
             } else {
-   
-                this.classList.add("relative")
-                this.firstElementChild.classList.add("absolute")
-                this.firstElementChild.nextElementSibling.classList.add("absolute")
-                dragId.firstElementChild.src = ""
+                this.firstElementChild.nextElementSibling.remove()
+                this.append(line3)
             }
         }
         if (dragClass === "line-4") {
             if (!checkSibling) {
                 this.append(line4)
                 answers.push("line")
-            } else {
-                console.log("already bezet")
-            }
-            if (this.id === dragId) {
                 this.classList.add("relative")
                 this.firstElementChild.classList.add("absolute")
                 this.firstElementChild.nextElementSibling.classList.add("absolute")
-                dragId.firstElementChild.src = ""
-            } else {
 
-                this.classList.add("relative")
-                this.firstElementChild.classList.add("absolute")
-                this.firstElementChild.nextElementSibling.classList.add("absolute")
-                dragId.firstElementChild.src = ""
+            } else {
+                this.firstElementChild.nextElementSibling.remove()
+                this.append(line4)
             }
         }
         if (dragClass === "line-5") {
             if (!checkSibling) {
                 this.append(line5)
                 answers.push("line")
-            } else {
-                console.log("already bezet")
-            }
-            if (this.id === dragId) {
                 this.classList.add("relative")
                 this.firstElementChild.classList.add("absolute")
                 this.firstElementChild.nextElementSibling.classList.add("absolute")
-                dragId.firstElementChild.src = ""
-                answer3 = true;
-            } else {
 
-                this.classList.add("relative")
-                this.firstElementChild.classList.add("absolute")
-                this.firstElementChild.nextElementSibling.classList.add("absolute")
-                dragId.firstElementChild.src = ""
+                if (this.id === dragId) {
+                    answer3 = true;
+                }
+            } else {
+                this.firstElementChild.nextElementSibling.remove()
+                this.append(line5)
             }
         }
         if (dragClass === "line-6") {
             if (!checkSibling) {
                 this.append(line6)
                 answers.push("line")
-            } else {
-                console.log("already bezet")
-            }
-            if (this.id === dragId) {
                 this.classList.add("relative")
                 this.firstElementChild.classList.add("absolute")
                 this.firstElementChild.nextElementSibling.classList.add("absolute")
-                dragId.firstElementChild.src = ""
-            } else {
 
-                this.classList.add("relative")
-                this.firstElementChild.classList.add("absolute")
-                this.firstElementChild.nextElementSibling.classList.add("absolute")
-                dragId.firstElementChild.src = ""
+            } else {
+                this.firstElementChild.nextElementSibling.remove()
+                this.append(line6)
             }
         }
     }
