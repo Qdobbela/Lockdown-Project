@@ -58,7 +58,7 @@
 
     function dragEnter(e) {
         e.preventDefault();
-        this.className += ' hovered';
+        // this.className += ' hovered';
     }
 
     function dragLeave() {
@@ -66,98 +66,139 @@
     }
 
     function dragDrop() {
+        const checkSibling = this.firstElementChild.nextElementSibling
         if (dragClass === "line-1") {
-            if (this.id === dragId) {
-                answers.push("line")
+            if (!checkSibling) {
                 this.append(line1)
-                this.classList.add("relative")
-                this.firstElementChild.classList.add("absolute")
-                this.firstElementChild.nextElementSibling.classList.add("absolute")
-                answer1 = true
+                answers.push("line")
+                if (this.id === dragId) {
+                    // Check if child element exists
+                    console.log(this.firstElementChild)
+                    // if (this.firstElementChild)
+                    this.classList.add("relative")
+                    this.firstElementChild.classList.add("absolute")
+                    this.firstElementChild.nextElementSibling.classList.add("absolute")
+                    dragId.firstElementChild.src = ""
+                    answer1 = true
+
+                } else {
+
+
+                    this.classList.add("relative")
+                    this.firstElementChild.classList.add("absolute")
+                    this.firstElementChild.nextElementSibling.classList.add("absolute")
+                    dragId.firstElementChild.src = ""
+                }
             } else {
-                answers.push("line")
-                this.append(line1)
-                this.classList.add("relative")
-                this.firstElementChild.classList.add("absolute")
-                this.firstElementChild.nextElementSibling.classList.add("absolute")
+                console.log("already bezet")
             }
         }
         if (dragClass === "line-2") {
-            if (this.id === dragId) {
-                answers.push("line")
+            if (!checkSibling) {
                 this.append(line2)
+                answers.push("line")
+            } else {
+                console.log("already bezet")
+            }
+            if (this.id === dragId) {
                 this.classList.add("relative")
                 this.firstElementChild.classList.add("absolute")
                 this.firstElementChild.nextElementSibling.classList.add("absolute")
+                dragId.firstElementChild.src = ""
                 answer2 = true
             } else {
-                answers.push("line")
-                this.append(line2)
+                if (checkSibling) {
+                    this.append(line2)
+                    answers.push("line")
+                } else {
+                    console.log("already bezet")
+                }
+
                 this.classList.add("relative")
                 this.firstElementChild.classList.add("absolute")
                 this.firstElementChild.nextElementSibling.classList.add("absolute")
+                dragId.firstElementChild.src = ""
             }
         }
         if (dragClass === "line-3") {
-            if (this.id === dragId) {
-                answers.push("line")
+            if (!checkSibling) {
                 this.append(line3)
-                this.classList.add("relative")
-                this.firstElementChild.classList.add("absolute")
-                this.firstElementChild.nextElementSibling.classList.add("absolute")
+                answers.push("line")
             } else {
-                answers.push("line")
-                this.append(line3)
+                console.log("already bezet")
+            }
+            if (this.id === dragId) {
                 this.classList.add("relative")
                 this.firstElementChild.classList.add("absolute")
                 this.firstElementChild.nextElementSibling.classList.add("absolute")
+                dragId.firstElementChild.src = ""
+            } else {
+   
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
+                dragId.firstElementChild.src = ""
             }
         }
         if (dragClass === "line-4") {
-            if (this.id === dragId) {
-                answers.push("line")
+            if (!checkSibling) {
                 this.append(line4)
-                this.classList.add("relative")
-                this.firstElementChild.classList.add("absolute")
-                this.firstElementChild.nextElementSibling.classList.add("absolute")
+                answers.push("line")
             } else {
-                answers.push("line")
-                this.append(line4)
+                console.log("already bezet")
+            }
+            if (this.id === dragId) {
                 this.classList.add("relative")
                 this.firstElementChild.classList.add("absolute")
                 this.firstElementChild.nextElementSibling.classList.add("absolute")
+                dragId.firstElementChild.src = ""
+            } else {
+
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
+                dragId.firstElementChild.src = ""
             }
         }
         if (dragClass === "line-5") {
-            if (this.id === dragId) {
-                answers.push("line")
+            if (!checkSibling) {
                 this.append(line5)
+                answers.push("line")
+            } else {
+                console.log("already bezet")
+            }
+            if (this.id === dragId) {
                 this.classList.add("relative")
                 this.firstElementChild.classList.add("absolute")
                 this.firstElementChild.nextElementSibling.classList.add("absolute")
+                dragId.firstElementChild.src = ""
                 answer3 = true;
             } else {
-                answers.push("line")
-                this.append(line5)
+
                 this.classList.add("relative")
                 this.firstElementChild.classList.add("absolute")
                 this.firstElementChild.nextElementSibling.classList.add("absolute")
+                dragId.firstElementChild.src = ""
             }
         }
         if (dragClass === "line-6") {
-            if (this.id === dragId) {
-                answers.push("line")
-                answers.push("line")
+            if (!checkSibling) {
                 this.append(line6)
-                this.classList.add("relative")
-                this.firstElementChild.classList.add("absolute")
-                this.firstElementChild.nextElementSibling.classList.add("absolute")
+                answers.push("line")
             } else {
-                answers.push("line")
-                this.append(line6)
+                console.log("already bezet")
+            }
+            if (this.id === dragId) {
                 this.classList.add("relative")
                 this.firstElementChild.classList.add("absolute")
                 this.firstElementChild.nextElementSibling.classList.add("absolute")
+                dragId.firstElementChild.src = ""
+            } else {
+
+                this.classList.add("relative")
+                this.firstElementChild.classList.add("absolute")
+                this.firstElementChild.nextElementSibling.classList.add("absolute")
+                dragId.firstElementChild.src = ""
             }
         }
     }
@@ -188,13 +229,15 @@
         const restart = document.querySelector(".restart");
         top.innerHTML = clonedTop.innerHTML;
         bottom.innerHTML = clonedBottom.innerHTML;
+
         restart.style.display = "flex"
 
         setTimeout(() => {
-            restart.style.display = "none"
+            // restart.style.display = "none";
+            // initListeners();
+            location.reload();
         }, 1500);
 
-        initListeners();
     }
 
 
