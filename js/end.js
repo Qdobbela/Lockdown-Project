@@ -54,7 +54,7 @@
 
     const getTime = () => {
         time = localStorage.getItem('endTime');
-        timeText = `Je hebt dit volbracht in ${time}`
+        timeText = `Je hebt deze hack volbracht in ${time}`
         console.log(timeText)
     }
 
