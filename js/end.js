@@ -81,11 +81,11 @@
     }
 
     const init = () => {
-        getTime()
         setTimeout(() => {
             const desktop = document.querySelector(".c-desktop");
             desktop.style.filter = "blur(8px)";
             setTerminal();
+            getTime()
         }, 2500);
 
     }
