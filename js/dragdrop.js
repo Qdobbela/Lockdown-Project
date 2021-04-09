@@ -38,13 +38,11 @@
         }
     }
 
-
-    // Drag Functions
-
     function dragStart() {
         // this.className += ' hold';
         dragClass = this.className.split(' ')[1];
         dragId = this.id;
+        console.log(this)
     }
 
     function dragEnd() {
@@ -65,6 +63,7 @@
     }
 
     function dragDrop() {
+        const lines = document.querySelectorAll('.line');
         const checkSibling = this.firstElementChild.nextElementSibling
         if (dragClass === "line-1") {
             if (!checkSibling) {
@@ -80,6 +79,9 @@
                 this.firstElementChild.nextElementSibling.remove()
                 this.append(line1)
             }
+            lines[0].innerHTML = `<div draggable="true"  id="1" class="fill line-1" >
+                <img    src="../img/drag&drop/lines/line3.png" alt="">
+              </div>`
         }
         if (dragClass === "line-2") {
             if (!checkSibling) {
@@ -96,6 +98,9 @@
                 this.firstElementChild.nextElementSibling.remove()
                 this.append(line2)
             }
+            lines[1].innerHTML = `<div draggable="true" id="2" class="fill line-2">
+                <img id="2" src="../img/drag&drop/lines/line1.png" alt="">
+              </div>`
         }
         if (dragClass === "line-3") {
             if (!checkSibling) {
@@ -109,6 +114,9 @@
                 this.firstElementChild.nextElementSibling.remove()
                 this.append(line3)
             }
+            lines[2].innerHTML = `<div draggable="true" id="3"  class="fill line-3" >
+                <img id="3" src="../img/drag&drop/lines/line6.png" alt="">
+              </div>`
         }
         if (dragClass === "line-4") {
             if (!checkSibling) {
@@ -122,6 +130,9 @@
                 this.firstElementChild.nextElementSibling.remove()
                 this.append(line4)
             }
+            lines[3].innerHTML = `<div draggable="true" id="4"  class="fill line-4" >
+            <img id="4" src="../img/drag&drop/lines/line5.png" alt="">
+          </div>`
         }
         if (dragClass === "line-5") {
             if (!checkSibling) {
@@ -138,6 +149,9 @@
                 this.firstElementChild.nextElementSibling.remove()
                 this.append(line5)
             }
+            lines[4].innerHTML = `<div draggable="true" id="5"  class="fill line-5" >
+                <img id="5" src="../img/drag&drop/lines/line2.png" alt="">
+              </div>`
         }
         if (dragClass === "line-6") {
             if (!checkSibling) {
@@ -151,17 +165,41 @@
                 this.firstElementChild.nextElementSibling.remove()
                 this.append(line6)
             }
+            lines[5].innerHTML = `<div draggable="true" id="6"  class="fill line-6" >
+            <img id="6" src="../img/drag&drop/lines/line4.png" alt="">
+          </div>`
         }
+        initListeners();
     }
 
     const checkAnswers = () => {
-        if (answers.length === 3) {
-            if (answer1 && answer2 && answer3 === true) {
-                // const restart = document.querySelector(".restart");
-                // const restartText = document.querySelector(".restart-text");
-                // restart.style.display = "flex"
-                // restartText.innerHTML = "Je hebt alles correct"
+        // if (answers.length === 3) {
+        //     if (answer1 && answer2 && answer3 === true) {
+        //         // const restart = document.querySelector(".restart");
+        //         // const restartText = document.querySelector(".restart-text");
+        //         // restart.style.display = "flex"
+        //         // restartText.innerHTML = "Je hebt alles correct"
 
+        //         const lottie = document.querySelector(".lottie-container")
+        //         lottie.style.display = "flex"
+        //         setTimeout(() => {
+        //             localStorage.setItem('pcIT', true);
+        //             document.location.href = "/pages-network/pcIT.html";
+        //         }, 2600);
+        //     } else {
+        //         resetCharts()
+        //     }
+        // }
+        // console.log(document.querySelector(".bot2").firstElementChild.nextElementSibling.id)
+
+        try {
+            const bot1 = document.querySelector(".bot2").firstElementChild.nextElementSibling.id;
+            const bot2 = document.querySelector(".bot5").firstElementChild.nextElementSibling.id;
+            const bot3 = document.querySelector(".bot1").firstElementChild.nextElementSibling.id;
+
+            console.log(bot1, bot2, bot3)
+
+            if (bot1 === "2" && bot2 === "5" && bot3 === "1") {
                 const lottie = document.querySelector(".lottie-container")
                 lottie.style.display = "flex"
                 setTimeout(() => {
@@ -171,7 +209,11 @@
             } else {
                 resetCharts()
             }
+
+        } catch {
+
         }
+
     }
 
     function resetCharts() {
