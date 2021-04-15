@@ -10,14 +10,37 @@ body {
     margin: 0;
 }
 
+b {
+    color: white;
+}
+
+.sortable {
+    display: flex;
+    justify-content: center;
+}
+
+.sortable-img {
+    width: 20rem;
+    margin: 0 auto;
+}
+
+.input-wrapper {
+    margin: 0 auto;
+    width: 25rem;
+    display: flex;
+    height: 2rem;
+    align-items: center;
+    justify-content: space-around;
+}
+
 #collage {
     height: 100%;
     padding: 0;
     margin: 0;
-    background-image: url("../img/hacker-background.jpg");
+    /* background-image: url("../img/hacker-background.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
 }
 
 #collage #playPanel {
@@ -51,6 +74,7 @@ body {
     display: inline-block;
     padding: 0;
     width: 400px;
+    
 }
 
 #collage #sortable li {

@@ -173,25 +173,6 @@
     }
 
     const checkAnswers = () => {
-        // if (answers.length === 3) {
-        //     if (answer1 && answer2 && answer3 === true) {
-        //         // const restart = document.querySelector(".restart");
-        //         // const restartText = document.querySelector(".restart-text");
-        //         // restart.style.display = "flex"
-        //         // restartText.innerHTML = "Je hebt alles correct"
-
-        //         const lottie = document.querySelector(".lottie-container")
-        //         lottie.style.display = "flex"
-        //         setTimeout(() => {
-        //             localStorage.setItem('pcIT', true);
-        //             document.location.href = "/pages-network/pcIT.html";
-        //         }, 2600);
-        //     } else {
-        //         resetCharts()
-        //     }
-        // }
-        // console.log(document.querySelector(".bot2").firstElementChild.nextElementSibling.id)
-
         try {
             const bot1 = document.querySelector(".bot2").firstElementChild.nextElementSibling.id;
             const bot2 = document.querySelector(".bot5").firstElementChild.nextElementSibling.id;

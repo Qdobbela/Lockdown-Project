@@ -9,6 +9,9 @@
     <script src="../js/puzzle/image-puzzle.js"></script>
 </head>
 <body>
+    <video autoplay muted loop class="matrix">
+        <source src="../img/matrix.mp4" type="video/mp4">
+      </video>
     <div class="lottie-wrapper">
         <div class="lottie-container">
             <lottie-player
@@ -27,20 +30,22 @@
         <div id="playPanel" style="display:none; flex-direction: column;">
             <div class="found">
                 <p class="found-text">LLYZAL ALRLU CHU LSRL OY ZBIMVSKLY</p>
-                <label for="psw"><b>Password</b></label>
-                <input placeholder="Enter Password" name="psw" required id="psw">
-                <br>
-                <button type="submit" id="btn" onclick="checkPasswordQR()">Confirm</button>
-                <p id="psw-fout"></p>
+                <div class="input-wrapper">
+                    <!-- <label for="psw"><b>Password</b></label> -->
+                    <input placeholder="Enter Password" name="psw" required id="psw">
+                    <button type="submit" id="btn" onclick="checkPasswordQR()">Confirm</button>
+                    <br>
+                    <p id="psw-fout"></p>
+                </div>
             </div>
-            <div >
+          
                 <ul id="sortable" class="sortable"></ul>
                 <div style="display: none;" id="actualImageBox">
                     <p id="levelPanel">
                         <input style="display: none;" type="radio" name="level" id="easy" checked="checked" value="3" /> <label for="easy">Easy</label>
                     </p>
                 </div>
-            </div>
+            
         </div>
         
 
